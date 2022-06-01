@@ -11,7 +11,6 @@ import json
 from discord.ext.commands import CommandNotFound
 import os
 from discord.utils import get
-#from antispam import AntiSpamHandler, Options
 from collections import Counter
 import collections
 import schedule
@@ -20,10 +19,8 @@ import sys
 import subprocess
 from decouple import config
 import backup
-# from AntiSpamTrackerSubclass import MyCustomTracker
 
 
-#os.chdir("/home/pi/Desktop/PC_Creator_2")
 with open("json_files/mainconfig.json", encoding="utf-8-sig") as f:
     mainconfig = json.load(f)
 
@@ -54,10 +51,6 @@ async def rsb(ctx):
         #print(ctx.author.id)
         if int(ans.content) == int(ctx.author.id):
             await ctx.send("Restarting...")
-            # os.system('restart.sh')
-            # cmd = "C:\\Users\\zockerbande\\Desktop\\Neuer Ordner\\PC_Creator_2\\restart.sh"
-            # os.execl('restart.sh', '')
-            #os.execv(sys.executable, ['python'] + sys.argv)
             subprocess.call([sys.executable, os.path.realpath(__file__)] + sys.argv[1:])
         else:
             await ctx.send("Canceled")
@@ -74,10 +67,6 @@ async def sdb(ctx):
         #print(ctx.author.id)
         if int(ans.content) == int(ctx.author.id):
             await ctx.send("Shutting down...")
-            # os.system('restart.sh')
-            # cmd = "C:\\Users\\zockerbande\\Desktop\\Neuer Ordner\\PC_Creator_2\\restart.sh"
-            # os.execl('restart.sh', '')
-            #os.execv(sys.executable, ['python'] + sys.argv)
             sys.exit()
         else:
             await ctx.send("Canceled")

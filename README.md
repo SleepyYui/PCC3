@@ -12,6 +12,7 @@ Install all dependencies:
 ```bash
 pip install -r requirements.txt
 ```
+
 Rename ```rename-to json_files``` to ```json_files```.
 
 Edit ```json_files/mainconfig.json``` for your use.
