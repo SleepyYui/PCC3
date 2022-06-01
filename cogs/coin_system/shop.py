@@ -143,7 +143,7 @@ class shop(commands.Cog):
     
 
 
-    @commands.slash_command(name="new_item")
+    """@commands.slash_command(name="new_item")
     @permissions.has_any_role(951207540472029195, 951464246506565683)
     async def new_item(self, ctx, item_name : Option(str, 'Item Name', required=True), price: Option(int, 'Price (only numbers)', required=True), emoji: Option(str, required=False)):
         shopjson = open("json_files/shop.json", "r")
@@ -205,7 +205,7 @@ class shop(commands.Cog):
 
         for item_name in items:
             itemprint.append(item_name)
-        await ctx.respond(f"```json\n{itemprint}\n```")
+        await ctx.respond(f"```json\n{itemprint}\n```")"""
 
 
 

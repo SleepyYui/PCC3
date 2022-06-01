@@ -39,8 +39,8 @@ class faqmain(commands.Cog):
         else:
             await ctx.respond("This command only works in #faq-ask", ephemeral=True)
 
-    @commands.slash_command(name="faq_answer", description="For Moderators / Admins to answer questions")
-    @permissions.has_any_role(951207540472029195, 589435378147262464, 632674518317531137, 951464246506565683)
+    @commands.slash_command(name="faq_answer", description="For Moderators / Admins to answer questions", guild_ids=[951463924279181322])
+    #@permissions.has_any_role(951207540472029195, 589435378147262464, 632674518317531137, 951464246506565683)
     async def faq_answer(self, ctx, question: Option(str, required=True), answer: Option(str, required=True)):
         channel = discord.utils.get(ctx.guild.channels, name="faq")
         embed=discord.Embed(title=None, description=None)
