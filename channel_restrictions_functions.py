@@ -24,7 +24,7 @@ async def new_restriction(ctx):
     #for guild in client.guilds:
         #for channel in guild.channels:
             #print(channel.id, channel.name)
-#
+
             restriction = await get_restriction()
 
             if str(ctx.channel.id) in restriction:

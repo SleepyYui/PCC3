@@ -248,8 +248,8 @@ class levelroles(commands.Cog):
             embed.set_image(url="attachment://dailymsgs.png")
             await send(file=f,embed=embed)   
 
-    @commands.command(name="refreshlrsstats")
-    @permissions.has_any_role(951207540472029195, 951464246506565683)
+    @commands.command(name="refreshlrsstats", guild_ids=[951463924279181322])
+    #@permissions.has_any_role(951207540472029195, 951464246506565683)
     async def refreshlrsstats(self, ctx):
         if ctx.author.id in [695229647021015040, 443769343138856961, 713696771188195368]:
             await ctx.send("Do you really want to do that? This can take up to 1 minute, **will set the leaderboard 1 day ahead** and could potentially break the leaderboard. **ONLY USE WHEN IT IS HAS NOT REFRESHED AT 1am CET!!!** Reply with your user-ID to confirm.")

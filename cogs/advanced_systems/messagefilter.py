@@ -35,13 +35,11 @@ class messagefilter(commands.Cog):
             await self.checkfornaughtyword(after)
     
     async def checkfornaughtyword(self, message):
-        #print("E")
         if message != None:
             if not message.author.bot:
                 badwordarr = localbadwords #await self.get_badwords()
                 muchusedarr = localmuchusedbadwords #await self.get_muchusedbadwords()
                 author = message.author
-                #print("A")
                 try:
                     webhooks = await message.channel.webhooks()
                 except:
@@ -51,7 +49,6 @@ class messagefilter(commands.Cog):
                 #replacement = ":heart:"
                 explanation = "\n\nPlease stop using swear words (rule 5).\nYou can read the rules in <#605326085328207872>.​"
                 if any(role.id in allowedroles for role in author.roles):
-                    #print("E")
                     return True
                 #nospacecontent = content.replace(" ", "")
                 for badword in badwordarr:
