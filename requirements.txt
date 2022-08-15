@@ -7,7 +7,7 @@ idna==3.3
 platformdirs==2.5.2
 requests==2.27.1
 six==1.16.0
-urllib3==1.26.9
+urllib3==1.26.11
 yarg==0.1.9
 py-cord==2.0.0rc1
 Pillow==9.1.1
