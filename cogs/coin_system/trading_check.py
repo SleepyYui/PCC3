@@ -11,7 +11,6 @@ class trading_check(commands.Cog):
     def __init__(self, client):
         self.client = client
 
-
     """@commands.slash_command(name="check_trades", description="Check your trades")
     async def check_trades_slash(self, ctx):
         trading_member = await get_trading()

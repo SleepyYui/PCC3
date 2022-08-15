@@ -1,4 +1,3 @@
-*.env
 **/__pycache__
 *.replit
 **/json_files

@@ -199,7 +199,7 @@ class messagecounter(commands.Cog):
         print("TEST")
 
     @commands.Cog.listener()
-    @permissions.has_any_role(951207540472029195, 632674518317531137, 589435378147262464, 951464246506565683) #botde, admin, mod, testserveradmin
+    #@permissions.has_any_role(951207540472029195, 632674518317531137, 589435378147262464, 951464246506565683) #botde, admin, mod, testserveradmin
     async def testo(ctx):
         await ctx.send(spammers)
         await ctx.send(collections.Counter(spammers))
