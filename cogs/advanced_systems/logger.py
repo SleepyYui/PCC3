@@ -88,7 +88,7 @@ class logs(commands.Cog):
                 await log_channel.send(embed=e)
             elif before.pinned == False and after.pinned == True:
                 e.description=f"**Message was pinned in {after.channel.mention}.**\n[Jump to message](https://discord.com/channels/{after.guild.id}/{after.channel.id}/{after.id}/)"
-                await log_channel.send(embed=e)"""
+                await log_channel.send(embed=e)
 
     @commands.Cog.listener()
     async def on_guild_channel_create(self, channel):
@@ -140,7 +140,7 @@ class logs(commands.Cog):
                 e.add_field(name="Channel's bitrate changed:", value=f"**Before:** {before.bitrate}\n**After:** {after.bitrate}", inline=False)
                 await log_channel.send(embed=e)
 
-    """@commands.Cog.listener()
+    @commands.Cog.listener()
     async def on_member_join(self, member):
         log_channel = self.bot.get_channel(MEMBER_LOGS)
         e=discord.Embed(color=discord.Color.green())
@@ -157,9 +157,9 @@ class logs(commands.Cog):
         e.set_footer(text=f"User ID: {member.id}")
         e.timestamp = datetime.now(pytz.timezone('Europe/Vienna'))
 
-        await log_channel.send(embed=e)"""
+        await log_channel.send(embed=e)
 
-    """@commands.Cog.listener()
+    @commands.Cog.listener()
     async def on_member_remove(self, member):
         log_channel = self.bot.get_channel(MEMBER_LOGS)
         e=discord.Embed(color=discord.Color.red())
@@ -176,7 +176,7 @@ class logs(commands.Cog):
         e.set_footer(text=f"User ID: {member.id}")
         e.timestamp = datetime.now(pytz.timezone('Europe/Vienna'))
 
-        await log_channel.send(embed=e)"""
+        await log_channel.send(embed=e)
 
     @commands.Cog.listener()
     async def on_member_update(self, before, after):
@@ -310,7 +310,7 @@ class logs(commands.Cog):
                 e.description=f"{member.mention} **moved to {after.channel.mention}**"
                 e.color = discord.Color.blue()
                 e.set_footer(text=f"Channel ID before: `{before.channel.id}` | Channel ID after: `{after.channel.id}`")
-            await log_channel.send(embed=e)
+            await log_channel.send(embed=e)"""
 
 
 def setup(bot):

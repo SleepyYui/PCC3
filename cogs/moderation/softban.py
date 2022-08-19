@@ -24,9 +24,9 @@ class softban(commands.Cog):
                     await member.unban(reason=reason)
                     await ctx.send(f"Softbanned {member.mention}", delete_after=10)
 
-                    embed = discord.Embed(title="Softbanned", color=13565696)
+                    embed = discord.Embed(title="Softban", color=13565696)
                     embed.add_field(name="Softbanned:", value=f"{member.mention}")
-                    embed.add_field(name="Moderator", value=f"{ctx.author.mention}")
+                    embed.add_field(name="Moderator:", value=f"{ctx.author.mention}")
                     embed.add_field(name="Reason:", value=reason, inline=False)
                     await channel.send(embed=embed)
                 except:
@@ -34,9 +34,9 @@ class softban(commands.Cog):
                     await member.unban(reason=reason)
                     await ctx.send(f"Softbanned {member.mention}", delete_after=10)
 
-                    embed = discord.Embed(title="Softbanned", color=13565696)
+                    embed = discord.Embed(title="Softban", color=13565696)
                     embed.add_field(name="Softbanned:", value=f"{member.mention}")
-                    embed.add_field(name="Moderator", value=f"{ctx.author.mention}")
+                    embed.add_field(name="Moderator:", value=f"{ctx.author.mention}")
                     embed.add_field(name="Reason:", value=reason, inline=False)
                     await channel.send(embed=embed)
             else:

@@ -6,3 +6,4 @@ cogs/pc_creator_commands/dontusethiscommand.py
 cogs/pc_creator_commands/own_pc.py
 motherboards.json
 **/.vs
+.env
