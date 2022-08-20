@@ -42,9 +42,9 @@ class warns(commands.Cog):
                         channel = self.client.get_channel(933768368970932254)
                         ochannel = self.client.get_channel(989272480671739954)
                         
-                        await ochannel.send(f"{member.mention} has been warned by {ctx.author.mention} for {reason}")
+                        
                     
-                        if warn_count == 1:
+                        if warn_count == 0:
                             try:
                                 await member.send(f"You have been warned in {ctx.guild.name} for `{reason}`.")
                                 await ctx.send(f"{member.mention} has been warned for {reason}. This is their first warning.", delete_after=10)
@@ -52,9 +52,10 @@ class warns(commands.Cog):
                                 await ctx.send(f"{member.mention} has been warned for {reason}. This is their first warning.\nThis user has disabled DMs from server members, so the message could not be sent.", delete_after=10)
 
                             await self.update_warns(member, reason + " (1)")
+                            await ochannel.send(f"{member.mention} has been warned for the first time by {ctx.author.mention} for {reason}")
                             return
 
-                        elif warn_count == 2:
+                        elif warn_count == 1:
                             try:
                                 await member.send(f"You have been muted in {ctx.guild.name} for `{reason}`.")
                                 await ctx.send(f"{member.mention} has been muted for {reason}. This is their second warning. (6h mute)", delete_after=10)
@@ -68,13 +69,14 @@ class warns(commands.Cog):
                             embed.add_field(name="Moderator:", value=f"{ctx.author.mention}")
                             embed.add_field(name="Duration:", value=f"**{0}** days, **{6}** hours,\n**{0}** minutes, and **{0}** second",inline=False)
                             embed.add_field(name="Reason:", value=reason)
+                            await ochannel.send(f"{member.mention} has been warned for the second time (mute 6h) by {ctx.author.mention} for {reason}")
                             await channel.send(embed=embed)
 
                             await self.update_warns(member, reason + " (2)")
                             await self.update_mutes(member, reason)
                             return
                             
-                        elif warn_count == 3:
+                        elif warn_count == 2:
                             try:
                                 await member.send(f"You have been muted in {ctx.guild.name} for `{reason}`.")
                                 await ctx.send(f"{member.mention} has been muted for {reason}. This is their third warning. (24h mute)", delete_after=10)
@@ -89,12 +91,13 @@ class warns(commands.Cog):
                             embed.add_field(name="Duration:", value=f"**{0}** days, **{24}** hours,\n**{0}** minutes, and **{0}** second",inline=False)
                             embed.add_field(name="Reason:", value=reason)
                             await channel.send(embed=embed)
-
+                            
+                            await ochannel.send(f"{member.mention} has been warned for the third time (mute 24h) by {ctx.author.mention} for {reason}")
                             await self.update_warns(member, reason + " (3)")
                             await self.update_mutes(member, reason)
                             return
 
-                        elif warn_count == 4:
+                        elif warn_count == 3:
                             try:
                                 await member.send(f"You have been soft-banned from {ctx.guild.name} for `{reason}`. All of the messages you sent in the last 7 days were deleted.")
                                 await ctx.send(f"{member.mention} has been muted for {reason}. This is their fourth warning. (Soft-Ban)", delete_after=10)
@@ -110,21 +113,23 @@ class warns(commands.Cog):
                             embed.add_field(name="Reason:", value=reason)
                             await channel.send(embed=embed)
 
+                            await ochannel.send(f"{member.mention} has been warned for the fourth time (softban) by {ctx.author.mention} for {reason}")
                             await self.update_warns(member, reason + " (4)")
                             await self.update_bans(member, reason)
                             return
 
-                        elif warn_count == 5:
+                        elif warn_count == 4:
                             try:
                                 await member.send(f"You have been warned for the last time in {ctx.guild.name} for `{reason}`. This is your last warning. If you don't behave the next time, you will be banned.")
                                 await ctx.send(f"{member.mention} has been warned for {reason}. This is their final warning.", delete_after=10)
                             except:
                                 await ctx.send(f"{member.mention} has been warned for {reason}. This is their final warning.\nThis user has disabled DMs from server members, so the message could not be sent.", delete_after=10)
-
+                                
+                            await ochannel.send(f"{member.mention} has been warned for the fifth time (last warn) by {ctx.author.mention} for {reason}")
                             await self.update_warns(member, reason + " (5)")
                             return
 
-                        elif warn_count == 6:
+                        elif warn_count == 5:
                             try:
                                 await member.send(f"You have been banned from {ctx.guild.name} for `{reason}`. To appeal, please contact <@695229647021015040> on discord.")
                                 await ctx.send(f"{member.mention} has been muted for {reason}. This is their 6th warning. (Banned)", delete_after=10)
@@ -138,6 +143,7 @@ class warns(commands.Cog):
                             embed.add_field(name="Reason:", value=reason)
                             await channel.send(embed=embed)
                             
+                            await ochannel.send(f"{member.mention} has been warned for the sixth time (ban) by {ctx.author.mention} for {reason}")
                             await self.update_warns(member, reason + " (6)")
                             await self.update_bans(member, reason)
                             return
@@ -174,7 +180,7 @@ class warns(commands.Cog):
 
                     channel = self.client.get_channel(933768368970932254)
                     ochannel = self.client.get_channel(989272480671739954)
-                    await ochannel.send(f"{member.mention} has been warned by {ctx.author.mention} for {reason}")
+                    #await ochannel.send(f"{member.mention} has been warned by {ctx.author.mention} for {reason}")
                     
                     #print("a")
                 
@@ -186,6 +192,7 @@ class warns(commands.Cog):
                         except:
                             await ctx.send(f"{member.mention} has been warned for {reason}. This is their first warning.\nThis user has disabled DMs from server members, so the message could not be sent.", delete_after=10)
 
+                        await ochannel.send(f"{member.mention} has been warned for the first time by {ctx.author.mention} for {reason}")
                         await self.update_warns(member, reason + " (1)")
                         return
 
@@ -206,6 +213,7 @@ class warns(commands.Cog):
                         await channel.send(embed=embed)
 
                         await self.update_warns(member, reason + " (2)")
+                        await ochannel.send(f"{member.mention} has been warned for the second time (mute 6h) by {ctx.author.mention} for {reason}")
                         await self.update_mutes(member, reason)
                         return
                         
@@ -224,7 +232,8 @@ class warns(commands.Cog):
                         embed.add_field(name="Duration:", value=f"**{0}** days, **{24}** hours,\n**{0}** minutes, and **{0}** second",inline=False)
                         embed.add_field(name="Reason:", value=reason)
                         await channel.send(embed=embed)
-
+                        
+                        await ochannel.send(f"{member.mention} has been warned for the third time (mute 24h) by {ctx.author.mention} for {reason}")
                         await self.update_warns(member, reason + " (3)")
                         await self.update_mutes(member, reason)
                         return
@@ -244,7 +253,8 @@ class warns(commands.Cog):
                         embed.add_field(name="Moderator:", value=f"{ctx.author.mention}")
                         embed.add_field(name="Reason:", value=reason)
                         await channel.send(embed=embed)
-
+                        
+                        await ochannel.send(f"{member.mention} has been warned for the fourth time (softban) by {ctx.author.mention} for {reason}")
                         await self.update_warns(member, reason + " (4)")
                         await self.update_bans(member, reason)
                         return
@@ -255,7 +265,8 @@ class warns(commands.Cog):
                             await ctx.send(f"{member.mention} has been warned for {reason}. This is their final warning.", delete_after=10)
                         except:
                             await ctx.send(f"{member.mention} has been warned for {reason}. This is their final warning.\nThis user has disabled DMs from server members, so the message could not be sent.", delete_after=10)
-
+                            
+                        await ochannel.send(f"{member.mention} has been warned for the fifth time (last warn) by {ctx.author.mention} for {reason}")
                         await self.update_warns(member, reason + " (5)")
                         return
 
@@ -273,6 +284,7 @@ class warns(commands.Cog):
                         embed.add_field(name="Reason:", value=reason)
                         await channel.send(embed=embed)
                         
+                        await ochannel.send(f"{member.mention} has been warned for the sixth time (ban) by {ctx.author.mention} for {reason}")
                         await self.update_warns(member, reason + " (6)")
                         await self.update_bans(member, reason)
                         return
