@@ -168,7 +168,7 @@ class warns(commands.Cog):
                 
                 await self.new_warn_member(member)
 
-                if not any(role.id in rolelist for role in user.roles) and not member.bot:
+                if not any(role.id in rolelist for role in member.roles) and not member.bot:
                     
                     #print("e")
                     
@@ -310,7 +310,7 @@ class warns(commands.Cog):
         if member == None:
                 member = ctx.author
         else:
-            if not any(role.id in rolelist for role in member.roles) and not member.id == ctx.author.id:
+            if not any(role.id in rolelist for role in ctx.author.roles) and not member.id == ctx.author.id:
                 await ctx.respond("You can't check the warns of someone else.", ephemeral=True)
                 return 
 
