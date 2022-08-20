@@ -168,7 +168,7 @@ class warns(commands.Cog):
                 
                 await self.new_warn_member(member)
 
-                if not any(role.id in rolelist for role in member.roles) and not member.bot:
+                if not any(role.id in rolelist for role in user.roles) and not member.bot:
                     
                     #print("e")
                     
