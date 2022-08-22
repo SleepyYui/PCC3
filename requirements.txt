@@ -1,5 +1,5 @@
 certifi
-charset-normalizer==2.1.0
+charset-normalizer==2.1.1
 distlib==0.3.5
 docopt==0.6.2
 filelock==3.8.0
