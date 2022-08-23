@@ -459,7 +459,7 @@ class warns(commands.Cog):
         warn_count_old = warns[str(member.id)]["warn_count"]
         warn_count_new = warn_count_old + 1
         warns[str(member.id)]["warn_count"] = warn_count_new
-        warns[str(member.id)][f"warn {warn_count_new}"] = reason    
+        warns[str(member.id)][f"warn {warn_count_new}"] = str(reason)    
 
         with open("json_files/warns.json", "w") as f:
             json.dump(warns,f)      
@@ -471,7 +471,7 @@ class warns(commands.Cog):
         warn_count_old = warns[str(member.id)]["mute_count"]
         warn_count_new = warn_count_old + 1
         warns[str(member.id)]["mute_count"] = warn_count_new
-        warns[str(member.id)][f"mute {warn_count_new}"] = reason    
+        warns[str(member.id)][f"mute {warn_count_new}"] = str(reason)    
 
         with open("json_files/warns.json", "w") as f:
             json.dump(warns,f)
@@ -483,7 +483,7 @@ class warns(commands.Cog):
         ban_count_old = bans[str(member.id)]["ban_count"]
         ban_count_new = ban_count_old + 1
         bans[str(member.id)]["ban_count"] = ban_count_new
-        bans[str(member.id)][f"ban {ban_count_new}"] = reason
+        bans[str(member.id)][f"ban {ban_count_new}"] = str(reason)
         
         with open("json_files/warns.json", "w") as f:
             json.dump(warns,f) 
