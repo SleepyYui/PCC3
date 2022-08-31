@@ -1,9 +1,0 @@
-Here is the message log for ticket: ticket-147
-----------
-
-PC Creator 2 | <@867896837436211240> <@&697728131003580537>
- ¥£$ | Hi
- ¥£$ | What is your problem
- Yui | ,close
- PC Creator 2 | 
- Yui | Close

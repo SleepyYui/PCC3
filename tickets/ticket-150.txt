@@ -1,8 +1,0 @@
-Here is the message log for ticket: ticket-150
-----------
-
-PC Creator 2 | <@!443769343138856961> <@&697728131003580537>
- Yui | test
- Yui | ,close
- PC Creator 2 | 
- Yui | close

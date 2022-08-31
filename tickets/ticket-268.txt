@@ -1,7 +1,0 @@
-Here is the message log for ticket: ticket-268
-----------
-
-PC Creator 2 | <@268403370643947520> <@&697728131003580537>
- ABHOY | ,close
- PC Creator 2 | 
- ABHOY | Close

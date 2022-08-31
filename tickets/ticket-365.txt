@@ -1,8 +1,0 @@
-Here is the message log for ticket: ticket-365
-----------
-
-PC Creator 2 | <@661222358325133345> <@&697728131003580537>
- repXileS | Sorry, I accidentally created this ticket.
- AMPW | ,close
- PC Creator 2 | 
- AMPW | close

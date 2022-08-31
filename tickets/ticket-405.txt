@@ -1,9 +1,0 @@
-Here is the message log for ticket: ticket-405
-----------
-
-PC Creator 2 | <@975328372236357692> <@&697728131003580537>
- Masterwinter | How may I help you? <@975328372236357692>
- AMPW | <:OmenKick:882742589697196042>
- AMPW | ,close
- PC Creator 2 | 
- AMPW | close
