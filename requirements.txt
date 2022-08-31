@@ -10,7 +10,7 @@ six==1.16.0
 urllib3==1.26.9
 yarg==0.1.9
 py-cord==2.0.0b7
-Pillow==9.1.0
+Pillow==9.1.1
 schedule==1.1.0
 python-decouple==3.6
 numpy==1.22.3
