@@ -1,10 +1,10 @@
 *.env
 **/__pycache__
 *.replit
-**/json_files
 **/tickets
 dailymsgs.png
 cogs/pc_creator_commands/dontusethiscommand.py
 cogs/pc_creator_commands/own_pc.py
 motherboards.json
+**/json_files
 **/.vs
