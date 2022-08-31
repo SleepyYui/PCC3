@@ -3,8 +3,9 @@
 *.replit
 **/json_files
 dailymsgs.png
-cogs/pc_creator_commands/dontusethiscommand.py
-cogs/pc_creator_commands/own_pc.py
+cogs/pc_creator_commands/dontusethiscommand_group.py
+cogs/pc_creator_commands/own_pc_group.py
 motherboards.json
 **/tickets
 **/.vs
+**/.vscode

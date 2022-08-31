@@ -51,14 +51,14 @@ class messagecounter(commands.Cog):
                     users[str(user.id)] += messag_e
                     with open("json_files/userLevels.json", "w") as f:
                         json.dump(users,f)
-                    await self.new_coin_member(message.author)
-                    user = message.author
-                    users_coins = await self.get_coins()
-                    coins = int(1)
-                    users_coins[str(user.id)] += coins
-                    with open("json_files/usercoins.json", "w") as f:
-                        json.dump(users_coins,f)
-                    with open ("json_files/counter-file.txt", "r") as cf:
+                    #await self.new_coin_member(message.author)
+                    #user = message.author
+                    #users_coins = await self.get_coins()
+                    #coins = int(1)
+                    #users_coins[str(user.id)] += coins
+                    #with open("json_files/usercoins.json", "w") as f:
+                    #    json.dump(users_coins,f)
+                    #with open ("json_files/counter-file.txt", "r") as cf:
                         data = cf.readlines()
                         cf.close
                     daily_messages = data[64]
