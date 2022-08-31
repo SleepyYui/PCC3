@@ -1,9 +1,0 @@
-Here is the message log for ticket: ticket-432
-----------
-
-PC Creator 2 | <@746819278883520632> <@&697728131003580537>
- sensei | i don’t need help i just wanted to see what it does
- PC Creator 2 | Warned <@746819278883520632> for Useless ticket
- Yui | ,close
- PC Creator 2 | 
- Yui | close

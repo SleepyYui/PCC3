@@ -1,9 +1,0 @@
-Here is the message log for ticket: ticket-326
-----------
-
-PC Creator 2 | <@382343423350407179> <@&697728131003580537>
- Masterwinter | How may I help you? <@382343423350407179>
- PC Creator 2 | Warned <@382343423350407179> for Useless ticket
- Yui | ,close
- PC Creator 2 | 
- Yui | Close
