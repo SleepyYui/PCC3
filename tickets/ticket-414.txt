@@ -1,9 +1,0 @@
-Here is the message log for ticket: ticket-414
-----------
-
-PC Creator 2 | <@766774163306053632> <@&697728131003580537>
- TheBloxian | It gets stuck loading the first room without an internet connection
- PC Creator 2 | Warned <@766774163306053632> for Useless ticket
- Yui | ,close
- PC Creator 2 | 
- Yui | Close

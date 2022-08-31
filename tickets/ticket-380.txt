@@ -1,9 +1,0 @@
-Here is the message log for ticket: ticket-380
-----------
-
-PC Creator 2 | <@924542095245594634> <@&697728131003580537>
- Masterwinter | How may I help you? <@924542095245594634>
- PC Creator 2 | Warned <@924542095245594634> for Useless ticket
- AMPW | ,close
- PC Creator 2 | 
- AMPW | Close
