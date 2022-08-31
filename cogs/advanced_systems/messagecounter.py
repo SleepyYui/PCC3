@@ -58,7 +58,7 @@ class messagecounter(commands.Cog):
                     #users_coins[str(user.id)] += coins
                     #with open("json_files/usercoins.json", "w") as f:
                     #    json.dump(users_coins,f)
-                    #with open ("json_files/counter-file.txt", "r") as cf:
+                    with open ("json_files/counter-file.txt", "r") as cf:
                         data = cf.readlines()
                         cf.close
                     daily_messages = data[64]
