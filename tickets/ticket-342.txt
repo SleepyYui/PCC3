@@ -1,9 +1,0 @@
-Here is the message log for ticket: ticket-342
-----------
-
-PC Creator 2 | <@903397290063044638> <@&697728131003580537>
- Masterwinter | Hello, how may I help you? <@903397290063044638>
- PC Creator 2 | Warned <@903397290063044638> for Useless ticket
- ABHOY | ,close
- PC Creator 2 | 
- ABHOY | Close

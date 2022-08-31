@@ -1,9 +1,0 @@
-Here is the message log for ticket: ticket-301
-----------
-
-PC Creator 2 | <@823314171726135297> <@&697728131003580537>
- AMPW | Hi
- AMPW | How can I help you?
- AMPW | ,close
- PC Creator 2 | 
- AMPW | Close

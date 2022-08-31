@@ -1,7 +1,0 @@
-Here is the message log for ticket: ticket-453
-----------
-
-PC Creator 2 | <@970427232382234654> <@&697728131003580537>
- AMPW | ,close
- PC Creator 2 | 
- AMPW | Close

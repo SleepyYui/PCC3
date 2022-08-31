@@ -1,9 +1,0 @@
-Here is the message log for ticket: ticket-461
-----------
-
-PC Creator 2 | <@498033477158043650> <@&697728131003580537>
- FizzY | I need russian translator
- FizzY | which translates the game
- Yui | ,close
- PC Creator 2 | 
- Yui | close

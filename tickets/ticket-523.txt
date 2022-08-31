@@ -1,9 +1,0 @@
-Here is the message log for ticket: ticket-523
-----------
-
-PC Creator 2 | <@759424944144252958> <@&697728131003580537>
- F A T  H E R | Pcc2 suddenly freezes and unplayable most of the time
- Yui | wait for the update
- Yui | ,close
- PC Creator 2 | 
- Yui | close

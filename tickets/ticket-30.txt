@@ -1,7 +1,0 @@
-Here is the message log for ticket: ticket-30
-----------
-
-PC Creator 2 | <@726800253919035404> <@&697728131003580537>
- Yui | ,close
- PC Creator 2 | 
- Yui | Close
