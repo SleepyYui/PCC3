@@ -1,0 +1,15 @@
+Here is the message log for ticket: ticket-488
+----------
+
+PC Creator 2 | <@590371069047603332> <@&697728131003580537>
+ Brycietheman | Hello
+ Brycietheman | I built and bitcoin miner thing and for some reason my rtx 1060 are in red
+ Brycietheman | Like the bar for them is down at the button
+ Brycietheman | Bottom*
+ Brycietheman | So idk if I gotta buy new cards or there is a way to repair them or sum
+ AMPW | In PCC1 you need to replace the broken gpus, there's no way to repair them.
+ AMPW | This is also why it's recommended to use only gpus that you can buy with In game money
+ AMPW | This is the health
+ Yui | ,close
+ PC Creator 2 | 
+ Yui | close

@@ -1,0 +1,12 @@
+Here is the message log for ticket: ticket-219
+----------
+
+PC Creator 2 | <@646023788810731520> <@&697728131003580537>
+ ¥£$ | Hi
+ ¥£$ | What is your problem
+ Yui | ,twarn 646023788810731520
+ PC Creator 2 | Warned <@646023788810731520> for Useless ticket
+ Yui | ,closw
+ Yui | ,close
+ PC Creator 2 | 
+ Yui | Close

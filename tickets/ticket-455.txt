@@ -1,0 +1,18 @@
+Here is the message log for ticket: ticket-455
+----------
+
+PC Creator 2 | <@668494347108483124> <@&697728131003580537>
+ SafiHit | 
+ SafiHit | I can't verify any order even when I press the button it doesn't work
+ SafiHit | Only the decline button works . It is not only this order but it has also been the same for 6 other orders
+ SafiHit | I am also not getting any new orders more than 2 hours have passed
+ SafiHit | Finally when I enter the game it says that I have a download although I downloaded the game today and Google play store says that I don't have any download and the bug report button in the game doesn't work
+ SafiHit | I can type about the bug but when I have to send the bug it doesn't verify
+ SafiHit | Also when I entered the game it said that it detected that I had a different account on my device (I had one like 2 years ago) so I told them that I want to load my saved account but everything that was in my account is gone the only thing left is my username
+ SafiHit | Please help me thanks in advance
+ ¥£$ | Try to reinstall
+ ¥£$ | And probably create a new account
+ SafiHit | It finally worked. The reason this happened is because when I reloaded my old account I was level 1 but I had orders from when I used to play the game 2 years ago which I couldn't get unless I leveled up so I declined all the orders and restarted the game. It is working now
+ Yui | ,close
+ PC Creator 2 | 
+ Yui | close

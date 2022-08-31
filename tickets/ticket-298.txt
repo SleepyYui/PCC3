@@ -1,0 +1,12 @@
+Here is the message log for ticket: ticket-298
+----------
+
+PC Creator 2 | <@734734983247429703> <@&697728131003580537>
+ jiafei's Mom | HEllo why pc creator dont support on 32 bit devices anymore
+ Yui | Hello, I will ask the devs about that. Thank you for the report.
+ Yui | <@734734983247429703> can you tell me the device you are using please?
+ ABHOY | The game was blocked for Redmi
+ ABHOY | Redmi 9,9a,9c, 9c NFC blocked for PCC access due to frequent technical issues
+ Yui | ,close
+ PC Creator 2 | 
+ Yui | Close

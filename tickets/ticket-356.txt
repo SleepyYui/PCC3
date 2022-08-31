@@ -1,0 +1,9 @@
+Here is the message log for ticket: ticket-356
+----------
+
+PC Creator 2 | <@911870239128563772> <@&697728131003580537>
+ ABHOY | Stop opening ticket
+ PC Creator 2 | Warned <@911870239128563772> for Useless ticket
+ Masterwinter | ,close
+ PC Creator 2 | 
+ Masterwinter | Close

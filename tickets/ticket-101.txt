@@ -1,0 +1,32 @@
+Here is the message log for ticket: ticket-101
+----------
+
+PC Creator 2 | <@575263740811804672> <@&697728131003580537>
+ ABHOY {INDIAN} | Hi
+ ABHOY {INDIAN} | How can I help you
+ ABHOY {INDIAN} | Hello <@575263740811804672>
+ RepZer | 
+ RepZer | This stuck
+ ¥£$ | when do you installed the game?
+ RepZer | Yesterday
+ ¥£$ | really?
+ ¥£$ | You can try to create an new account maybe it will fix the problem
+ RepZer | I've tried to create a new account,
+still like that
+ ¥£$ | i think you have to wait for an update
+ AMPW | But did you did both requirements at the right pc?
+ RepZer | yes i did it right
+ AMPW | Did you used a new acc and installed it from the Google play store?
+ RepZer | I installed from taptap
+ AMPW | I think that's the problem
+ RepZer | So now? I need to reinstall and then download from play store?
+ AMPW | Only the Google play store Version is at the moment official and there was 2 weeks or something like that ago a update which fixed this bug
+ AMPW | Apks are illegal
+ RepZer | Owh
+ AMPW | There is only a pre release for the USA in the play store
+ RepZer | ok i will download via play store
+ ABHOY {INDIAN} | I think conversation close?
+ AMPW | Yes
+ AMPW | ,close
+ PC Creator 2 | 
+ AMPW | Close

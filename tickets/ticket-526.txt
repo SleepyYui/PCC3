@@ -1,0 +1,11 @@
+Here is the message log for ticket: ticket-526
+----------
+
+PC Creator 2 | <@901368473496723456> <@&697728131003580537>
+ Yui (つ≧▽≦)つ | Hi!
+How can I help you today?
+ ABHOY | No need
+ PC Creator 2 | Warned <@901368473496723456> for Useless ticket
+ ABHOY | ,close
+ PC Creator 2 | 
+ ABHOY | Close

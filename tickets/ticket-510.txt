@@ -1,0 +1,9 @@
+Here is the message log for ticket: ticket-510
+----------
+
+PC Creator 2 | <@988603963857317979> <@&697728131003580537>
+ XXIV | how do i complete this? I don't understand the question...
+ Yui | It's a bug. just wait for the hotfix.
+ Yui | ,close
+ PC Creator 2 | 
+ Yui | close

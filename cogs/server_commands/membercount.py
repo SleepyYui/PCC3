@@ -13,11 +13,11 @@ class membercount(commands.Cog):
         await ctx.send(f"**PC CREATOR** has **{membercount}** members")"""
 
 
-    @commands.slash_command(name="membercount", description="Sends how many members are on the server")
+    """@commands.slash_command(name="membercount", description="Sends how many members are on the server")
     async def membercount_slash(self, ctx):
         membercount = ctx.guild.member_count
         guildname = ctx.guild.name
-        await ctx.respond(f"**{guildname}** has **{membercount}** members")    
+        await ctx.respond(f"**{guildname}** has **{membercount}** members")  """  
 
 
 def setup(client):

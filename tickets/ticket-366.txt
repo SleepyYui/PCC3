@@ -1,0 +1,17 @@
+Here is the message log for ticket: ticket-366
+----------
+
+PC Creator 2 | <@443769343138856961> <@&697728131003580537>
+ ABHOY | What
+ Yui | i am testinmg
+ ABHOY | Ok ok
+ AMPW | <a:pingWtf:755799386486866002>
+ AMPW | <a:pinghappy:745694994286772295>
+ Yui | ,close
+ PC Creator 2 | 
+ Yui | clos
+ PC Creator 2 | Ok, didn't close the ticket.
+ Yui | ,close
+ PC Creator 2 | 
+ Yui | close
+ ABHOY | Nice

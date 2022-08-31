@@ -9,7 +9,7 @@ class pcc2_role(commands.Cog):
         self.client = client
 
  
-    @commands.command(name="pcc2r")
+    """@commands.command(name="pcc2r")
     async def pcc2role(self, ctx, member:discord.Member):
         user = ctx.author
         if any(role.id in rolelist for role in user.roles):
@@ -19,7 +19,7 @@ class pcc2_role(commands.Cog):
             await member.add_roles(role)
         else:
             return
-
+"""
 
 def setup(client):
     client.add_cog(pcc2_role(client)) 

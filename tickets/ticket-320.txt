@@ -1,0 +1,19 @@
+Here is the message log for ticket: ticket-320
+----------
+
+PC Creator 2 | <@751628520614002718> <@&697728131003580537>
+ 【𝗚𝗔𝗠𝗘𝗗𝗣𝗔𝗡𝗗】 | Hi
+ 【𝗚𝗔𝗠𝗘𝗗𝗣𝗔𝗡𝗗】 | Why the trading in pc creator 2 not working
+ 【𝗚𝗔𝗠𝗘𝗗𝗣𝗔𝗡𝗗】 | And the crypto not working
+ ABHOY | The server is currently down
+ 【𝗚𝗔𝗠𝗘𝗗𝗣𝗔𝗡𝗗】 | When will it work?
+ ABHOY | No idea
+ 【𝗚𝗔𝗠𝗘𝗗𝗣𝗔𝗡𝗗】 | Ok thanks
+ Yui | ,close
+ PC Creator 2 | 
+ Yui | Clode
+ PC Creator 2 | Ok, didn't close the ticket.
+ Yui | ,clode
+ Yui | ,close
+ PC Creator 2 | 
+ Yui | Close

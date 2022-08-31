@@ -1,0 +1,18 @@
+Here is the message log for ticket: ticket-406
+----------
+
+PC Creator 2 | <@873277578872496148> <@&697728131003580537>
+ 𝓟𝓵𝓪𝔂𝓮𝓻 | Hi
+ 𝓟𝓵𝓪𝔂𝓮𝓻 | ok so
+ 𝓟𝓵𝓪𝔂𝓮𝓻 | My problem is
+ 𝓟𝓵𝓪𝔂𝓮𝓻 | Earlier I had a task
+ 𝓟𝓵𝓪𝔂𝓮𝓻 | I had to clean the PC z from viruse
+ 𝓟𝓵𝓪𝔂𝓮𝓻 | viruses
+ 𝓟𝓵𝓪𝔂𝓮𝓻 | On a Linux
+ 𝓟𝓵𝓪𝔂𝓮𝓻 | And Linux does not allow to install abuntu or whatever oS it is
+ AMPW | There are 2 anti-virus programs in pcc
+ AMPW | 
+ AMPW | You need eset for linux
+ Yui | ,close
+ PC Creator 2 | 
+ Yui | Close

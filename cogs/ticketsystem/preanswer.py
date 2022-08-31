@@ -141,8 +141,6 @@ class PreAnswer(commands.Cog):
                     webhook = await ctx.channel.create_webhook(name="PreanswerHook")
                     await webhook.send(content=message, username=ctx.author.display_name, avatar_url=ctx.author.avatar.url)
                     await ctx.respond("Success, there an error, so i created a new hook.", ephemeral=True)
-        else:
-            return
 
     @commands.command(name="getwebhookstest")
     async def getwebhooks(self, ctx, message=None):

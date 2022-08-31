@@ -1,0 +1,23 @@
+Here is the message log for ticket: ticket-250
+----------
+
+PC Creator 2 | <@470623393767489536> <@&697728131003580537>
+ ABHOY | Hi
+ ABHOY | How can I help you today?
+ AMPW | Hi
+ ABHOY | He left the server <@713696771188195368>
+ AMPW | I see
+ ABHOY | Ban
+ AMPW | Problem is, I can't ban h3
+ AMPW | *Him
+ ABHOY | Twarn
+ ABHOY | Should I try
+ AMPW | I don't think it's work
+ ABHOY | ,twarn 470623393767489536
+ PC Creator 2 | Can't find this member
+ ABHOY | <:hahaha6:740166145167982623> <:hahaha6:740166145167982623>
+ ABHOY | 470623393767489536
+ ABHOY | <:Angryping:705894470268223549>
+ AMPW | ,close
+ PC Creator 2 | 
+ AMPW | Close

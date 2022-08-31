@@ -1,0 +1,13 @@
+Here is the message log for ticket: ticket-263
+----------
+
+PC Creator 2 | <@895245474947285002> <@&697728131003580537>
+ ABHOY | Hi
+ ABHOY | How can I help you today?
+ Hashim | Please why is PC creator 2 not available in Saudi Arabia
+ AMPW | It's not released yet. It's a pre release for the USA only for testing. There are also many bugs that need to be fixed and some new features will implemented.
+ Hashim | Thank you
+ AMPW | Np.
+ AMPW | ,close
+ PC Creator 2 | 
+ AMPW | Close

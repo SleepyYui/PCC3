@@ -1,0 +1,18 @@
+Here is the message log for ticket: ticket-87
+----------
+
+PC Creator 2 | <@420574080320798720> <@&697728131003580537>
+ AMPW | Hi, how can we help you?
+ AMPW | Next time don't open 2 tickets
+ PC Creator 2 | Warned <@420574080320798720> for No reply
+ ホワイトベア Whitebear. | Yep.
+ ¥£$ | ,close
+ PC Creator 2 | 
+ ¥£$ | No
+ PC Creator 2 | Ok, didn't close the ticket.
+ ¥£$ | Do you want to say something else
+ ホワイトベア Whitebear. | I want to try ticket system
+ ¥£$ | Ok then
+ ¥£$ | ,close
+ PC Creator 2 | 
+ ¥£$ | Close

@@ -1,0 +1,19 @@
+Here is the message log for ticket: ticket-247
+----------
+
+PC Creator 2 | <@709797182126948403> <@&697728131003580537>
+ Yui ♡(,,•ω•,,´) | Hi <@709797182126948403>!
+How can I help you today?
+ ABHOY | <@709797182126948403>
+ ABHOY | What's your problem
+ ABHOY | If you didn't reply in 6 minutes i will warn you
+ ABHOY | <@709797182126948403>
+ ABHOY | ,lrs 709797182126948403
+ PC Creator 2 | 
+ ABHOY | ,whois 709797182126948403
+ PC Creator 2 | 
+ ABHOY | ,twarn 709797182126948403
+ PC Creator 2 | Warned <@709797182126948403> for Useless ticket
+ ABHOY | ,close
+ PC Creator 2 | 
+ ABHOY | Close

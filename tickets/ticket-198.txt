@@ -1,0 +1,48 @@
+Here is the message log for ticket: ticket-198
+----------
+
+PC Creator 2 | <@689407315786334248> <@&697728131003580537>
+ ABHOY | Hi
+ ABHOY | How can I help you today?
+ Egg | my game doesnt save
+ ABHOY | Ok
+ Egg | like i do the first order and then when i restart the game it starts from scratch
+ Egg | so how can it be fixed?
+ ABHOY | Reinstall
+ ABHOY | Maybe it's glitch
+ ABHOY | Why?
+ Egg | i dont know
+ ABHOY | Hmm
+ Egg | i used to play pc creator like a year ago
+ Egg | it was pretty cool and easier
+ Egg | but my game just reset
+ Egg | i was maxed out
+ Egg | so its annoying
+ ABHOY | Did you using 5.5.0
+ Egg | yeah
+ ABHOY | version 5.5.0 is freezed due to bug with Season Pass appeared for old users
+ Egg | season pass doesnt work for me
+ Egg | it doesnt appear
+ ABHOY | That the problem don't worry wait for update
+ Egg | how long?
+ ABHOY | Glitch or bug
+ ABHOY | Idk
+ Egg | ok thanks
+ ABHOY | Welcome
+ ABHOY | Any other questions <@689407315786334248>
+ Egg | yeah
+ ABHOY | Ok tell
+ Egg | how long does it take for new orders to appear?
+ ABHOY | huh didn't appear orders
+ ABHOY | It's definitely bug or glitch or something like that
+ Egg | when i finish an order how long do i have to wait for another order?
+ ABHOY | Like 1 to 3 minutes
+ Egg | it says “check back later for orders”
+ ABHOY | Yes it's bug
+ Egg | ob ok
+ Egg | thx
+ ABHOY | Welcome again
+ ABHOY | Any other questions?
+ ABHOY | ,close
+ PC Creator 2 | 
+ ABHOY | Close

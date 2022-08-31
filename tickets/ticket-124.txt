@@ -1,0 +1,10 @@
+Here is the message log for ticket: ticket-124
+----------
+
+PC Creator 2 | <@709466256587227166> <@&697728131003580537>
+ Yui | Hi <@709466256587227166>!
+How can I help you today?
+ ABHOY {INDIAN} | No need
+ ABHOY {INDIAN} | ,close
+ PC Creator 2 | 
+ ABHOY {INDIAN} | Close

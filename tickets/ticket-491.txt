@@ -1,0 +1,12 @@
+Here is the message log for ticket: ticket-491
+----------
+
+PC Creator 2 | <@865203960892751882> <@&697728131003580537>
+ Death Trooper | ok
+ Death Trooper | why 1 story mission is stuck?
+ Death Trooper | it says to play 3 mini games in conference
+ Death Trooper | did it but it is still doesn't complete
+ Yui (つ≧▽≦)つ | Can you send us a screen-recording of you reproducing the bug/problem please?
+ Yui | ,close
+ PC Creator 2 | 
+ Yui | close

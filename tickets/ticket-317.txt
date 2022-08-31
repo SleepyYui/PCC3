@@ -1,0 +1,29 @@
+Here is the message log for ticket: ticket-317
+----------
+
+PC Creator 2 | <@696824321909194813> <@&697728131003580537>
+ ¥£$ | Hi
+ ¥£$ | What is your problem
+ Spectral | Hola, me descargue el pc creator de play store, y el problema que tengo es que cuando pongo un juego este no pasa de los 60 fps
+ Yui | ¿Has probado a instalar una tarjeta gráfica mejor?
+ Spectral | El geekbench me da 79k
+ Yui | ¿En qué juego obtienes solo 60FPS?
+ Spectral | En todos
+ Spectral | 
+ Yui | cuanta ram tienes
+ Spectral | 128gb
+ Spectral | En este setup todos los juegos me dan max 60 fps
+ Yui | El problema probablemente sea la TITAN RTX, porque esta tarjeta gráfica está hecha para la oficina y no para gaming.
+ Spectral | Para que pruebo cambiarla y te digo
+ Yui | bien, a eso
+ Spectral | Probe a cambiarla por una gamer y sigue igual
+ Spectral | Con ese setup da 76k
+ Spectral | Si quieres te paso un video haciendo el geekbench y probando juegos
+ ¥£$ | <@696824321909194813>
+ ¥£$ | Tienes que usar un monitor mejor
+ Spectral | Ohh tiene sentido
+ Spectral | Gracias! y disculpen la joda
+ ¥£$ | No problem
+ Yui | ,close
+ PC Creator 2 | 
+ Yui | Close

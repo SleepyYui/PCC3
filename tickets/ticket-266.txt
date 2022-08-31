@@ -1,0 +1,20 @@
+Here is the message log for ticket: ticket-266
+----------
+
+PC Creator 2 | <@480663533043056650> <@&697728131003580537>
+ ¥£$ | Hi
+ ¥£$ | What is your problem
+ Earth | Hello
+ AMPW | Hi
+ Earth | I have problem about trading system
+ Earth | 
+ AMPW | Maybe the server is currently down
+ Earth | Oh
+ Earth | I tried to reinstall and it still show the same thing so yeah I think it is probably server problem.
+ Earth | Appreciate for the fast response
+ AMPW | Maybe it's disabled because the pcc server works. I think it's the same server, but idk.
+ Earth | Oh well thanks.
+ AMPW | Maybe try it later again. If you don't have any other questions I'll close the ticket.
+ AMPW | ,close
+ PC Creator 2 | 
+ AMPW | Close

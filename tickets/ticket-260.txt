@@ -1,0 +1,11 @@
+Here is the message log for ticket: ticket-260
+----------
+
+PC Creator 2 | <@967256943016157304> <@&697728131003580537>
+ Masterwinter | Hello, how may I help you? <@967256943016157304>
+ Masterwinter | ,twarn
+ Masterwinter | ,twarn <@967256943016157304>
+ PC Creator 2 | Warned <@967256943016157304> for Useless ticket
+ Masterwinter | ,close
+ PC Creator 2 | 
+ Masterwinter | Close

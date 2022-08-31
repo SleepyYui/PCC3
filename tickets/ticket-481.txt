@@ -1,0 +1,10 @@
+Here is the message log for ticket: ticket-481
+----------
+
+PC Creator 2 | <@702589465486688256> <@&697728131003580537>
+ RC | Yo when I boot up pc creator and says i need to update but when I go on App Store it never says update
+ RC | Nvm I just restarted the game
+ PC Creator 2 | Warned <@702589465486688256> for Useless ticket
+ Yui | ,close
+ PC Creator 2 | 
+ Yui | close

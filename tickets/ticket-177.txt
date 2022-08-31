@@ -1,0 +1,25 @@
+Here is the message log for ticket: ticket-177
+----------
+
+PC Creator 2 | <@797761078582837298> <@&697728131003580537>
+ ABHOY | hi
+ ABHOY | how can i help you today?
+ ABHOY | <@713696771188195368>
+ ABHOY | Ban
+ ABHOY | Why you playing games?
+ ABHOY | Stellaris
+ AMPW | because I like it to play games
+ ABHOY | <:PlsHelp:720878428105998408>
+ ABHOY | I understand
+ ABHOY | Ban?
+ ABHOY | Warn?
+ AMPW | <@797761078582837298> if you dont react to this message withhin 10 minuts you will get a warn
+ ABHOY | Noice
+ ABHOY | It's been 20 minutes <@713696771188195368>
+ ABHOY | I mean 30 minutes
+ AMPW | Ik but bot is down
+ ABHOY | Ooof
+ PC Creator 2 | Warned <@797761078582837298> for useless ticket (no response)
+ AMPW | ,close
+ PC Creator 2 | 
+ AMPW | Close

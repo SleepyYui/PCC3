@@ -1,0 +1,9 @@
+Here is the message log for ticket: ticket-289
+----------
+
+PC Creator 2 | <@800618912655081492> <@&697728131003580537>
+ AMPW | Hi <@800618912655081492>, how can we help you?
+ PC Creator 2 | Warned <@800618912655081492> for Useless ticket
+ ABHOY | ,close
+ PC Creator 2 | 
+ ABHOY | Close

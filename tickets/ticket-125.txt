@@ -1,0 +1,11 @@
+Here is the message log for ticket: ticket-125
+----------
+
+PC Creator 2 | <@709466256587227166> <@&697728131003580537>
+ Yui | Hi <@709466256587227166>!
+How can I help you today?
+ ABHOY {INDIAN} | Stop making 2 ticket <@709466256587227166>
+ PC Creator 2 | Warned <@709466256587227166> for Useless Ticket
+ Masterwinter | ,close
+ PC Creator 2 | 
+ Masterwinter | Close

@@ -1,0 +1,11 @@
+Here is the message log for ticket: ticket-327
+----------
+
+PC Creator 2 | <@700081913012027472> <@&697728131003580537>
+ ABHOY | Hi
+ ABHOY | How can I help you today?
+ yazan | No, it's good, thank you, I found the answer to my request
+ PC Creator 2 | Warned <@700081913012027472> for Useless ticket
+ Masterwinter | ,close
+ PC Creator 2 | 
+ Masterwinter | Close

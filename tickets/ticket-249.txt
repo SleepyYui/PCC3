@@ -1,0 +1,9 @@
+Here is the message log for ticket: ticket-249
+----------
+
+PC Creator 2 | <@888215493054464020> <@&697728131003580537>
+ Yui | ,twarn 888215493054464020
+ PC Creator 2 | Warned <@888215493054464020> for Useless ticket
+ Yui | ,close
+ PC Creator 2 | 
+ Yui | Close

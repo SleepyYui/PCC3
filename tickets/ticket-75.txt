@@ -1,0 +1,11 @@
+Here is the message log for ticket: ticket-75
+----------
+
+PC Creator 2 | <@564234746150780948> <@&697728131003580537>
+ Yui | Hi <@!564234746150780948> how can i help you
+ 지성 | Can I shift my android account to iphone account?
+ Yui | sadly it is currently only possible to save and upload data on the same os. E.g. iphone to iphone and android to android.
+ 지성 | Ok
+ Yui | ,close
+ PC Creator 2 | 
+ Yui | Close

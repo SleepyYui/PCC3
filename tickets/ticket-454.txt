@@ -1,0 +1,8 @@
+Here is the message log for ticket: ticket-454
+----------
+
+PC Creator 2 | <@970427232382234654> <@&697728131003580537>
+ PC Creator 2 | Softbanned <@970427232382234654>
+ Yui | ,close
+ PC Creator 2 | 
+ Yui | close

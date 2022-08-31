@@ -1,0 +1,10 @@
+Here is the message log for ticket: ticket-498
+----------
+
+PC Creator 2 | <@879084727603187764> <@&697728131003580537>
+ ABHOY | Hi
+ ABHOY | How can I help you
+ PC Creator 2 | Warned <@879084727603187764> for Useless ticket
+ ABHOY | ,close
+ PC Creator 2 | 
+ ABHOY | Close

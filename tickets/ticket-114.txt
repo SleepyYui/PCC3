@@ -1,0 +1,28 @@
+Here is the message log for ticket: ticket-114
+----------
+
+PC Creator 2 | <@811611294339563532> <@&697728131003580537>
+ ABHOY {INDIAN} | hi
+ everyday space nerd | Hello
+ ABHOY {INDIAN} | how can i help you
+ everyday space nerd | When ever I load into pc creator and go to my contracts it then freezes so I can’t click the buttons but I can still scroll. Do you know what is happening?
+ ABHOY {INDIAN} | hmmm you try reinstall?
+ everyday space nerd | No, won’t I lose all my data?
+ ABHOY {INDIAN} | you connect with cloud
+ ABHOY {INDIAN} | ios or android
+ everyday space nerd | iOS
+ everyday space nerd | I will try to reinstall
+ ABHOY {INDIAN} | ok
+ everyday space nerd | Thanks it worked but i lost my daily reward progress I was about to get the exclusive items fromthe daily reward but it reset it. Is there anything you can do?
+ ABHOY {INDIAN} | you lost your progress?
+ everyday space nerd | No I lost my daily rewards progress.
+ ABHOY {INDIAN} | hmmm what can i do wait again
+ ABHOY {INDIAN} | i am really sorry
+ everyday space nerd | Ok thanks no problem
+ everyday space nerd | Bye
+ ABHOY {INDIAN} | bye
+ ABHOY {INDIAN} | i forgot to say welcome
+ AMPW | ok, ticket will be closed
+ AMPW | ,close
+ PC Creator 2 | 
+ AMPW | close

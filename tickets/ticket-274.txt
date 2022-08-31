@@ -1,0 +1,10 @@
+Here is the message log for ticket: ticket-274
+----------
+
+PC Creator 2 | <@610915894427779146> <@&697728131003580537>
+ Masterwinter | How can I help you? <@610915894427779146>
+ Sfal | sorry i clicked by accident
+ PC Creator 2 | Warned <@610915894427779146> for Useless ticket
+ Masterwinter | ,close
+ PC Creator 2 | 
+ Masterwinter | Close

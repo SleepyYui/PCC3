@@ -1,0 +1,22 @@
+Here is the message log for ticket: ticket-412
+----------
+
+PC Creator 2 | <@704304447093735486> <@&697728131003580537>
+ IsarQ | in what country pcc2 is available?
+ AMPW | USA
+ AMPW | and only in the Google play store
+ AMPW | <@704304447093735486>
+ IsarQ | ok
+ IsarQ | thx you can close ticket because idk if i can
+ IsarQ | vpn will do the work?
+ Yui | Yes
+ IsarQ | ok thanks
+ IsarQ | now find one for free
+ IsarQ | but still thanks you can close ticket
+ Yui | ,close
+ PC Creator 2 | 
+ Yui | Lose
+ PC Creator 2 | Ok, didn't close the ticket.
+ Yui | ,close
+ PC Creator 2 | 
+ Yui | Close

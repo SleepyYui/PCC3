@@ -1,0 +1,8 @@
+Here is the message log for ticket: ticket-504
+----------
+
+PC Creator 2 | <@717789039520120883> <@&697728131003580537>
+ Somebody | Hi
+ Yui | ,close
+ PC Creator 2 | 
+ Yui | close

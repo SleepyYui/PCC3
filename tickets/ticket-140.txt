@@ -1,0 +1,30 @@
+Here is the message log for ticket: ticket-140
+----------
+
+PC Creator 2 | <@735037743360507946> <@&697728131003580537>
+ ¥£$ | Hi what is your problem
+ Keith | Half of the game turn russian many button doesnt work
+ ¥£$ | Tried to restart the game with wifi?
+ Keith | Wifi always on
+ ¥£$ | I guess <#610448258292121628> I can’t really do something about that
+ Keith | 
+ Keith | Im stuck building pc
+ Keith | X doesnt work
+ Keith | 
+ Keith | When i go edit the pc i cant get out
+ ¥£$ | Ok yes some people reported this bug 
+
+Hopefully there will be an update too
+
+You can still put the videos to <#610448258292121628>
+ Keith | Ok
+ ABHOY {INDIAN} | , close
+ ABHOY {INDIAN} | No
+ ¥£$ | No
+ ABHOY {INDIAN} | No
+ ABHOY {INDIAN} | Disassemble all parts
+ ABHOY {INDIAN} | If you stuck
+ Keith | Ok
+ Masterwinter | ,close
+ PC Creator 2 | 
+ Masterwinter | Close

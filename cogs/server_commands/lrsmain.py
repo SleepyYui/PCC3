@@ -226,7 +226,7 @@ class levelroles(commands.Cog):
         return True
 
 
-    @commands.slash_command(name="lead")
+    @commands.slash_command(name="lead", description="Shows the lrs leaderboard")
     async def lead_command(self, ctx):
         send = ctx.respond
         await self.lead(ctx, send)

@@ -1,0 +1,25 @@
+Here is the message log for ticket: ticket-59
+----------
+
+PC Creator 2 | <@!443769343138856961> <@&697728131003580537>
+ ABHOY {INDIAN} | Seriously
+ Yui | <@!695229647021015040> hast du den log channel schon aktiviert?
+ ABHOY {INDIAN} | No i think
+ ABHOY {INDIAN} | What ever
+ Yui | wenn ja dann schau mal im json nach ob <@&697728131003580537> schon bei "ticket-support-roles" drinne ist
+ ABHOY {INDIAN} | ,close
+ PC Creator 2 | 
+ ABHOY {INDIAN} | No
+ PC Creator 2 | Ok, didn't close the ticket.
+ ¥£$ | Mach ich
+ ABHOY {INDIAN} | Nice now closed
+ ABHOY {INDIAN} | Hahahah
+ ¥£$ | No
+ ABHOY {INDIAN} | Ok
+ ABHOY {INDIAN} | Hahah
+ Yui | ,close
+ PC Creator 2 | 
+ PC Creator 2 | Ok, didn't close the ticket.
+ Yui | ,close
+ PC Creator 2 | 
+ Yui | close

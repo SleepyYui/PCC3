@@ -1,0 +1,65 @@
+Here is the message log for ticket: ticket-505
+----------
+
+PC Creator 2 | <@932757275133767790> <@&697728131003580537>
+ FURISALT | Yo
+ FURISALT | So idk if this is a hardware problem but everytime I put on power saving itll restart my device
+ Masterwinter | maybe a hardware problem but i cant be 100% sure if i dont know your device and os version
+ FURISALT | true
+ Masterwinter | can you tell me the device and os version?
+ Masterwinter | because there is a problem with xiomi and one huawai phone
+ FURISALT | samsung a8, and for os dosnt show
+ Masterwinter | should me android
+ FURISALT | like?
+ FURISALT | it says 9 so idk
+ Masterwinter | yeah its android 9
+ FURISALT | alr
+ Masterwinter | its maybe due to ram issues
+ FURISALT | ye
+ Masterwinter | as the game at one point was unplayable
+ Masterwinter | for ram issue
+ FURISALT | says i have 4 gb ram but i usually get 999 mb
+ Masterwinter | maybe a ram issue
+ FURISALT | ye
+ Masterwinter | put the problem in <#610448258292121628>
+ Masterwinter | and the devs will fix it when they can
+ FURISALT | did
+ FURISALT | just came here for a suggestion on what to do
+ Masterwinter | just play pcc while charging?
+ FURISALT | did it
+ FURISALT | when i do that it has a higher chance restarting
+ Masterwinter | does the restart happen only while playing pc creator or does it happen to other apps too?
+ FURISALT | like 2 apps ive installled, both are made w unity, seems like unity games mainly do it
+ Masterwinter | its maybe due to the unity
+ FURISALT | huh
+ Masterwinter | but make sure you watch the battery as it maybe near its end on life
+ Masterwinter | as battery can last for so long before its unuseable
+ FURISALT | its like a 3 year old battery so idk
+ Masterwinter | depends on how many times you charge it
+ FURISALT | like 3-6 times depending if i charged it last night
+ FURISALT | per day btw
+ Masterwinter | thats maybe a sign its on its life support
+ Masterwinter | anyways anything else?
+ FURISALT | like?
+ Masterwinter | any other problem with pcc1/pro/2
+ FURISALT | ye
+ Masterwinter | and yes there is going to be pc creator 2 in aug 18
+ Masterwinter | what is it
+ FURISALT | pcc1 makes my phone become red hot basically too
+ Masterwinter | hardware problem we cant fix that
+ Masterwinter | as its the phone maker that tries to reduce it
+ FURISALT | o
+ Masterwinter | with thermal stuff to help reduce the heat
+ Masterwinter | anything else?
+ FURISALT | nope though rq question
+ FURISALT | what do you mean by life support
+ Masterwinter | its almost unuseable
+ FURISALT | oh
+ Masterwinter | as it will be out of battery in a few min
+ Masterwinter | like 10-20 min
+ FURISALT | it usally takes 2 hours to go to 15
+ Masterwinter | anything else?
+ FURISALT | nope
+ Masterwinter | ,close
+ PC Creator 2 | 
+ Masterwinter | close

@@ -1,0 +1,13 @@
+Here is the message log for ticket: ticket-352
+----------
+
+PC Creator 2 | <@663724762526253057> <@&697728131003580537>
+ ABHOY | Hi
+ ABHOY | How can I help you
+ Никита Сергеевич | No thank you
+ ABHOY | <:PlsHelp:720878428105998408>
+ ABHOY | <@663724762526253057> why open the ticket if you don't want help
+ PC Creator 2 | Warned <@663724762526253057> for Useless ticket
+ ABHOY | ,close
+ PC Creator 2 | 
+ ABHOY | Close

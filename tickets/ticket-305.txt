@@ -1,0 +1,31 @@
+Here is the message log for ticket: ticket-305
+----------
+
+PC Creator 2 | <@875438137394999366> <@&697728131003580537>
+ Feoran | Ticket-305
+ AMPW | Hi
+ AMPW | How can I help you?
+ AMPW | Hello?
+ ABHOY | ????
+ ABHOY | <@875438137394999366>
+ ABHOY | ,twarn
+ ABHOY | <:PlsHelp:720878428105998408>
+ ABHOY | Who delete it
+ ABHOY | ,twarn
+ ABHOY | Don't delete
+ ABHOY | ,twarn
+ ABHOY | Not again
+ ABHOY | ,twarn
+ ABHOY | I like it
+ ABHOY | ,twarn
+ PC Creator 2 | Hey! You made a mistake.
+member is a required argument that is missing.
+ ABHOY | ,twarn
+ PC Creator 2 | Hey! You made a mistake.
+member is a required argument that is missing.
+ AMPW | ,close
+ PC Creator 2 | 
+ ABHOY | ,twarn
+ PC Creator 2 | Hey! You made a mistake.
+member is a required argument that is missing.
+ AMPW | Close

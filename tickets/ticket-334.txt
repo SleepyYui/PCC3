@@ -1,0 +1,21 @@
+Here is the message log for ticket: ticket-334
+----------
+
+PC Creator 2 | <@507318933003698202> <@&697728131003580537>
+ AMPW | hi
+ AMPW | how can I help you?
+ _Prosto_Vadim_ | Здравствуйте хочу спросить почему нельзя скачать вторую часть из украйны
+ _Prosto_Vadim_ | Yes
+ _Prosto_Vadim_ | Hello, I want to ask why it is impossible to download the second part from Ukraine
+ AMPW | pcc2 is currently only as pre release for the google play store in the usa available. you could use a vpn to create a google acc with country set to usa but there are currently many bugs so I wouldn't recommend it.
+ _Prosto_Vadim_ | Thank you, can I ask how soon it will appear in Ukraine and other countries&
+ _Prosto_Vadim_ | ?
+ AMPW | probably it'll released after the war.
+ AMPW | thats all I can tell you
+ _Prosto_Vadim_ | Thanks I got
+ _Prosto_Vadim_ | And yes, excuse me, but if I go into my account on another phone, my savings will be there
+ AMPW | if you upload a save in pcc (settings) and then open pcc on the other device with the same acc you should able to download the save
+ _Prosto_Vadim_ | Thank you very much I hope that everything will be fine and you can continue to develop games
+ AMPW | ,close
+ PC Creator 2 | 
+ AMPW | Close

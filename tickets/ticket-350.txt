@@ -1,0 +1,11 @@
+Here is the message log for ticket: ticket-350
+----------
+
+PC Creator 2 | <@322832867589881856> <@&697728131003580537>
+ Ghino Luqyano | Hello
+ Ghino Luqyano | Any developer here?
+ Ghino Luqyano | I have sent an email to ultrateamlab@gmail.com as well
+ Yui | Hi, can you tell me the issue please so I can forward it to the developers.
+ Yui | ,close
+ PC Creator 2 | 
+ Yui | Close

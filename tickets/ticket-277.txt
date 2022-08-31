@@ -1,0 +1,28 @@
+Here is the message log for ticket: ticket-277
+----------
+
+PC Creator 2 | <@522444973392658452> <@&697728131003580537>
+ ShibaAuNutella | How to optimize fps?
+ ShibaAuNutella | On pc creator 1
+ PC Creator 2 | The goal of this requirement is to make the PC get the specified FPS in the specified game, meaning you must test hardware and play the game on the PC till you find something that meets or beats the requirement. Parts that affect FPS are CPUs, RAM, and GPUs.
+ PC Creator 2 | https://images-ext-2.discordapp.net/external/N_KGsUc6ROD1TTOPEKAd558ih_r9WA8pjJvZgJ5yEio/https/media.discordapp.net/attachments/778848112588095559/904718105740210216/unknown.png
+ ShibaAuNutella | Huh
+ ShibaAuNutella | I need stup 3
+ ABHOY | Yea
+ ShibaAuNutella | Tried it all
+ ShibaAuNutella | But it says incompatible because I’m using macOS
+ PC Creator 2 | The goal of this requirement is to make the PC get the specified FPS in the specified game, meaning you must test hardware and play the game on the PC till you find something that meets or beats the requirement. Parts that affect FPS are CPUs, RAM, and GPUs.
+ PC Creator 2 | https://images-ext-2.discordapp.net/external/N_KGsUc6ROD1TTOPEKAd558ih_r9WA8pjJvZgJ5yEio/https/media.discordapp.net/attachments/778848112588095559/904718105740210216/unknown.png
+ ShibaAuNutella | But it says incompatible because I’m using macOS
+<@761937966867152929>
+ ABHOY | Maybe
+ ABHOY | Change it
+ ShibaAuNutella | No because it’s a task
+ ABHOY | Just Decline it
+ ShibaAuNutella | Oh ok
+ ¥£$ | You can only use Intol and RMD with macOS
+ ShibaAuNutella | I know.
+ ¥£$ | Then you should know that some of the setups are not working
+ ¥£$ | ,close
+ PC Creator 2 | 
+ ¥£$ | Close

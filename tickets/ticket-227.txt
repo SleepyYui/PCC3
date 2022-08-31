@@ -1,0 +1,27 @@
+Here is the message log for ticket: ticket-227
+----------
+
+PC Creator 2 | <@602290400853622795> <@&697728131003580537>
+ Galoryx | I declined an order I had in progress but the pc didn't go away and I can't get rid of it.
+ ¥£$ | I think you can’t really fix that
+
+
+You could reinstall but maybe the pc will still be there
+ Galoryx | Yea I tried and its still there
+ Galoryx | It s٭٭٭٭ bc my room can only hold 3 and I have one for mining. I only have 1 spot for order pcs
+
+Please stop using swear words (rule 5).
+You can read the rules in <#605326085328207872>.​
+ Galoryx | Sorry didn't realize that was considered a swear word
+ Yui | We don't care about people using swear words as long as they don't circumvent the naughty-word-filter
+ Galoryx | Oh okay cool
+ Galoryx | Is there really nothing I can do about the bug though?
+ ¥£$ | Maybe there is a way but I don’t know a solution
+ Galoryx | Okay well thanks for everyone's time
+ Galoryx | Happened again and now I can't even play
+ Yui | Hmmm, have you tried reinstalling
+ Galoryx | Yea
+ Yui | Ok, there is nothing we can do. Please write a bug report in <#610448258292121628>
+ Yui | ,close
+ PC Creator 2 | 
+ Yui | close

@@ -1,0 +1,13 @@
+Here is the message log for ticket: ticket-284
+----------
+
+PC Creator 2 | <@732967014016221236> <@&697728131003580537>
+ ABHOY | Hi
+ ABHOY | How can I help you today?
+ ZeroGrav4 | How do you redeem codes in PCC in mobile version(
+ ABHOY | Idk maybe next update
+ ZeroGrav4 | What is the IAP shop?
+ ABHOY | I said next update
+ ABHOY | ,close
+ PC Creator 2 | 
+ ABHOY | Close

@@ -1,0 +1,15 @@
+Here is the message log for ticket: ticket-413
+----------
+
+PC Creator 2 | <@723457601790148641> <@&697728131003580537>
+ noob_gamer772 | Hello
+ noob_gamer772 | I can't download PC creator 2 on my iphone
+ noob_gamer772 | What's the problem
+ Yui | The game is not available on ios. Please read the pins in <#571031705109135361> before creating a ticket
+ AMPW | ,close
+ PC Creator 2 | 
+ AMPW | closer
+ PC Creator 2 | Ok, didn't close the ticket.
+ AMPW | ,close
+ PC Creator 2 | 
+ AMPW | close

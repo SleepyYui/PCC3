@@ -1,0 +1,9 @@
+Here is the message log for ticket: ticket-290
+----------
+
+PC Creator 2 | <@600745032508637184> <@&697728131003580537>
+ razi._.c | What does  <#828617395571654697> channel do?
+ Masterwinter | https://discord.com/channels/571031703661969430/572536109754744839/828617599499370537
+ Masterwinter | ,close
+ PC Creator 2 | 
+ Masterwinter | Close

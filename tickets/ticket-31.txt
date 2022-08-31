@@ -1,0 +1,11 @@
+Here is the message log for ticket: ticket-31
+----------
+
+PC Creator 2 | <@726800253919035404> <@&697728131003580537>
+ Yui | ,close
+ PC Creator 2 | 
+ Yui | Closw
+ PC Creator 2 | Ok, didn't close the ticket.
+ Yui | ,close
+ PC Creator 2 | 
+ Yui | Close

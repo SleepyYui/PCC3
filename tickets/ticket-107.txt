@@ -1,0 +1,8 @@
+Here is the message log for ticket: ticket-107
+----------
+
+PC Creator 2 | <@959662708603629588> <@&697728131003580537>
+ AMPW | hi, how can I help you?
+ ABHOY {INDIAN} | ,close
+ PC Creator 2 | 
+ ABHOY {INDIAN} | Close

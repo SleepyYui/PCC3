@@ -1,0 +1,56 @@
+Here is the message log for ticket: ticket-311
+----------
+
+PC Creator 2 | <@673538597474926602> <@&697728131003580537>
+ dsawdsaww | My game keeps restarting
+ dsawdsaww | I mean
+ dsawdsaww | All my progress disappears
+ dsawdsaww | After i exit
+ dsawdsaww | I tried everything
+ dsawdsaww | Reinstalling
+ dsawdsaww | Clear cache
+ dsawdsaww | Switching between google play acc
+ dsawdsaww | S
+ dsawdsaww | Accounts
+ AMPW | OK.
+ AMPW | I think <#610448258292121628> is better for this.
+ dsawdsaww | Ok
+ AMPW | What's your device?
+ dsawdsaww | Android
+ dsawdsaww | Like mobile
+ AMPW | And do you have still performance problems?
+ dsawdsaww | Yes
+ dsawdsaww | I mean
+ dsawdsaww | Just this problem
+ dsawdsaww | I have a A90
+ dsawdsaww | Pretty good
+ dsawdsaww | It can run a lot of big games
+ dsawdsaww | With 60 fps
+ AMPW | OK.
+ AMPW | Write a bug report in <#610448258292121628>. That's currently all I can tell you. I have no solution for this.
+ dsawdsaww | Ok
+ Yui | bad mod <:Stonksdown:712232673342390303>
+ AMPW | ?
+ Yui | mods should be able to help
+ AMPW | That's the job of helpers.
+ AMPW | And do you know a solution?
+ Yui | yes
+ Yui | reset the phone 🤝
+ Yui | its probably a game related problem in connection to the samsung firmware
+ Yui | i had a a51 once and the game always crashed
+ AMPW | Not a good solution
+ AMPW | ||I had this bug on a emulator||
+ dsawdsaww | I like drama, keep going
+ Yui | it worked for me, and either the devs update, or you try completely reinstalling the game and whiping all game related data
+ dsawdsaww | I did that
+ AMPW | I just jused another emulator
+ AMPW | To break the game even more
+ AMPW | btw, better solution (originally made for a small not important bug in another game)
+ AMPW | reset phone, destroy phone, nuke phone to ensure everything is gone, destroy earth, sun, galaxy and universe and then create everything new, even the game. this should work
+ ABHOY | Wtf <:hahaha6:740166145167982623>
+ ABHOY | <:hahaha6:740166145167982623>
+ ABHOY | Bye
+ ABHOY | Gn
+ Yui | ,close
+ PC Creator 2 | 
+ Yui | close

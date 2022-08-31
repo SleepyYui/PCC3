@@ -1,0 +1,14 @@
+Here is the message log for ticket: ticket-258
+----------
+
+PC Creator 2 | <@815153032059813902> <@&697728131003580537>
+ AMPW | Hi
+ AMPW | How can we help you?
+ ABHOY | <@815153032059813902> ?
+ Dapasu | umm sorry it didn't happen
+ Yui | what?
+ Yui | ,twarn 815153032059813902
+ PC Creator 2 | Warned <@815153032059813902> for Useless ticket
+ Yui | ,close
+ PC Creator 2 | 
+ Yui | close

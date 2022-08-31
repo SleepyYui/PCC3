@@ -1,0 +1,53 @@
+Here is the message log for ticket: ticket-262
+----------
+
+PC Creator 2 | <@874638287669694464> <@&697728131003580537>
+ ABHOY | Hi
+ ABHOY | How can I help you today?
+ Maj M v2 | Uhhh I have problems with the game
+ Maj M v2 | It dosent launch
+ Maj M v2 | It just stays in the loading screen for o dont know a lot of time
+ ABHOY | Which version did you using?
+ Maj M v2 | Wdym like which version of the game?
+ ABHOY | Yea
+ Maj M v2 | Uh lemme check
+ ABHOY | Ok
+ Maj M v2 | 5.5.5
+ ABHOY | Hmm, did you try to reinstall?
+ Maj M v2 | Yea a couple times
+ ABHOY | Yea, maybe it's a game problem
+ Maj M v2 | Oh
+ ABHOY | Hmm, did you install apk?
+ ¥£$ | What happens when you try to launch
+ ¥£$ | And which phone are you using
+ ABHOY | Loading?
+ Maj M v2 | Just the normal loadingg screen
+ ¥£$ | Yeah but does it freezes?
+ ¥£$ | Or normal loading
+ Maj M v2 | Normal loading
+ ¥£$ | Do you use wifi?
+ Maj M v2 | Yea
+ ¥£$ | Can you try to start without wifi
+ Maj M v2 | Ok
+ Maj M v2 | Wait a sec
+ Maj M v2 | Nope the same thing just loads and loads
+ ¥£$ | How long do you waited
+ ¥£$ | And still 
+
+Which device
+ Maj M v2 | Like about 30 mins
+ ¥£$ | Ok
+ Maj M v2 | And im on android
+ ¥£$ | But which device
+ Maj M v2 | Realme c11
+ ¥£$ | Idk but maybe 2GB of RAM isn’t enough 
+
+
+Or it’s a game problem
+
+We can’t help you here
+ ¥£$ | But thanks for the report
+ Maj M v2 | Ok
+ Yui | ,close
+ PC Creator 2 | 
+ Yui | close

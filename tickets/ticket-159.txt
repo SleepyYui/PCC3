@@ -1,0 +1,27 @@
+Here is the message log for ticket: ticket-159
+----------
+
+PC Creator 2 | <@699720233291612211> <@&697728131003580537>
+ ABHOY | Hi
+ ABHOY | How can I help you today
+ BroツRomchuk | I ran into a problem. Completed all tasks, but the mission is not protected
+ BroツRomchuk | 
+ BroツRomchuk | Windows is installed, photoshop too, but I can’t send the computer
+ Masterwinter | That's a bug
+ Masterwinter | And it's almost impossible to fix it
+ Masterwinter | Since many people have also reported about the same bug
+ Masterwinter | And there's no fix sorry
+ Masterwinter | Only way is to restart
+ BroツRomchuk | start playing again? Or wait for an update?
+ ABHOY | Wait for update
+ ABHOY | I prefer
+ BroツRomchuk | Thanks
+ ABHOY | Welcome
+ Masterwinter | Update is unknown
+ ABHOY | <#572536109754744839>
+ Masterwinter | Anything else? <@699720233291612211>
+ BroツRomchuk | No, thanks
+ Masterwinter | ,close
+ PC Creator 2 | 
+ ABHOY | We glad to help you
+ Masterwinter | Close

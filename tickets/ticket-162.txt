@@ -1,0 +1,15 @@
+Here is the message log for ticket: ticket-162
+----------
+
+PC Creator 2 | <@802236054915776603> <@&697728131003580537>
+ ABHOY | Hi
+ ABHOY | How can I help you today?
+ SansGoBrrrr | I would like to report a bug with the subscription on PC Creator 2
+ ABHOY | You bought subscription?
+ ABHOY | <@802236054915776603>
+ ABHOY | If you bought the subscription so
+
+DM <@266306316136480770>
+ Yui | ,close
+ PC Creator 2 | 
+ Yui | Close

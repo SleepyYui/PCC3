@@ -1,0 +1,11 @@
+Here is the message log for ticket: ticket-341
+----------
+
+PC Creator 2 | <@316531593285992448> <@&697728131003580537>
+ ABHOY | Hi
+ ABHOY | How can I help you
+ ABHOY | <@316531593285992448> ? Are you here
+ PC Creator 2 | Warned <@316531593285992448> for Useless ticket
+ ABHOY | ,close
+ PC Creator 2 | 
+ ABHOY | Close

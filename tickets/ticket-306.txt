@@ -1,0 +1,8 @@
+Here is the message log for ticket: ticket-306
+----------
+
+PC Creator 2 | <@747859793607131268> <@&697728131003580537>
+ Yui | <@747859793607131268> Why did you create 2 tickets?
+ Yui | ,close
+ PC Creator 2 | 
+ Yui | Close

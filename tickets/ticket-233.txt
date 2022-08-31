@@ -1,0 +1,43 @@
+Here is the message log for ticket: ticket-233
+----------
+
+PC Creator 2 | <@878603698681577482> <@&697728131003580537>
+ ABHOY | Hi
+ ABHOY | How can I help you today?
+ Glebinka | После обновления у меня всё ещё грузит игра
+ AMPW | hi
+ Glebinka | Бесконечная загрузка
+ Glebinka | Здравствуйте
+ ABHOY | Which version
+ ABHOY | Maybe it's a bug
+ ABHOY | Or something
+ Glebinka | 
+ Glebinka | Version 5.5.5
+ ABHOY | Did you try reinstall?
+ Glebinka | I tried
+ Glebinka | Now I'll try again
+ ABHOY | Yea
+ Glebinka | 
+ Glebinka | Oh
+ Glebinka | name the phone model?
+ Yui | Yep
+ Glebinka | Model: POCO X3 NFC
+ AMPW | its a little bit weird because normally you should see a easter start screen. did you installed the game through the play store?
+ Glebinka | yes. I had a screen with an Easter update, but after reinstalling it disappeared
+ Glebinka | 
+ Glebinka | Proofs
+ AMPW | weird
+ ABHOY | Yea
+ Glebinka | can I clear the cache?
+ ABHOY | Do clear data
+ Glebinka | Ок
+ Glebinka | everything is exactly infinite loading
+ Glebinka | 
+ AMPW | can you try it without a internet connection?
+ Glebinka | everything is fine with the Internet
+ AMPW | yes, but there are extreme performance issues with internet connection so I want to know if your game loads without internet connection
+ Glebinka | Okay I'll check it out now
+ Glebinka | thanks everything works
+ Masterwinter | ,close
+ PC Creator 2 | 
+ Masterwinter | Close

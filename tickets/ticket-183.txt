@@ -1,0 +1,13 @@
+Here is the message log for ticket: ticket-183
+----------
+
+PC Creator 2 | <@661974762695950347> <@&697728131003580537>
+ Masterwinter | Hello, how may I help you?
+ yaroslav dotsenko | hi
+ yaroslav dotsenko | will update be on pc version?
+ Masterwinter | Yes, but updates will be slow due to the war
+ yaroslav dotsenko | thx, its all
+ yaroslav dotsenko | goodbye
+ Masterwinter | ,close
+ PC Creator 2 | 
+ Masterwinter | Close

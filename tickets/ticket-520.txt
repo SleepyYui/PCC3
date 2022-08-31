@@ -1,0 +1,11 @@
+Here is the message log for ticket: ticket-520
+----------
+
+PC Creator 2 | <@286201707346526229> <@&697728131003580537>
+ nerfine | Hello, my biggest apologizes for the bothering once more, but I'm unable to download PCC2, even trying with a VPN, unless I'm doing it wrong. May I get some help?
+ nerfine | Device : OPPO A74
+ AMPW | I would recommend to wait until the 18.8.2022 because there's the global release of Pcc2 but as far as I know work a VPN only if you create a new Google acc while you are connected to the a US server
+ nerfine | 👍
+ Yui | ,close
+ PC Creator 2 | 
+ Yui | close

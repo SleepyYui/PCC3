@@ -1,0 +1,20 @@
+Here is the message log for ticket: ticket-438
+----------
+
+PC Creator 2 | <@694163146201628752> <@&697728131003580537>
+ Yui (つ≧▽≦)つ | Hi!
+How can I help you today?
+ oSpam | I updated it yesterday but online stuff doesn’t work still
+ oSpam | How do it make sure it’s updated? App Store (iPhone)
+ oSpam | 
+ Yui | If you don't mind you could try reinstalling. The thing is that on iOS, applications take pretty long to get verified. So maybe try waiting a day or two. If it doesn't work then, just write here again. I'll leave the ticket open.
+ oSpam | Okay, also on pc so i fully reset my pc the other week but the game was on steam. is there no way to get a backup?
+ Yui | if it didnt automatically save in the steam cloud, no
+ oSpam | yikes
+ oSpam | Will mobile still save if i delete and redownload
+ oSpam | i aint doing all t his again
+ Masterwinter | Yes, but wait for Apple to verify
+ Masterwinter | As if you dont wait it might not save
+ Yui | ,close
+ PC Creator 2 | 
+ Yui | close

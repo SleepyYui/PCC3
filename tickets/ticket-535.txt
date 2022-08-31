@@ -1,0 +1,10 @@
+Here is the message log for ticket: ticket-535
+----------
+
+PC Creator 2 | <@1000363706250698753> <@&697728131003580537>
+ Yui (つ≧▽≦)つ | Hi <@1000363706250698753>!
+How can I help you today?
+ PC Creator 2 | Warned <@1000363706250698753> for Useless ticket
+ Yui | ,close
+ PC Creator 2 | 
+ Yui | close

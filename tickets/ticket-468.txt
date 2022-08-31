@@ -1,0 +1,10 @@
+Here is the message log for ticket: ticket-468
+----------
+
+PC Creator 2 | <@726735928252694530> <@&697728131003580537>
+ Masterwinter | How can I help you? <@726735928252694530>
+ PC Creator 2 | Warned <@726735928252694530> for Useless ticket
+ Yui | ,clise
+ Yui | ,close
+ PC Creator 2 | 
+ Yui | close

@@ -1,0 +1,9 @@
+Here is the message log for ticket: ticket-99
+----------
+
+PC Creator 2 | <@689744274627362821> <@&697728131003580537>
+ AMPW | hi, how can we help you?
+ PC Creator 2 | Warned <@689744274627362821> for Useless ticket
+ ¥£$ | ,close
+ PC Creator 2 | 
+ ¥£$ | close

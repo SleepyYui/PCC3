@@ -1,0 +1,19 @@
+Here is the message log for ticket: ticket-396
+----------
+
+PC Creator 2 | <@952746573585064006> <@&697728131003580537>
+ madog | ok
+ Yui (つ≧▽≦)つ | Hi <@952746573585064006>!
+How can I help you today?
+ madog | I don't need anything for today but thank you for asking
+ ABHOY | Why you click then <:PeepoCringe:974670941726580757>
+ AMPW | To Get a warn
+ ABHOY | ,twarn 952746573585064006
+ PC Creator 2 | Can't find this member
+ ABHOY | ,close
+ PC Creator 2 | 
+ ABHOY | Ha
+ PC Creator 2 | Ok, didn't close the ticket.
+ Yui | ,close
+ PC Creator 2 | 
+ Yui | Close

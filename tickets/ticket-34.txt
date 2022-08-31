@@ -1,0 +1,29 @@
+Here is the message log for ticket: ticket-34
+----------
+
+PC Creator 2 | <@602728354860498944> <@&697728131003580537>
+ ABHOY {INDIAN} | Hi
+ christiantrejo13 | Hey
+ ABHOY {INDIAN} | How can I help you
+ AMPW | Hi
+ christiantrejo13 | Did they fix the problem with david?
+ christiantrejo13 | On pcc2
+ AMPW | No
+ ABHOY {INDIAN} | Help him?
+ AMPW | Yes for new users
+ ABHOY {INDIAN} | Ok
+ AMPW | That's what support said are your options:
+1. Wait for the update (but it is a 50/50 possibility that it will be fixed)
+2. Delete a game and start with a new account
+3. Start a game with a guest account, pass that problematic order and rewrite their old account with a progress of guest account.
+You can't just delete the game. It is better to start from the beginning.
+ christiantrejo13 | So those are my options then?
+ AMPW | Yes
+ christiantrejo13 | Ok
+ ABHOY {INDIAN} | <@713696771188195368> you didn't close
+ ABHOY {INDIAN} | If conversation close
+ AMPW | ,close
+ PC Creator 2 | 
+ ABHOY {INDIAN} | Ok
+ ABHOY {INDIAN} | Close
+ AMPW | Close

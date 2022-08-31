@@ -1,0 +1,10 @@
+Here is the message log for ticket: ticket-482
+----------
+
+PC Creator 2 | <@559976479681675274> <@&697728131003580537>
+ дерку | how to change components on a computer?  I bought everything that needs to be changed, but I don’t know how to change it
+ дерку | I solved a problem
+ дерку | how to close ticket?
+ ¥£$ | ,close
+ PC Creator 2 | 
+ ¥£$ | Close

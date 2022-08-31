@@ -1,0 +1,13 @@
+Here is the message log for ticket: ticket-426
+----------
+
+PC Creator 2 | <@445636369214341150> <@&697728131003580537>
+ Zeik | Hi
+ Zeik | I sent a message to translate interview and it was instantly eliminated
+ Masterwinter | Its not eliminated the message is just hidden as some(most) can't see the history
+ Masterwinter | So the message is there you just can't see it
+ Zeik | Ok thx
+ Zeik | You can close this
+ AMPW | ,close
+ PC Creator 2 | 
+ AMPW | Close

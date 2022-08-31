@@ -1,0 +1,17 @@
+Here is the message log for ticket: ticket-255
+----------
+
+PC Creator 2 | <@853562000864968745> <@&697728131003580537>
+ ABHOY | Hi
+ ABHOY | How can I help you today?
+ ABHOY | <@853562000864968745> are you here
+ ABHOY | <@853562000864968745> ?
+ ABHOY | If you didn't respond in 4 minutes i will warn you <@853562000864968745>
+ Rby | sorry i don't how to use discord, i just click ticket and i dont know it
+ ABHOY | <:PlsHelp:720878428105998408>
+ ABHOY | It's a ticket for help
+ Rby | ok sorry bro
+ ABHOY | It's ok
+ ABHOY | ,close
+ PC Creator 2 | 
+ ABHOY | Close

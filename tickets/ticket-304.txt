@@ -1,0 +1,12 @@
+Here is the message log for ticket: ticket-304
+----------
+
+PC Creator 2 | <@890365912442613801> <@&697728131003580537>
+ ABHOY | Hi
+ ABHOY | How can I help you today?
+ SailingPeanut77 | Sorry
+ SailingPeanut77 | I think I missclicked
+ ABHOY | Oh ok
+ ABHOY | ,close
+ PC Creator 2 | 
+ ABHOY | Close

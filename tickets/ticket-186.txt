@@ -1,0 +1,14 @@
+Here is the message log for ticket: ticket-186
+----------
+
+PC Creator 2 | <@862863039003230208> <@&697728131003580537>
+ ABHOY | Hi
+ ABHOY | How can I help you today?
+ AMPW | Hi
+ ABHOY | Hi
+ ABHOY | Warn him
+ AMPW | Yes
+ PC Creator 2 | Warned <@862863039003230208> for no response ticket
+ AMPW | ,close
+ PC Creator 2 | 
+ AMPW | Close

@@ -1,0 +1,10 @@
+Here is the message log for ticket: ticket-315
+----------
+
+PC Creator 2 | <@438910681757253632> <@&697728131003580537>
+ Masterwinter | Hello <@438910681757253632>, how may I help you?
+ Black_Shadow001 | Sorry, misclick.
+ PC Creator 2 | Warned <@438910681757253632> for Useless ticket
+ Masterwinter | ,close
+ PC Creator 2 | 
+ Masterwinter | Close

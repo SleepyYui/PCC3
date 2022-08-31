@@ -142,7 +142,7 @@ class messagecounter(commands.Cog):
 
 
 
-    async def get_coins(self):
+    """async def get_coins(self):
         with open("json_files/usercoins.json", "r") as f:
             users_coins = json.load(f)
         return users_coins
@@ -159,7 +159,7 @@ class messagecounter(commands.Cog):
 
         with open("json_files/usercoins.json", "w") as f:
             json.dump(users_coins,f)
-        return True
+        return True"""
 
     #async def get_restriction():
     #    with open("channel_restrictions.json", "r") as f:

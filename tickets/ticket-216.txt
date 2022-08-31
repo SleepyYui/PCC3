@@ -1,0 +1,28 @@
+Here is the message log for ticket: ticket-216
+----------
+
+PC Creator 2 | <@926921437808328736> <@&697728131003580537>
+ detective 2 | I forgot my password to the game save
+ Yui | Hi <@926921437808328736>!
+How can I help you today?
+ detective 2 | I forgot my password
+ Yui | I am sorry to tell you that, but there is no way to help you with that.
+ detective 2 | Password reset
+ Yui | Sadly we cannot do that as of now.
+ detective 2 | Am I talking to a bot or a person
+ Yui | You are talking to both.
+ detective 2 | Ok so do u know if google play games can save my game
+ Yui | It is really buggy, sometimes it does, sometimes not.
+ detective 2 | And why in my country I can't download the game from Google play store only from apk file
+ Yui | Are you talking about PCC2? <@926921437808328736>
+ detective 2 | Yea
+ Yui | It is not available anywhere else than in the US. It will be released after the War in Ukraine is over
+ detective 2 | Why
+ Yui | Please do not download apk's since they are against the PlayStore ToS and is illegal in many countrys (software theft)
+ Yui | Because the Devs live in the ukraine.
+ detective 2 | But they don't want to stop the war (Russia)
+ detective 2 | Ok that a realy good reason
+ Yui | <:shrug:747680403778699304>
+ Yui | ,close
+ PC Creator 2 | 
+ Yui | Close

@@ -1,0 +1,18 @@
+Here is the message log for ticket: ticket-378
+----------
+
+PC Creator 2 | <@743877415809450015> <@&697728131003580537>
+ Styx | this quest is impossible without the card itself being unlocked, forcing us to trade for it
+ Masterwinter | It can be unlocked by doing conference minigame( 2020 March 5 spring conference)
+ Styx | when is that
+ Styx | it seems like conferences only happen when i progress through the quests
+ Masterwinter | Leveling up will unlock the next conference
+ Masterwinter | But make sure you also do the story to avoid getting soft locked
+ Styx | alright
+ Styx | what level do i need to unlock the 2020 spring conference
+ Masterwinter | 29 I think
+ Styx | alright
+ Masterwinter | Anything else?
+ Yui | ,close
+ PC Creator 2 | 
+ Yui | close

@@ -1,0 +1,17 @@
+Here is the message log for ticket: ticket-231
+----------
+
+PC Creator 2 | <@183224804613029889> <@&697728131003580537>
+ brcorrea | I'm stock on David mission
+ Masterwinter | Which mission?
+ AMPW | David Mission pcc2
+ Masterwinter | Which kind like do conference or photoshop mission
+ AMPW | I think Photoshop
+ AMPW | If it's the Photoshop mission I can only say that this bug is known and the devs working on a solution
+ brcorrea | Yes.
+ Masterwinter | Than no fix, just wait for update,It will take a long time im guessing due to dev being Ukrainian
+ Masterwinter | Anything else?
+ brcorrea | No, thanks
+ Masterwinter | ,close
+ PC Creator 2 | 
+ Masterwinter | Close

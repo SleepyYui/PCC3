@@ -1,0 +1,19 @@
+Here is the message log for ticket: ticket-287
+----------
+
+PC Creator 2 | <@530415207013548034> <@&697728131003580537>
+ Yui ♡(,,•ω•,,´) | Hi <@530415207013548034>!
+How can I help you today?
+ Sytax | Hey!
+I already had this issue in the past, is it possible to sync an account on different computers? I'm on PC/Steam version
+ Yui ♡(,,•ω•,,´) | Yes, the progress is / should be saved in the steam cloud.
+ Sytax | Eeee... Looks like it isn't just launched the game and the tutorial just started
+ Yui ♡(,,•ω•,,´) | Ok, you can try copying the game files or the appdata of the game
+ Sytax | Alright, so copying the whole game files from a device to another should be working?
+ Yui ♡(,,•ω•,,´) | <@!530415207013548034> Sorry for the late response. Yes, it should work.
+ Sytax | No probs, I will come back to you to let you know if it fixed the issue.
+However, is the Steam Cloud option the only option to sync an account?
+ Yui ♡(,,•ω•,,´) | <@!530415207013548034> Have you fixed it yet?
+ Yui | ,close
+ PC Creator 2 | 
+ Yui | Close

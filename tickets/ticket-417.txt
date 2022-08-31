@@ -1,0 +1,15 @@
+Here is the message log for ticket: ticket-417
+----------
+
+PC Creator 2 | <@507159129693880321> <@&697728131003580537>
+ PledgedVoice212 | I've tried downloading and deleting but all I get when I open it is black
+ Masterwinter | Game?
+ Masterwinter | Is it pcc 1 or pcc2?
+ PledgedVoice212 | Pcc2
+ Masterwinter | And what is the problem?
+ AMPW | Read first message
+ AMPW | He only gets black screen
+ Yui | Can you specify the device you are using
+ Yui | ,close
+ PC Creator 2 | 
+ Yui | Close

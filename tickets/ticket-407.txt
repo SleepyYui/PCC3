@@ -1,0 +1,31 @@
+Here is the message log for ticket: ticket-407
+----------
+
+PC Creator 2 | <@948830153088303124> <@&697728131003580537>
+ !            nora | okay so i dont really like the game's cursor so how do i use my own system cursor instead?
+ !            nora | cuz i dont really like the default game cursor
+ !            nora | uh
+ !            nora | a
+ !            nora | hello
+ !            nora | uh,
+ Yui | Hello, can you specify which game you are talking about?
+ !            nora | Pc creator
+ Yui | Can you **specify** which game you are talking about?
+There are 4 Versions of the Game
+ !            nora | the first one
+ !            nora | a
+ Masterwinter | There's 4 pcc 1, pcc 2,pcc pro, pcc steam
+ Masterwinter | Which one is it?
+ !            nora | pcc 1
+ Masterwinter | The mobile?
+ !            nora | the one thats on pc
+ Masterwinter | That would be steam
+ Masterwinter | Since pcc steam is on steam
+ !            nora | oh okay
+ Masterwinter | And I don't think you can change the game cursor
+ !            nora | oh
+ Masterwinter | Anything else?
+ !            nora | nothing else
+ Masterwinter | ,close
+ PC Creator 2 | 
+ Masterwinter | Close

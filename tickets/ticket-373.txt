@@ -1,0 +1,11 @@
+Here is the message log for ticket: ticket-373
+----------
+
+PC Creator 2 | <@931996323450871868> <@&697728131003580537>
+ Yui (つ≧▽≦)つ | Hi!
+How can I help you today?
+ AMPW | Hi <@931996323450871868>, what's your problem?
+ PC Creator 2 | Warned <@931996323450871868> for Useless ticket
+ Yui | ,close
+ PC Creator 2 | 
+ Yui | close

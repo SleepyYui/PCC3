@@ -1,0 +1,22 @@
+Here is the message log for ticket: ticket-191
+----------
+
+PC Creator 2 | <@653070038424748043> <@&697728131003580537>
+ ABHOY | Hi
+ ABHOY | How can I help you today?
+ jpzex | Good afternoon
+ ABHOY | Yea
+ ABHOY | Good afternoon
+ jpzex | I tried installing the latest game from play store and appeared an error
+ jpzex | 403 forbidden
+ jpzex | It was asking for approval from dev
+ ABHOY | version 5.5.0 is freezed due to bug with Season Pass appeared for old users
+ jpzex | I must wait then?
+ ABHOY | Yes
+ jpzex | Okay, thank you Very much
+ jpzex | Have a good day
+ ABHOY | Welcome
+ ABHOY | You too
+ ABHOY | ,close
+ PC Creator 2 | 
+ ABHOY | Close

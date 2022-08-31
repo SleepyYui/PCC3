@@ -1,0 +1,12 @@
+Here is the message log for ticket: ticket-94
+----------
+
+PC Creator 2 | <@661974762695950347> <@&697728131003580537>
+ ¥£$ | What is your problem
+ yaroslav dotsenko | I have bugs in pro version
+ ¥£$ | Can you send a screenshot or a video
+ yaroslav dotsenko | No, i cant, there bug how when you remove videocard you can remove motherboard
+ ¥£$ | Ok thanks for the the report
+ ¥£$ | ,close
+ PC Creator 2 | 
+ ¥£$ | Close

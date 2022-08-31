@@ -1,0 +1,11 @@
+Here is the message log for ticket: ticket-204
+----------
+
+PC Creator 2 | <@508681998366408704> <@&697728131003580537>
+ Yui | Hi <@508681998366408704>!
+How can I help you today?
+ ABHOY | <@695229647021015040> warn him too
+ PC Creator 2 | Warned <@508681998366408704> for Useless ticket
+ Masterwinter | ,close
+ PC Creator 2 | 
+ Masterwinter | Close

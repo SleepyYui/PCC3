@@ -1,0 +1,19 @@
+Here is the message log for ticket: ticket-215
+----------
+
+PC Creator 2 | <@953700475428024432> <@&697728131003580537>
+ ILPIUFIGODIPOMEZIA | Scusatemi
+ ¥£$ | Hi <@953700475428024432>!
+How can I help you today?
+ Yui | ?
+ ILPIUFIGODIPOMEZIA | Ma come posso vedere la capienza dei driver su PC creator?
+ Yui | please speak english
+ ILPIUFIGODIPOMEZIA | Ok
+ ILPIUFIGODIPOMEZIA | But how can I see the driver capacity on PC creator?
+ Masterwinter | Just click in the ssd/hhd/m.2 ssd
+ ILPIUFIGODIPOMEZIA | Ok so
+ ILPIUFIGODIPOMEZIA | Thanks close the ticket
+ ILPIUFIGODIPOMEZIA | Close
+ Masterwinter | ,close
+ PC Creator 2 | 
+ Masterwinter | Close

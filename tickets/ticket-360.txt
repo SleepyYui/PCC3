@@ -1,0 +1,44 @@
+Here is the message log for ticket: ticket-360
+----------
+
+PC Creator 2 | <@788747028317601803> <@&697728131003580537>
+ Glacier | For some reason, instead of 1000 fps shows 100 fps
+ Glacier | 
+ AMPW | your monitor
+ AMPW | it has a fps limit
+ Glacier | No
+ Yui | Please post that in <#610448258292121628> and don't make a ticket for that.
+ Yui | Schau dir die Bilder an du blind Fisch <:Facepalm:563068072068513792>
+ Glacier | 
+ AMPW | <:KayONo:898049197876576277>
+ Glacier | <:frustrated:968369515282980924>
+ AMPW | it shouldn't be the max
+ Glacier | Sorry
+ AMPW | wait a second, I'll test it
+ Yui | Du bist einfach behindert <a:AFheadbang:886173624703258634>
+ Glacier | Max.
+ Yui | Please send it into <#610448258292121628>
+ AMPW | <:ViperToxic:837375876936892536>
+ Glacier | next 100 shows
+ Yui | Because the 0 does not get rendered
+ Glacier | Why??
+ AMPW | I got 4.3k fps in minecraft
+ Yui | Don't ask me, just write it into <#610448258292121628>
+ Glacier | What version are you on?
+ AMPW | newest version of pcc
+ Glacier | Pro version?
+ AMPW | no
+ AMPW | normal
+ Glacier | I mean, the version PRO
+ AMPW | yes, write a bug report in <#610448258292121628> and say that its pccp
+ Glacier | but how to write
+ AMPW | in pccp its showing 100 instead of 1000 fps
+ AMPW | something like that
+ Glacier | 1000
+ Glacier | <:LOL:720879922008031246>
+ Glacier | 
+ Glacier | right?
+ Glacier | Andrii fall asleep?
+ Yui | ,close
+ PC Creator 2 | 
+ Yui | Close

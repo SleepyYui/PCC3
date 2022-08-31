@@ -1,0 +1,24 @@
+Here is the message log for ticket: ticket-285
+----------
+
+PC Creator 2 | <@526562972764471296> <@&697728131003580537>
+ ABHOY | Hi
+ ZTL Multi | Hello
+ ABHOY | How can I help you today?
+ ZTL Multi | Good it’s Pretty simple
+ ABHOY | ?
+ ZTL Multi | Umm how do u put in codes Sorry I’m Confused with the New UI
+ ABHOY | Idk maybe next update
+ ZTL Multi | Ok
+ ZTL Multi | That’s it
+ ZTL Multi | Thanks for Your time
+ ABHOY | Maybe this one <@526562972764471296>
+ ZTL Multi | Tryed it but it Said Wrong code With that Works
+ ABHOY | Hmmm
+ ABHOY | Maybe anyone use it already
+ ZTL Multi | True
+ ZTL Multi | Gtg bye
+ ABHOY | Bye
+ ABHOY | ,close
+ PC Creator 2 | 
+ ABHOY | Close

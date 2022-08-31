@@ -1,0 +1,14 @@
+Here is the message log for ticket: ticket-439
+----------
+
+PC Creator 2 | <@649368509305847828> <@&697728131003580537>
+ Yui (つ≧▽≦)つ | Hi!
+How can I help you today?
+ Who Am I ? | Is it BOT ?
+ Yui (つ≧▽≦)つ | How do you mean, is it BOT?
+ Who Am I ? | I just wanna make suggestions for PC Creator 2. Please make Unique PC Case as be rare item
+ Who Am I ? | That's all. Thanks
+ Yui (つ≧▽≦)つ | Please use the <#572541644755435520> channel for that, and don't create a ticket. Thank you, have a nice day.
+ Yui | ,close
+ PC Creator 2 | 
+ Yui | close
