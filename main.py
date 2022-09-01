@@ -25,7 +25,7 @@ from discord import SlashCommandGroup
 with open("json_files/mainconfig.json", encoding="utf-8-sig") as f:
     mainconfig = json.load(f)
 
-client = commands.Bot(command_prefix=mainconfig["prefix"], intents=discord.Intents.all(), case_insensitive=True, debug_guilds=[708218806928932896])
+client = commands.Bot(command_prefix=mainconfig["prefix"], intents=discord.Intents.all(), case_insensitive=True) #debug_guilds=[708218806928932896])
 client.remove_command('help')
 
 
