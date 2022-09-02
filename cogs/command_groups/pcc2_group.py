@@ -13,7 +13,7 @@ class pcc2_group(commands.Cog):
         self.client = client
 
 
-    pcc2 = SlashCommandGroup("pcc2", "PC Creator one related stuff")
+    pcc2 = SlashCommandGroup("pcc2", "PC Creator two related stuff")
 
     
     @pcc2.command(name="record", description="Shows the best PC in PCC2")
