@@ -45,7 +45,7 @@ class ban(commands.Cog):
         if send == ctx.send:
             await ctx.message.delete()
 
-        if ctx.author.guild_permissions.manage_messages:
+        if member.guild_permissions.manage_messages:
             await ctx.respond(f"Cannot ban a member with Moderator permissions.", delete_after=10)
 
         await self.new_warn_member(member)
