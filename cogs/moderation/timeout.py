@@ -45,7 +45,7 @@ class timeout(commands.Cog):
         embed = discord.Embed(title="Timeout", color=13565696)
         embed.add_field(name="Muted", value=f"{member.mention}")
         embed.add_field(name="Moderator", value=f"{ctx.author.mention}")
-        embed.add_field(name="Duration", value=f"**{days}** days, **{hours}** hours,\n**{minutes}** minutes, and **{seconds}** second",inline=False)
+        embed.add_field(name="Duration", value=f"**{days}** days, **{hours}** hours,\n**{minutes}** minutes, and **{seconds}** seconds", inline=False)
 
         if reason != None:
             embed.add_field(name="Reason:", value=reason)
