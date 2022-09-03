@@ -76,11 +76,18 @@ class warns(commands.Cog):
 
         warn_count_old = warns[str(member.id)]["warn_count"]
         warn_count_new = warn_count_old + 1
-        warns[str(member.id)]["warn_count"] = warn_count_new
-        warns[str(member.id)][f"warn {warn_count_new}"] = reason    
 
-        with open("json_files/warns.json", "w") as f:
-            json.dump(warns,f)   
+        warns[str(member.id)]["warn_count"] = warn_count_new
+
+        mute_count_old = warns[str(member.id)]["mute_count"]
+        mute_count_new = mute_count_old + 1
+
+        kick_count_old = warns[str(member.id)]["kick_count"]
+        kick_count_new = kick_count_old + 1
+
+        ban_count_old = warns[str(member.id)]["ban_count"]
+        ban_count_new = ban_count_old + 1
+   
 
         if warn_count_new > 0:
 
@@ -89,6 +96,9 @@ class warns(commands.Cog):
             modlogs = self.client.get_channel(933768368970932254)
 
             if warn_count_new == 1:
+
+                warns[str(member.id)][f"warn {warn_count_new}"] = f"{reason} (1st warn)"
+
                 try:
                     await member.send(f"You were warned for the first time in the PC Creator server\nreason: {reason}")
                 except:
@@ -97,6 +107,10 @@ class warns(commands.Cog):
 
 
             if warn_count_new == 2:
+
+                warns[str(member.id)][f"mute_count"] = mute_count_new
+                warns[str(member.id)][f"mute {mute_count_new}"] = f"{reason} (2nd warn)"
+
                 try:
                     await member.send(f"You were warned for the second time in the PC Creator server. This leads to a 6 hour timeout\nreason: {reason}")
                 except:
@@ -116,6 +130,10 @@ class warns(commands.Cog):
                 await modlogs.send(embed=embed)
 
             if warn_count_new == 3:
+
+                warns[str(member.id)][f"mute_count"] = mute_count_new
+                warns[str(member.id)][f"mute {mute_count_new}"] = f"{reason} (3rd warn)"
+
                 try:
                     await member.send(f"You were warned for the third time in the PC Creator server. This leads to a 24 hour timeout\nreason: {reason}")
                 except:
@@ -135,6 +153,10 @@ class warns(commands.Cog):
                 await modlogs.send(embed=embed)
 
             if warn_count_new == 4:
+
+                warns[str(member.id)][f"kick_count"] = kick_count_new
+                warns[str(member.id)][f"kick {kick_count_new}"] = f"{reason} (4th warn)"
+
                 try:
                     await member.send(f"You were warned for the fourth time in the PC Creator server. This leads to a softban\nreason: {reason}")
                 except:
@@ -154,6 +176,10 @@ class warns(commands.Cog):
                 await modlogs.send(embed=embed)
 
             if warn_count_new == 5:
+
+                warns[str(member.id)][f"warn_count"] = warn_count_new
+                warns[str(member.id)][f"warn {warn_count_new}"] = f"{reason} (5th warn)"
+
                 try:
                     await member.send(f"You were warned for the fifth time in the PC Creator server. This is your **last warning**. The next warn will lead to a permanent ban.\nreason: {reason}")
                 except:
@@ -161,6 +187,10 @@ class warns(commands.Cog):
                 await the_other_logs.send(f"{member.mention} has been warned for the fifth time (last warning) by {moderator.mention} for **{reason}**")
 
             if warn_count_new == 6:
+
+                warns[str(member.id)][f"ban_count"] = ban_count_new
+                warns[str(member.id)][f"ban {ban_count_new}"] = f"{reason} (6th warn)"
+
                 try:
                     await member.send(f"You were warned for the sixth time in the PC Creator server. This leads to a **permanent ban**. If you think there is a mistake DM <@695229647021015040>\nreason: {reason}")
                 except:
@@ -177,6 +207,9 @@ class warns(commands.Cog):
                 embed.add_field(name="Moderator", value=f"{moderator.mention}")
                 embed.add_field(name="Reason:", value=reason, inline=False)
                 await modlogs.send(embed=embed)
+
+        with open("json_files/warns.json", "w") as f:
+            json.dump(warns,f)
 
 
 def setup(client):
