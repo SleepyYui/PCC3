@@ -73,7 +73,7 @@ class warns(commands.Cog):
                 warns[str(member.id)]["kick_count"] = 0
 
             with open("json_files/warns.json", "w") as f:
-                json.dump(warns,f)
+                json.dump(warns,f, indent=4)
             return True     
 
     async def update_warns(self, member, reason, moderator):
@@ -223,7 +223,7 @@ class warns(commands.Cog):
                     await the_other_logs.send(f"{member.mention} has been warned for the {warn_count_new}th time by {moderator.mention} for `{reason}`\n**DM NOT SENT**")
 
         with open("json_files/warns.json", "w") as f:
-            json.dump(warns,f)
+            json.dump(warns,f, indent=4)
 
 
 def setup(client):
