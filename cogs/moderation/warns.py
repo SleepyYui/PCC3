@@ -113,7 +113,7 @@ class warns(commands.Cog):
                 
 
 
-            if warn_count_new == 2:
+            elif warn_count_new == 2:
 
                 warns[str(member.id)][f"mute_count"] = mute_count_new
                 warns[str(member.id)][f"mute {mute_count_new}"] = f"{reason} (2nd warn)"
@@ -136,7 +136,7 @@ class warns(commands.Cog):
 
                 await modlogs.send(embed=embed)
 
-            if warn_count_new == 3:
+            elif warn_count_new == 3:
 
                 warns[str(member.id)][f"mute_count"] = mute_count_new
                 warns[str(member.id)][f"mute {mute_count_new}"] = f"{reason} (3rd warn)"
@@ -159,7 +159,7 @@ class warns(commands.Cog):
 
                 await modlogs.send(embed=embed)
 
-            if warn_count_new == 4:
+            elif warn_count_new == 4:
 
                 warns[str(member.id)][f"kick_count"] = kick_count_new
                 warns[str(member.id)][f"kick {kick_count_new}"] = f"{reason} (4th warn)"
@@ -182,7 +182,7 @@ class warns(commands.Cog):
                 embed.add_field(name="Reason:", value=reason, inline=False)
                 await modlogs.send(embed=embed)
 
-            if warn_count_new == 5:
+            elif warn_count_new == 5:
 
                 warns[str(member.id)][f"warn_count"] = warn_count_new
                 warns[str(member.id)][f"warn {warn_count_new}"] = f"{reason} (5th warn)"
@@ -193,7 +193,7 @@ class warns(commands.Cog):
                 except:
                     await the_other_logs.send(f"{member.mention} has been warned for the fifth time (last warn) by {moderator.mention} for `{reason}`\n**DM NOT SENT**")
 
-            if warn_count_new == 6:
+            elif warn_count_new == 6:
 
                 warns[str(member.id)][f"ban_count"] = ban_count_new
                 warns[str(member.id)][f"ban {ban_count_new}"] = f"{reason} (6th warn)"
@@ -217,7 +217,7 @@ class warns(commands.Cog):
        
             else:
                 try:
-                    await member.send(f"You have been banned from **PC CREATOR** for `{reason}`")
+                    await member.send(f"You have been warned on **PC CREATOR** for `{reason}`")
                     await the_other_logs.send(f"{member.mention} has been warned for the {warn_count_new}th time by {moderator.mention} for `{reason}`")
                 except:
                     await the_other_logs.send(f"{member.mention} has been warned for the {warn_count_new}th time by {moderator.mention} for `{reason}`\n**DM NOT SENT**")
