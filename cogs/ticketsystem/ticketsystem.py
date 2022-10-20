@@ -1,3 +1,4 @@
+import re
 import discord, json
 from discord.ext import commands
 
@@ -7,13 +8,14 @@ class PersistentButton(discord.ui.View):
     def __init__(self):
         super().__init__(timeout=None)
 
-    @discord.ui.button(
+    """@discord.ui.button(
         label="Create Ticket",
-        style=discord.ButtonStyle.primary,
-        custom_id="persistent_view:primary",
-        emoji="🎟️",
+        style=discord.ButtonStyle.link,
+        url="https://discord.com/channels/@me/986681363858071552",
+        emoji="🎟️"
     )
     async def createticket(self, button: discord.ui.Button, interaction: discord.Interaction):
+        return
         with open(data_file_name) as f:
             data = json.load(f)
         ticket_number = int(data["ticket-counter"])
@@ -43,7 +45,7 @@ class PersistentButton(discord.ui.View):
         data["ticket-counter"] = int(ticket_number)
         with open(data_file_name, 'w') as f:
             json.dump(data, f)
-        await interaction.response.send_message(f"Created Ticket in {ticket_channel.mention}", ephemeral=True)
+        await interaction.response.send_message(f"Created Ticket in {ticket_channel.mention}", ephemeral=True)"""
 
 class PersistentButtonLoad(commands.Cog):
     def __init__(self, client):
@@ -57,8 +59,11 @@ class PersistentButtonLoad(commands.Cog):
         await self.client.http.delete_message(channel.id, int(data["ticket-react-message-id"]))
         embed = discord.Embed(title="Support Ticket", description="React to this message with 🎟️ to open a ticket.", color=13565696)
         embed.add_field(name="Info", value="We provide help with any problems you have with the game or server. If you don't know how to do something; or even want to report someone on this server, just create a ticket and we try to help as soon as possible.", inline=True)
+        embed.add_field(name="UPDATE", value="You can now also use the `/support` command to create a Ticket.", inline=True)
         embed.set_footer(text="Creating a ticket without a reason can lead to a warn. Not answering (creating a ticket and not writing anything in it) is also counted as unreasonable.")
-        message = await channel.send(embed=embed, view=PersistentButton())
+        a=PersistentButton()
+        a.add_item(discord.ui.Button(label="Create Ticket 🎟️",style=discord.ButtonStyle.link,url="https://discord.com/channels/@me/986681363858071552"))
+        message = await channel.send(embed=embed, view=a)
         data["ticket-react-message-id"] = int(message.id)
         with open(data_file_name, 'w') as f:
                 json.dump(data, f)
