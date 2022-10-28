@@ -14,7 +14,7 @@ class PersistentButton(discord.ui.View):
         emoji="🎟️",
     )
     async def createticket(self, button: discord.ui.Button, interaction: discord.Interaction):
-        with open(data_file_name) as f:
+        """with open(data_file_name) as f:
             data = json.load(f)
         ticket_number = int(data["ticket-counter"])
         ticket_number += 1
@@ -43,7 +43,8 @@ class PersistentButton(discord.ui.View):
         data["ticket-counter"] = int(ticket_number)
         with open(data_file_name, 'w') as f:
             json.dump(data, f)
-        await interaction.response.send_message(f"Created Ticket in {ticket_channel.mention}", ephemeral=True)
+        await interaction.response.send_message(f"Created Ticket in {ticket_channel.mention}", ephemeral=True)"""
+        await interaction.response.send_message("Please Message <@969729643819196471> to create a Ticket.", ephemeral=True)
 
 class PersistentButtonLoad(commands.Cog):
     def __init__(self, client):
@@ -57,6 +58,7 @@ class PersistentButtonLoad(commands.Cog):
         await self.client.http.delete_message(channel.id, int(data["ticket-react-message-id"]))
         embed = discord.Embed(title="Support Ticket", description="React to this message with 🎟️ to open a ticket.", color=13565696)
         embed.add_field(name="Info", value="We provide help with any problems you have with the game or server. If you don't know how to do something; or even want to report someone on this server, just create a ticket and we try to help as soon as possible.", inline=True)
+        embed.add_field(name="UPDATE", value="You can now use the `/support` command to create a Ticket.", inline=False)
         embed.set_footer(text="Creating a ticket without a reason can lead to a warn. Not answering (creating a ticket and not writing anything in it) is also counted as unreasonable.")
         message = await channel.send(embed=embed, view=PersistentButton())
         data["ticket-react-message-id"] = int(message.id)
