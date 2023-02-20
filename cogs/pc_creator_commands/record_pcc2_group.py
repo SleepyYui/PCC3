@@ -1,6 +1,7 @@
 import discord
 from discord.ext import commands
-
+import websockets
+import json
    
 
 async def record_pcc2(ctx): 
@@ -12,3 +13,34 @@ async def record_pcc2(ctx):
 
     await ctx.respond(embed=embed)   
 
+async def pcc2_user(ctx, code):
+    code = str(code)
+    try:
+        async with websockets.connect("ws://83.229.84.175:8082/TradingPlatform", max_size=99999999999) as ws:
+            await ws.send('{"method":"getTrader","args":id}'.replace("id", code, 1))
+            msg = json.loads(await ws.recv())
+            if msg["response"] != None:
+                totals = {"CPU": 0, "RAM": 0, "PCCase": 0, "PowerSupply": 0, "Drive": 0, "Cooler": 0, "Motherboard": 0, "Videocard": 0, "ThermalGrease": 0}
+                stuff = msg["response"]
+                user = stuff["user"]
+                inventory = stuff["inventory"]
+                for item in inventory:
+                    totals[item["id"].split(".")[0]] += 1
+                embed = discord.Embed(title=user['userName'])
+                embed.add_field(name="ID", value=user['code'], inline=False)
+                embed.add_field(name="Items", value=len(inventory), inline=False)
+                embed.add_field(name="Cases", value=totals['PCCase'], inline=True)
+                embed.add_field(name="Motherboards", value=totals['Motherboard'], inline=True)
+                embed.add_field(name="CPUs", value=totals['CPU'], inline=True)
+                embed.add_field(name="Coolers", value=totals['Cooler'], inline=True)
+                embed.add_field(name="RAMs", value=totals['RAM'], inline=True)
+                embed.add_field(name="Videocards", value=totals['Videocard'], inline=True)
+                embed.add_field(name="Drives", value=totals['Drive'], inline=True)
+                embed.add_field(name="Power Supplies", value=totals['PowerSupply'], inline=True)
+                embed.add_field(name="Thermal Grease", value=totals['ThermalGrease'], inline=True)
+                await ctx.respond(embed=embed)
+            else:
+                await ctx.respond(embed=discord.Embed(title="User Not Found", description=f"User with the ID {code} was not found!"))
+            await ws.close()
+    except:
+        await ctx.respond(embed=discord.Embed(title="Failed To Get Data", description="The bot has failed to succesfully receive user data, most likely, the trading servers are offline."))
