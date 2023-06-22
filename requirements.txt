@@ -20,3 +20,4 @@ discord-webhook
 pytz
 bs4
 websockets
+orjson
