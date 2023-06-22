@@ -2,6 +2,7 @@ import discord
 from discord.ext import commands
 import websockets
 import json
+from cogs.pc_creator_commands.importantfunctions import check_all
    
 
 async def record_pcc2(ctx): 
@@ -12,6 +13,10 @@ async def record_pcc2(ctx):
     embed.set_image(url="https://media.discordapp.net/attachments/748122380383027210/959825115485470790/1648910536234.jpg")
 
     await ctx.respond(embed=embed)   
+
+async def pcc2_status(ctx):
+   status = await check_all()
+   await ctx.respond(embed=discord.Embed(title="Status", description=f"{status}"))
 
 async def pcc2_user(ctx, code):
     code = str(code)
