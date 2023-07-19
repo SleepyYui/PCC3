@@ -9,17 +9,33 @@ CHAT_WS = "ws://83.229.84.175:8081/Chat"
 EXCHANGE_WS = "ws://83.229.84.175:8082/CurrencyRate"
 TRADING_WS = "ws://83.229.84.175:8082/TradingPlatform"
 FILE_STORAGE = "https://kamatera.creaty.me/storage/pc-creator-two/Localizations/production.json"
+SESSION_MANAGER = "ws://83.229.84.175:8082/SessionManager"
 definitions = {
-    FILE_STORAGE: "File Storage",
-    PROMOCODE_DB: "Promocode Validation",
-    CHAT_WS: "Ingame Chat",
-    EXCHANGE_WS: "Currency Exchange",
-    TRADING_WS: "Trading Platform",
+  FILE_STORAGE: "File Storage",
+  PROMOCODE_DB: "Promocode Validation",
+  CHAT_WS: "Ingame Chat",
+  EXCHANGE_WS: "Currency Exchange",
+  TRADING_WS: "Trading Platform",
+  SESSION_MANAGER: "Session Manager"
 }
 USER_ID = 466664
 TIMEOUT = 10
-WORKING_CODE = "TEST00" # change it to a new code later!
-async def check_promocode() -> bool: # this code isnt very good but i think it works
+WORKING_CODE = "TEST00"  # change it to a new code later!
+USERAGENT = "BestHTTP 1.11.2"  # pcc2 uses it
+
+
+async def check_ws(url: str) -> bool:
+  try:
+    async with connect(url, extra_headers={"User-Agent": USERAGENT}) as socket:
+      await (await socket.ping())
+      await socket.close()
+    return True
+  except:
+    return False
+
+
+async def check_promocode(
+) -> bool:  # this code isnt very good but i think it works
   try:
     async with connect(
         "wss://pc-creator-2-b499e-default-rtdb.firebaseio.com/.ws?ns=pc-creator-2-b499e-default-rtdb&v=5",
@@ -74,23 +90,27 @@ async def check_promocode() -> bool: # this code isnt very good but i think it w
   except:
     return False
 
+
 async def check_chat() -> bool:
   try:
     recvd = 0
-    async with connect(CHAT_WS) as socket:
+    async with connect(CHAT_WS, extra_headers={"User-Agent":
+                                               USERAGENT}) as socket:
       await socket.send('{"method":"subscribe", "args":"PCC2.Main"}')
       async for msg in socket:
         recvd += 1
-        if recvd == 30: # server sends exactly 30 last messages
+        if recvd == 30:  # server sends exactly 30 last messages
           break
       await socket.close()
     return True
   except:
     return False
-  
+
+
 async def check_exchange() -> bool:
   try:
-    async with connect(EXCHANGE_WS) as socket:
+    async with connect(EXCHANGE_WS, extra_headers={"User-Agent":
+                                                   USERAGENT}) as socket:
       msg = loads(await socket.recv())["response"]
       await wait_for(socket.recv(), timeout=msg["interval"])
       await socket.close()
@@ -98,10 +118,12 @@ async def check_exchange() -> bool:
   except:
     return False
 
+
 async def check_trading() -> bool:
   try:
     async with connect(TRADING_WS,
-                       max_size=99999999999) as ws:
+                       max_size=99999999999,
+                       extra_headers={"User-Agent": USERAGENT}) as ws:
       await ws.send(dumps({"method": "getTrader", "args": USER_ID}))
       msg = loads(await ws.recv())
       await ws.close()
@@ -112,32 +134,37 @@ async def check_trading() -> bool:
         return False
   except:
     return False
-    
-async def check_http(url: str) -> bool:
-    try:
-        async with ClientSession() as session:
-            result = await session.get(url)
-            await session.close()
-        return not str(result.status).startswith("5")
-    except:
-        return False
 
+
+async def check_http(url: str) -> bool:
+  try:
+    async with ClientSession() as session:
+      result = await session.get(url, headers={"User-Agent": USERAGENT})
+    return not str(result.status).startswith("5")
+  except:
+    return False
 
 
 def format_msg(url: str, status: bool) -> str:
-    return f"{'✅' if status else '❌'} | {definitions[url]} is {'online' if status else 'down!'}\n"
+  return f"{'✅' if status else '❌'} | {definitions[url]} is {'online' if status else 'down!'}\n"
+
 
 async def checker_wrapper(coro):
   try:
-        return await wait_for(coro, timeout=TIMEOUT)
+    status = await wait_for(coro, timeout=TIMEOUT)
   except:
-        return False
+    status = False
+  return status
+
 
 async def check_all() -> str:
-    result = ""
-    result += format_msg(FILE_STORAGE, await checker_wrapper(check_http(FILE_STORAGE)))
-    result += format_msg(PROMOCODE_DB, await checker_wrapper(check_promocode()))
-    result += format_msg(EXCHANGE_WS, await checker_wrapper(check_exchange()))
-    result += format_msg(CHAT_WS, await checker_wrapper(check_chat()))
-    result += format_msg(TRADING_WS, await checker_wrapper(check_trading()))
-    return result.strip()
+  result = ""
+  result += format_msg(FILE_STORAGE, await
+                       checker_wrapper(check_http(FILE_STORAGE)))
+  result += format_msg(PROMOCODE_DB, await checker_wrapper(check_promocode()))
+  result += format_msg(EXCHANGE_WS, await checker_wrapper(check_exchange()))
+  result += format_msg(CHAT_WS, await checker_wrapper(check_chat()))
+  result += format_msg(TRADING_WS, await checker_wrapper(check_trading()))
+  result += format_msg(SESSION_MANAGER, await
+                       checker_wrapper(check_ws(SESSION_MANAGER)))
+  return result.strip()
