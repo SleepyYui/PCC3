@@ -48,7 +48,7 @@ async def check_promocode(
         max_size=99999999999999999) as socket:
       async for msg in socket:
         try:
-          msg = orjson.loads(msg)
+          msg = loads(msg)
         except:
           continue
         if type(msg) != dict:
@@ -113,7 +113,7 @@ async def check_exchange() -> bool:
   try:
     async with connect(EXCHANGE_WS, extra_headers={"User-Agent":
                                                    WS_USERAGENT}) as socket:
-      msg = orjson.loads(await socket.recv())["response"]
+      msg = loads(await socket.recv())["response"]
       await wait_for(socket.recv(), timeout=msg["interval"])
       await socket.close()
     return True
@@ -127,7 +127,7 @@ async def check_trading() -> bool:
                        max_size=99999999999,
                        extra_headers={"User-Agent": WS_USERAGENT}) as ws:
       await ws.send(dumps({"method": "getTrader", "args": USER_ID}))
-      msg = orjson.loads(await ws.recv())
+      msg = loads(await ws.recv())
       await ws.close()
       if msg["response"] != None:
         return True
