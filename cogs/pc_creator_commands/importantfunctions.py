@@ -21,12 +21,14 @@ definitions = {
 USER_ID = 466664
 TIMEOUT = 10
 WORKING_CODE = "TEST00"  # change it to a new code later!
-USERAGENT = "BestHTTP 1.11.2"  # pcc2 uses it
+HTTP_USERAGENT = "UnityPlayer/2021.3.3f1 (UnityWebRequest/1.0, libcurl/7.80.0-DEV)" # pcc2 uses it too
+WS_USERAGENT = "BestHTTP 1.11.2"  # pcc2 uses it
 
 
 async def check_ws(url: str) -> bool:
   try:
-    async with connect(url, extra_headers={"User-Agent": USERAGENT}) as socket:
+    async with connect(url, extra_headers={"User-Agent":
+                                           WS_USERAGENT}) as socket:
       await (await socket.ping())
       await socket.close()
     return True
@@ -46,7 +48,7 @@ async def check_promocode(
         max_size=99999999999999999) as socket:
       async for msg in socket:
         try:
-          msg = loads(msg)
+          msg = orjson.loads(msg)
         except:
           continue
         if type(msg) != dict:
@@ -95,7 +97,7 @@ async def check_chat() -> bool:
   try:
     recvd = 0
     async with connect(CHAT_WS, extra_headers={"User-Agent":
-                                               USERAGENT}) as socket:
+                                               WS_USERAGENT}) as socket:
       await socket.send('{"method":"subscribe", "args":"PCC2.Main"}')
       async for msg in socket:
         recvd += 1
@@ -110,8 +112,8 @@ async def check_chat() -> bool:
 async def check_exchange() -> bool:
   try:
     async with connect(EXCHANGE_WS, extra_headers={"User-Agent":
-                                                   USERAGENT}) as socket:
-      msg = loads(await socket.recv())["response"]
+                                                   WS_USERAGENT}) as socket:
+      msg = orjson.loads(await socket.recv())["response"]
       await wait_for(socket.recv(), timeout=msg["interval"])
       await socket.close()
     return True
@@ -123,9 +125,9 @@ async def check_trading() -> bool:
   try:
     async with connect(TRADING_WS,
                        max_size=99999999999,
-                       extra_headers={"User-Agent": USERAGENT}) as ws:
+                       extra_headers={"User-Agent": WS_USERAGENT}) as ws:
       await ws.send(dumps({"method": "getTrader", "args": USER_ID}))
-      msg = loads(await ws.recv())
+      msg = orjson.loads(await ws.recv())
       await ws.close()
       if msg["response"] != None:
         return True
@@ -139,7 +141,7 @@ async def check_trading() -> bool:
 async def check_http(url: str) -> bool:
   try:
     async with ClientSession() as session:
-      result = await session.get(url, headers={"User-Agent": USERAGENT})
+      result = await session.get(url, headers={"User-Agent": HTTP_USERAGENT})
     return not str(result.status).startswith("5")
   except:
     return False
@@ -151,10 +153,9 @@ def format_msg(url: str, status: bool) -> str:
 
 async def checker_wrapper(coro):
   try:
-    status = await wait_for(coro, timeout=TIMEOUT)
+    return await wait_for(coro, timeout=TIMEOUT)
   except:
-    status = False
-  return status
+    return False
 
 
 async def check_all() -> str:
