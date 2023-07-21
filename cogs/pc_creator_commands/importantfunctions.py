@@ -3,6 +3,7 @@ from websockets import connect
 from asyncio import wait_for
 from orjson import loads, dumps as dump
 from discord import Embed
+
 dumps = lambda a:str(dump(a), "utf-8")
 PROMOCODE_DB = "wss://pc-creator-2-b499e-default-rtdb.firebaseio.com/.ws?ns=pc-creator-2-b499e-default-rtdb&v=5"
 CHAT_WS = "ws://83.229.84.175:8081/Chat"
