@@ -2,7 +2,7 @@ from aiohttp import ClientSession
 from websockets import connect
 from asyncio import wait_for
 from orjson import loads, dumps as dump
-
+from discord import Embed
 dumps = lambda a:str(dump(a), "utf-8")
 PROMOCODE_DB = "wss://pc-creator-2-b499e-default-rtdb.firebaseio.com/.ws?ns=pc-creator-2-b499e-default-rtdb&v=5"
 CHAT_WS = "ws://83.229.84.175:8081/Chat"
@@ -10,19 +10,12 @@ EXCHANGE_WS = "ws://83.229.84.175:8082/CurrencyRate"
 TRADING_WS = "ws://83.229.84.175:8082/TradingPlatform"
 FILE_STORAGE = "https://kamatera.creaty.me/storage/pc-creator-two/Localizations/production.json"
 SESSION_MANAGER = "ws://83.229.84.175:8082/SessionManager"
-definitions = {
-  FILE_STORAGE: "File Storage",
-  PROMOCODE_DB: "Promocode Validation",
-  CHAT_WS: "Ingame Chat",
-  EXCHANGE_WS: "Currency Exchange",
-  TRADING_WS: "Trading Platform",
-  SESSION_MANAGER: "Session Manager"
-}
 USER_ID = 466664
 TIMEOUT = 10
 WORKING_CODE = "TEST00"  # change it to a new code later!
-HTTP_USERAGENT = "UnityPlayer/2021.3.3f1 (UnityWebRequest/1.0, libcurl/7.80.0-DEV)" # pcc2 uses it too
+HTTP_USERAGENT = "UnityPlayer/2021.3.3f1 (UnityWebRequest/1.0, libcurl/7.80.0-DEV)"  # pcc2 uses it too
 WS_USERAGENT = "BestHTTP 1.11.2"  # pcc2 uses it
+LOADING = "<a:Loading:867450712887918632>"
 
 
 async def check_ws(url: str) -> bool:
@@ -147,25 +140,54 @@ async def check_http(url: str) -> bool:
     return False
 
 
-def format_msg(url: str, status: bool) -> str:
-  return f"{'✅' if status else '❌'} | {definitions[url]} is {'online' if status else 'down!'}\n"
+definitions = {
+  FILE_STORAGE: {
+    "name": "File Storage",
+    "check": lambda: check_http(FILE_STORAGE)
+  },
+  PROMOCODE_DB: {
+    "name": "Promocode Validation",
+    "check": check_promocode
+  },
+  CHAT_WS: {
+    "name": "Ingame Chat",
+    "check": check_chat
+  },
+  EXCHANGE_WS: {
+    "name": "Currency Exchange",
+    "check": check_exchange
+  },
+  TRADING_WS: {
+    "name": "Trading Platform",
+    "check": check_trading
+  },
+  SESSION_MANAGER: {
+    "name": "Session Manager",
+    "check": lambda: check_ws(SESSION_MANAGER)
+  }
+}
 
 
-async def checker_wrapper(coro):
+def format_msg(url: str, status: bool | str) -> str:
+  if status is True:
+    return f"✅ | {definitions[url]['name']} is online\n"
+  if status is False:
+    return f"❌ | {definitions[url]['name']} is down!\n"
+  if status == "loading":
+    return f"{LOADING} | Connecting to {definitions[url]['name']}...\n"
+
+
+async def checker_wrapper(coro) -> bool:
   try:
     return await wait_for(coro, timeout=TIMEOUT)
   except:
     return False
 
 
-async def check_all() -> str:
-  result = ""
-  result += format_msg(FILE_STORAGE, await
-                       checker_wrapper(check_http(FILE_STORAGE)))
-  result += format_msg(PROMOCODE_DB, await checker_wrapper(check_promocode()))
-  result += format_msg(EXCHANGE_WS, await checker_wrapper(check_exchange()))
-  result += format_msg(CHAT_WS, await checker_wrapper(check_chat()))
-  result += format_msg(TRADING_WS, await checker_wrapper(check_trading()))
-  result += format_msg(SESSION_MANAGER, await
-                       checker_wrapper(check_ws(SESSION_MANAGER)))
-  return result.strip()
+async def live_check(index: int, item: str, checks: list[str], response):
+  definition = definitions[item]
+  data = await checker_wrapper(definition["check"]())
+  checks[index] = format_msg(item, data)
+  await response.edit_original_message(
+    embed=Embed(title="Status", description=''.join(checks).strip()))
+  return
