@@ -2,7 +2,8 @@ import discord
 from discord.ext import commands
 import websockets
 import json
-from cogs.pc_creator_commands.importantfunctions import check_all
+from asyncio import create_task
+from cogs.pc_creator_commands.importantfunctions import format_msg, definitions, live_check
    
 
 async def record_pcc2(ctx): 
@@ -15,8 +16,10 @@ async def record_pcc2(ctx):
     await ctx.respond(embed=embed)   
 
 async def pcc2_status(ctx):
-   status = await check_all()
-   await ctx.respond(embed=discord.Embed(title="Status", description=f"{status}"))
+    checks = list(map(lambda item: format_msg(item, "loading"), definitions.keys()))
+    response = await ctx.respond(embed=discord.Embed(title="Status", description=''.join(checks).strip()))
+    for index, item in enumerate(definitions):
+        create_task(live_check(index, item, checks, response))
 
 async def pcc2_user(ctx, code):
     code = str(code)
