@@ -16,6 +16,26 @@ TIMEOUT = 10
 WORKING_CODE = "TEST00"  # change it to a new code later!
 HTTP_USERAGENT = "UnityPlayer/2021.3.3f1 (UnityWebRequest/1.0, libcurl/7.80.0-DEV)"  # pcc2 uses it too
 WS_USERAGENT = "BestHTTP 1.11.2"  # pcc2 uses it
+ITEM_DB = {
+  "PCCase.1105": '"Blue Panda" PC Case',
+  "PCCase.1133": '"Matrix" PC Case'
+}
+PUBLIC_PROMOCODE_LIST = [
+  "5MILLION",
+  "B4GF1X"
+]
+FIELD_NAMES = {
+  "ads": "No Ads",
+  "ads_ultimate": "No Ads + X2",
+  "subscribe": "VIP",
+  "btc": "Bitcoin",
+  "usd": "USD",
+  "dgc": "Dogecoin",
+  "eth": "Ethereum",
+  "gem": "Gems",
+  "cards": "Hacking Cards",
+  "ids": "Items"
+}
 LOADING = "<a:Loading:867450712887918632>"
 
 
@@ -30,14 +50,14 @@ async def check_ws(url: str) -> bool:
     return False
 
 
-async def check_promocode(
-) -> bool:  # this code isnt very good but i think it works
+async def _get_promocode(code: str):
+  code = code.upper()
   try:
     async with connect(
         "wss://pc-creator-2-b499e-default-rtdb.firebaseio.com/.ws?ns=pc-creator-2-b499e-default-rtdb&v=5",
         extra_headers={
           "User-Agent": "Firebase/5/20.1.0/30/Android",
-          "X-Firebase-AppCheck": "null"
+          "X-Firebase-AppCheck": "null",
         },
         max_size=99999999999999999) as socket:
       async for msg in socket:
@@ -68,7 +88,7 @@ async def check_promocode(
                 "a": "q",
                 "r": 1,
                 "b": {
-                  "p": "RestoreCodes/" + WORKING_CODE,
+                  "p": "RestoreCodes/" + code,
                   "h": ""
                 }
               }
@@ -76,13 +96,30 @@ async def check_promocode(
         elif msg["t"] == "d":
           msg = msg["d"]["b"]
           if msg.get("p") != None:
-            return True
+            return msg
           elif msg["d"] == {}:
-            print("please change WORKING_CODE as it likely expired!")
-            return False
+            return None
           await socket.close()
         else:
           continue
+  except:
+    return "err"
+
+
+async def get_promocode(code: str, retry: int = 3): # _get_promocode but with retries as the websocket sometimes fails with 1005
+  attempts = 0
+  while attempts < retry:
+    result = await _get_promocode(code)
+    if result != "err":
+      return result
+    attempts += 1
+  raise RecursionError
+
+
+async def check_promocode() -> bool:  # this code isnt very good but i think it works
+  try:
+    await get_promocode(WORKING_CODE)
+    return True
   except:
     return False
 
