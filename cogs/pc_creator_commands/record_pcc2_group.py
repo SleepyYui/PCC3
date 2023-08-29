@@ -3,7 +3,7 @@ from discord.ext import commands
 import websockets
 import json
 from asyncio import create_task
-from cogs.pc_creator_commands.importantfunctions import format_msg, definitions, live_check
+from cogs.pc_creator_commands.importantfunctions import format_msg, definitions, live_check, get_promocode, ITEM_DB, PROMOCODE_DB, FIELD_NAMES, PUBLIC_PROMOCODE_LIST
    
 
 async def record_pcc2(ctx): 
@@ -21,6 +21,39 @@ async def pcc2_status(ctx):
     for index, item in enumerate(definitions):
         create_task(live_check(index, item, checks, response))
 
+async def pcc2_promo(ctx, code):
+    if code:
+        code = await get_promocode(code)
+        if not code:
+            return await ctx.respond(embed=discord.Embed(title="Promocode not found!"))
+        embed = discord.Embed(title=code["p"][13:])
+        data = code["d"]
+        for item in data:
+            if item in FIELD_NAMES:
+                value = data[item]
+                if type(value) == dict:
+                    combined = []
+                    for thing in value:
+                        thing = value[thing]
+                        if thing != "":
+                            combined.append(ITEM_DB[thing]) 
+                    if len(combined) > 0:
+                        embed.add_field(name=FIELD_NAMES[item], value=", ".join(combined))
+                elif value:
+                    result = ""
+                    if type(value) == bool:
+                        result = "✅" if value else "❌"
+                    else:
+                        result = value
+                    embed.add_field(name=FIELD_NAMES[item], value=result)
+        return await ctx.respond(embed=embed)
+    else:
+        embed = discord.Embed(title="Promocodes")
+        embed.add_field(name="List of known promocodes", value="\n".join(PUBLIC_PROMOCODE_LIST), inline=False)
+        embed.add_field(name="❗️How to use promocodes", value='1. Go to the Shop (right side of the screen)\n2. Scroll to the right and press "Restore Purchases"\n3. Enter the promocode and click "Restore"', inline=False)
+        return await ctx.respond(embed=embed)
+
+
 async def pcc2_user(ctx, code):
     code = str(code)
     try:
@@ -37,15 +70,15 @@ async def pcc2_user(ctx, code):
                 embed = discord.Embed(title=user['userName'])
                 embed.add_field(name="ID", value=user['code'], inline=False)
                 embed.add_field(name="Items", value=len(inventory), inline=False)
-                embed.add_field(name="Cases", value=totals['PCCase'], inline=True)
-                embed.add_field(name="Motherboards", value=totals['Motherboard'], inline=True)
-                embed.add_field(name="CPUs", value=totals['CPU'], inline=True)
-                embed.add_field(name="Coolers", value=totals['Cooler'], inline=True)
-                embed.add_field(name="RAMs", value=totals['RAM'], inline=True)
-                embed.add_field(name="Videocards", value=totals['Videocard'], inline=True)
+                embed.add_field(name="Cases", value=totals['PCCase'])
+                embed.add_field(name="Motherboards", value=totals['Motherboard'])
+                embed.add_field(name="CPUs", value=totals['CPU'])
+                embed.add_field(name="Coolers", value=totals['Cooler'])
+                embed.add_field(name="RAMs", value=totals['RAM'])
+                embed.add_field(name="Videocards", value=totals['Videocard'])
                 embed.add_field(name="Drives", value=totals['Drive'], inline=True)
-                embed.add_field(name="Power Supplies", value=totals['PowerSupply'], inline=True)
-                embed.add_field(name="Thermal Grease", value=totals['ThermalGrease'], inline=True)
+                embed.add_field(name="Power Supplies", value=totals['PowerSupply'])
+                embed.add_field(name="Thermal Grease", value=totals['ThermalGrease'])
                 await ctx.respond(embed=embed)
             else:
                 await ctx.respond(embed=discord.Embed(title="User Not Found", description=f"User with the ID {code} was not found!"))
