@@ -54,7 +54,7 @@ async def pcc2_promo(ctx, code):
         return await ctx.respond(embed=embed)
     else:
         embed = discord.Embed(title="Promocodes")
-        embed.add_field(name="List of known promocodes", value="\n".join(PUBLIC_PROMOCODE_LIST), inline=False)
+        embed.add_field(name="List of known promocodes", value="- " + "\n- ".join(PUBLIC_PROMOCODE_LIST), inline=False)
         embed.add_field(name="❗️How to use promocodes", value='1. Go to the Shop (right side of the screen)\n2. Scroll to the right and press "Restore Purchases"\n3. Enter the promocode and click "Restore"', inline=False)
         return await ctx.respond(embed=embed)
 
@@ -110,3 +110,4 @@ async def pcc2_user(ctx, code):
             await ws.close()
     except:
         await ctx.respond(embed=discord.Embed(title="Failed To Get Data", description="The bot has failed to succesfully receive user data, most likely, the trading servers are offline."))
+
