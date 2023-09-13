@@ -3,7 +3,9 @@ from discord.ext import commands
 import websockets
 import json
 from asyncio import create_task
-from cogs.pc_creator_commands.importantfunctions import format_msg, definitions, live_check, get_promocode, ITEM_DB, PROMOCODE_DB, FIELD_NAMES, PUBLIC_PROMOCODE_LIST
+from cogs.pc_creator_commands.importantfunctions import (format_msg, definitions, live_check, get_promocode, ITEM_DB, PROMOCODE_DB, 
+                                                         FIELD_NAMES, PUBLIC_PROMOCODE_LIST, WS_HEADERS, get_power_lb, 
+                                                         CURRENCIES, get_crypto_lb, LEADERBOARD_TITLES) # the import is getting bigger and bigger
    
 
 async def record_pcc2(ctx): 
@@ -23,7 +25,10 @@ async def pcc2_status(ctx):
 
 async def pcc2_promo(ctx, code):
     if code:
-        code = await get_promocode(code)
+        try:
+            code = await get_promocode(code)
+        except:
+            return await ctx.respond(embed=discord.Embed(title="Failed to retrieve promocode data")) 
         if not code:
             return await ctx.respond(embed=discord.Embed(title="Promocode not found!"))
         embed = discord.Embed(title=code["p"][13:])
@@ -54,10 +59,30 @@ async def pcc2_promo(ctx, code):
         return await ctx.respond(embed=embed)
 
 
+async def pcc2_leaderboard(ctx, category):
+    category = category.strip()
+    try:
+        if category == "PC Score":
+            result = await get_power_lb()
+        elif category in CURRENCIES:
+            result = await get_crypto_lb(CURRENCIES[category])
+        else:
+            raise NameError
+    except:
+        return await ctx.respond(embed=discord.Embed(title="Something went wrong while retrieving leaderboard data"))
+    embed = discord.Embed(title=category + " Leaderboard")
+    for place in result:
+        position = place['UserPosition']
+        value = place['Value']
+        value = round(value, 3) if type(value) == float else value
+        embed.add_field(name=f"{LEADERBOARD_TITLES.get(position, str(position) + '.')} {discord.utils.escape_markdown(place['NickName'])}", value=f"{value} {category}", inline=False)
+    return await ctx.respond(embed=embed)
+
+
 async def pcc2_user(ctx, code):
     code = str(code)
     try:
-        async with websockets.connect("ws://83.229.84.175:8082/TradingPlatform", max_size=99999999999) as ws:
+        async with websockets.connect("ws://83.229.84.175:8082/TradingPlatform", max_size=99999999999, extra_headers=WS_HEADERS) as ws:
             await ws.send('{"method":"getTrader","args":id}'.replace("id", code, 1))
             msg = json.loads(await ws.recv())
             if msg["response"] != None:
