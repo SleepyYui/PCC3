@@ -11,17 +11,17 @@ EXCHANGE_WS = "ws://83.229.84.175:8082/CurrencyRate"
 TRADING_WS = "ws://83.229.84.175:8082/TradingPlatform"
 FILE_STORAGE = "https://kamatera.creaty.me/storage/pc-creator-two/Localizations/production.json"
 SESSION_MANAGER = "ws://83.229.84.175:8082/SessionManager"
+LEADERBOARD = "https://kamatera.creaty.me/leaderboard"
 USER_ID = 466664
 TIMEOUT = 10
 WORKING_CODE = "B4GF1X"  # change it to a new code later!
-HTTP_USERAGENT = "UnityPlayer/2021.3.3f1 (UnityWebRequest/1.0, libcurl/7.80.0-DEV)"  # pcc2 uses it too
-WS_USERAGENT = "BestHTTP 1.11.2"  # pcc2 uses it
+HTTP_HEADERS = {"User-Agent": "UnityPlayer/2021.3.3f1 (UnityWebRequest/1.0, libcurl/7.80.0-DEV)", "X-Unity-Version": "2021.3.3f1"}
+WS_HEADERS = {"User-Agent": "BestHTTP 1.11.2"}  # pcc2 uses it
 ITEM_DB = {
   "PCCase.1105": '"Blue Panda" PC Case',
   "PCCase.1133": '"Matrix" PC Case'
 }
 PUBLIC_PROMOCODE_LIST = [
-  "5MILLION",
   "B4GF1X"
 ]
 FIELD_NAMES = {
@@ -36,13 +36,22 @@ FIELD_NAMES = {
   "cards": "Hacking Cards",
   "ids": "Items"
 }
+CURRENCIES = {
+  "Bitcoin": 1,
+  "Ethereum": 2,
+  "Dogecoin": 3
+}
+LEADERBOARD_TITLES = {
+  1: "🥇",
+  2: "🥈",
+  3: "🥉"
+}
 LOADING = "<a:Loading:867450712887918632>"
 
 
 async def check_ws(url: str) -> bool:
   try:
-    async with connect(url, extra_headers={"User-Agent":
-                                           WS_USERAGENT}) as socket:
+    async with connect(url, extra_headers=WS_HEADERS) as socket:
       await (await socket.ping())
       await socket.close()
     return True
@@ -127,8 +136,7 @@ async def check_promocode() -> bool:  # this code isnt very good but i think it 
 async def check_chat() -> bool:
   try:
     recvd = 0
-    async with connect(CHAT_WS, extra_headers={"User-Agent":
-                                               WS_USERAGENT}) as socket:
+    async with connect(CHAT_WS, extra_headers=WS_HEADERS) as socket:
       await socket.send('{"method":"subscribe", "args":"PCC2.Main"}')
       async for msg in socket:
         recvd += 1
@@ -142,8 +150,7 @@ async def check_chat() -> bool:
 
 async def check_exchange() -> bool:
   try:
-    async with connect(EXCHANGE_WS, extra_headers={"User-Agent":
-                                                   WS_USERAGENT}) as socket:
+    async with connect(EXCHANGE_WS, extra_headers=WS_HEADERS) as socket:
       msg = loads(await socket.recv())["response"]
       await wait_for(socket.recv(), timeout=msg["interval"])
       await socket.close()
@@ -156,7 +163,7 @@ async def check_trading() -> bool:
   try:
     async with connect(TRADING_WS,
                        max_size=99999999999,
-                       extra_headers={"User-Agent": WS_USERAGENT}) as ws:
+                       extra_headers=WS_HEADERS) as ws:
       await ws.send(dumps({"method": "getTrader", "args": USER_ID}))
       msg = loads(await ws.recv())
       await ws.close()
@@ -172,11 +179,42 @@ async def check_trading() -> bool:
 async def check_http(url: str) -> bool:
   try:
     async with ClientSession() as session:
-      result = await session.get(url, headers={"User-Agent": HTTP_USERAGENT})
+      result = await session.get(url, headers=HTTP_HEADERS)
     return not str(result.status).startswith("5")
   except:
     return False
 
+
+async def get_power_lb(count: int = 10) -> dict | list | None:
+  async with ClientSession() as session:
+    result = await session.post(LEADERBOARD, headers=HTTP_HEADERS, json={
+      "method": "GetPowerLeaderboard",
+      "id": -1, # your id
+      "count": count,
+      "page": 0
+    })
+    return await result.json(loads=loads)
+
+
+async def get_crypto_lb(currency: int, count: int = 10) -> dict | list | None:
+  async with ClientSession() as session:
+    result = await session.post(LEADERBOARD, headers=HTTP_HEADERS, json={
+      "method": "GetTopEntries",
+      "currency": currency,
+      "id": -1, # your id,
+      "page": 0,
+      "count": count
+    })
+    result = await result.json(loads=loads)
+    return result["top"]
+
+
+async def check_lb() -> bool:
+  try:
+    result = await get_power_lb(count=10)
+    return len(result) == 10
+  except:
+    return False
 
 definitions = {
   FILE_STORAGE: {
@@ -202,6 +240,10 @@ definitions = {
   SESSION_MANAGER: {
     "name": "Session Manager",
     "check": lambda: check_ws(SESSION_MANAGER)
+  },
+  LEADERBOARD: {
+    "name": "Leaderboard",
+    "check": check_lb
   }
 }
 
