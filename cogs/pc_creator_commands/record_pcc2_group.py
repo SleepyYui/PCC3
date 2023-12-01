@@ -23,23 +23,21 @@ async def pcc2_status(ctx):
     for index, item in enumerate(definitions):
         create_task(live_check(index, item, checks, response))
 
-async def pcc2_promo(ctx, code):
-    if code:
+async def pcc2_promo(ctx, code_name):
+    if code_name:
         try:
-            code = await get_promocode(code)
+            code = await get_promocode(code_name)
         except:
-            return await ctx.respond(embed=discord.Embed(title="Failed to retrieve promocode data")) 
+            return await ctx.respond(embed=discord.Embed(title="Failed to retrieve promocode code")) 
         if not code:
             return await ctx.respond(embed=discord.Embed(title="Promocode not found!"))
-        embed = discord.Embed(title=code["p"][13:])
-        data = code["d"]
-        for item in data:
+        embed = discord.Embed(title=code_name)
+        for item in code:
             if item in FIELD_NAMES:
-                value = data[item]
-                if type(value) == dict:
+                value = code[item]
+                if type(value) == list:
                     combined = []
                     for thing in value:
-                        thing = value[thing]
                         if thing != "":
                             combined.append(ITEM_DB[thing]) 
                     if len(combined) > 0:
@@ -109,5 +107,4 @@ async def pcc2_user(ctx, code):
                 await ctx.respond(embed=discord.Embed(title="User Not Found", description=f"User with the ID {code} was not found!"))
             await ws.close()
     except:
-        await ctx.respond(embed=discord.Embed(title="Failed To Get Data", description="The bot has failed to succesfully receive user data, most likely, the trading servers are offline."))
-
+        await ctx.respond(embed=discord.Embed(title="Failed To Get code", description="The bot has failed to succesfully receive user data, most likely, the trading servers are offline."))
