@@ -29,7 +29,7 @@ class pcc2_group(commands.Cog):
 
     @pcc2.command(name="promocode", description="Get info on promocode(s)")
     async def promocode(self, ctx, code: Option(name="code", description="Promocode", required=False)):
-        await pcc2_promo(ctx, code)
+        await pcc2_promo(ctx, code.upper())
     
     @pcc2.command(name="leaderboard", description="View ingame leaderboards")
     async def leaderboard(self, ctx, category: Option(name="category", description="Leaderboard category", choices=["PC Score", "Bitcoin", "Ethereum", "Dogecoin"])):
