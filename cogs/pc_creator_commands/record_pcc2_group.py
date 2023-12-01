@@ -107,4 +107,4 @@ async def pcc2_user(ctx, code):
                 await ctx.respond(embed=discord.Embed(title="User Not Found", description=f"User with the ID {code} was not found!"))
             await ws.close()
     except:
-        await ctx.respond(embed=discord.Embed(title="Failed To Get code", description="The bot has failed to succesfully receive user data, most likely, the trading servers are offline."))
+        await ctx.respond(embed=discord.Embed(title="Failed To Get Data", description="The bot has failed to succesfully receive user data, most likely, the trading servers are offline."))
