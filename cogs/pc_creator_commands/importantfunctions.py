@@ -5,7 +5,7 @@ from orjson import loads, dumps as dump
 from discord import Embed
 
 dumps = lambda a:str(dump(a), "utf-8")
-PROMOCODE_DB = "wss://pc-creator-2-b499e-default-rtdb.firebaseio.com/.ws?ns=pc-creator-2-b499e-default-rtdb&v=5"
+PROMOCODE_DB = "https://pc-creator-2-b499e-default-rtdb.firebaseio.com/RestoreCodes/"
 CHAT_WS = "ws://83.229.84.175:8081/Chat"
 EXCHANGE_WS = "ws://83.229.84.175:8082/CurrencyRate"
 TRADING_WS = "ws://83.229.84.175:8082/TradingPlatform"
@@ -14,7 +14,7 @@ SESSION_MANAGER = "ws://83.229.84.175:8082/SessionManager"
 LEADERBOARD = "https://kamatera.creaty.me/leaderboard"
 USER_ID = 466664
 TIMEOUT = 10
-WORKING_CODE = "B4GF1X"  # change it to a new code later!
+WORKING_CODE = "FFSCJY"  # change it to a new code later!
 HTTP_HEADERS = {"User-Agent": "UnityPlayer/2021.3.3f1 (UnityWebRequest/1.0, libcurl/7.80.0-DEV)", "X-Unity-Version": "2021.3.3f1"}
 WS_HEADERS = {"User-Agent": "BestHTTP 1.11.2"}  # pcc2 uses it
 ITEM_DB = {
@@ -22,7 +22,8 @@ ITEM_DB = {
   "PCCase.1133": '"Matrix" PC Case'
 }
 PUBLIC_PROMOCODE_LIST = [
-  "B4GF1X"
+  "B4GF1X",
+  "FFSCJY"
 ]
 FIELD_NAMES = {
   "ads": "No Ads",
@@ -59,70 +60,10 @@ async def check_ws(url: str) -> bool:
     return False
 
 
-async def _get_promocode(code: str):
-  code = code.upper()
-  try:
-    async with connect(
-        "wss://pc-creator-2-b499e-default-rtdb.firebaseio.com/.ws?ns=pc-creator-2-b499e-default-rtdb&v=5",
-        extra_headers={
-          "User-Agent": "Firebase/5/20.1.0/30/Android",
-          "X-Firebase-AppCheck": "null",
-        },
-        max_size=99999999999999999) as socket:
-      async for msg in socket:
-        try:
-          msg = loads(msg)
-        except:
-          continue
-        if type(msg) != dict:
-          continue
-        elif msg["t"] == "c":
-          await socket.send(
-            dumps({
-              "t": "d",
-              "d": {
-                "a": "s",
-                "r": 0,
-                "b": {
-                  "c": {
-                    "sdk.android.20-1-0": 1
-                  }
-                }
-              }
-            }))
-          await socket.send(
-            dumps({
-              "t": "d",
-              "d": {
-                "a": "q",
-                "r": 1,
-                "b": {
-                  "p": "RestoreCodes/" + code,
-                  "h": ""
-                }
-              }
-            }))
-        elif msg["t"] == "d":
-          msg = msg["d"]["b"]
-          if msg.get("p") != None:
-            return msg
-          elif msg["d"] == {}:
-            return None
-          await socket.close()
-        else:
-          continue
-  except:
-    return "err"
-
-
-async def get_promocode(code: str, retry: int = 3): # _get_promocode but with retries as the websocket sometimes fails with 1005
-  attempts = 0
-  while attempts < retry:
-    result = await _get_promocode(code)
-    if result != "err":
-      return result
-    attempts += 1
-  raise RecursionError
+async def get_promocode(code: str) -> dict | list | None:
+  async with ClientSession() as session:
+    resp = await session.get(PROMOCODE_DB + code + ".json")
+    return await resp.json(loads=loads)
 
 
 async def check_promocode() -> bool:  # this code isnt very good but i think it works
