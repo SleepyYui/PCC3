@@ -318,7 +318,7 @@ class levelroles(commands.Cog):
 
 
 
-        image = Image.new("RGB", (4000, 2000), (49, 51, 56))
+        image = Image.new("RGB", (4000, 2000), (38, 39, 50, 255))
         draw = ImageDraw.Draw(image)
         draw.fontmode = "L"
         myFont = ImageFont.truetype('ARIAL.TTF', 35)
@@ -447,7 +447,7 @@ class levelroles(commands.Cog):
 
 
 
-        image = Image.new("RGB", (4000, 2000), (49, 51, 56))
+        image = Image.new("RGB", (4000, 2000), (38, 39, 50, 255))
         draw = ImageDraw.Draw(image)
         draw.fontmode = "L"
         myFont = ImageFont.truetype('ARIAL.TTF', 35)
