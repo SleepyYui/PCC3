@@ -12,6 +12,7 @@ import asyncio
 from discord.ext import tasks
 from discord import Option
 from discord.commands import permissions
+import random
 
 
 class levelroles(commands.Cog):
@@ -263,6 +264,9 @@ class levelroles(commands.Cog):
             await ctx.send("F*** you")
 
     def lrs_stats(self):
+
+        output_path = "dailymsgs.png"
+
         with open ("json_files/counter-file.txt", "r") as d_m:
             data = d_m.readlines()
             d_m.close
@@ -279,72 +283,119 @@ class levelroles(commands.Cog):
         data = [string for string in data if string != ""]
 
         data_2 = list(int(x) for x in data)
-        hundreds = round(max(data_2)/100 + .5)
-        if hundreds == 0:
-            hundreds = 1
 
-        divier_5 = False
-        if hundreds >= 10:
-            while divier_5 == False:
-                if hundreds % 5 == 0:
-                    divier_5 = True
-                    hundreds_1 = int(hundreds / 5)
-                else:
-                    hundreds += 1
+        lines = round(max(data_2)/1000)
+        #print(lines)
+        if lines > 2:
+            lines_2 = 1000
+
+        if lines == 2:
+            lines_2 = 500
+            lines = 4
+
+        if lines == 1:
+            if int(round(max(data_2)/100)) >= 12 <= 15:
+                lines_2 = 500
+                lines = 3
+            else:
+                lines_2 = 250
+                lines = 4
+
+        max_1 = int(round(max(data_2)/10))
+        if lines == 0:
+            if max_1 <= 10:
+                lines_2 = 25
+                lines = 4
+            if max_1 > 10 <=20:
+                lines_2 = 50
+                lines = 4
+            if max_1 > 20 <= 30:
+                lines_2 = 100
+                lines = 3
+            if max_1 > 30:
+                lines_2 = 100
+                lines = 5
+
+
+
+        image = Image.new("RGB", (4000, 2000), (49, 51, 56))
+        draw = ImageDraw.Draw(image)
+        draw.fontmode = "L"
+        myFont = ImageFont.truetype('ARIAL.TTF', 35)
+
+        x1 = 140
+        lines_distance = int(1500/lines) #auf 1200 ändern um oben platz zu haben
+        y = int(1900-lines_distance)
+
         
-        x = 1
-        y = 500/hundreds_1
-        line = Image.open("lrs_stats_tabelle.png")
-        draw = ImageDraw.Draw(line)
-        for i in range(hundreds):
-            y_1 = 500-y*x+2
-            draw.line((4, y_1, 724, y_1), fill=(45, 48, 52), width=2)
-            x += 1
-        draw.line((4, 502, 724, 502), fill=(45, 48, 52), width=2)
-        x_punkte = 0
-        punktn = int(0)
-        for i in range(60):
-            y_multi = data[punktn]
-            y_punkte = int(500/hundreds/100*int(y_multi))
-            y_punkte = 500-y_punkte
-            xy = [(716-x_punkte, y_punkte-1),(724-x_punkte, y_punkte+7)]
-            draw.ellipse(tuple(xy),fill=(88, 101, 242), outline=(88, 101, 242))
-            x_punkte += 12
-            punktn += 1
-        punktn = int(0)
-        x_punkte = 5
-        punktn = int(0)
-        for i in range(59):
-            y_multi = data[punktn]
-            y_punkte_1 = int(500-(500/hundreds/100*int(y_multi)))
-            punktn += 1
-            y_multi = data[punktn]
-            y_punkte_2 = int(500-(500/hundreds/100*int(y_multi)))
-            xy = [(714-x_punkte, y_punkte_2+3),(724-x_punkte, y_punkte_1+3)]
-            draw.line(xy, fill=(88, 101, 242), width=3)
-            x_punkte += 12
-        lrs_picture = Image.open("lrs_stats_fertig.png")
-        lrs_picture.paste(line, (5, 46))
-        lrs_picture_text = ImageDraw.Draw(lrs_picture)
-        lrs_picture_text.fontmode = "1"
-        myFont = ImageFont.truetype('calibri.ttf', 20)
-        x = 0
-        y = 500/hundreds
-        text = hundreds_1
-        for i in range(text):
-            y_1 = y*x+40
-            if divier_5 == False:
-                lrs_picture_text.text((731, y_1), f"{(hundreds-x)*100} msgs/day",font=myFont, fill=(255, 255, 255))
-                x += 1
-            elif divier_5 == True:
-                hundreds_2 = hundreds
-                if (hundreds_2-x)*100 % 1000 == 0:
-                    lrs_picture_text.text((731, y_1), f"{(hundreds_2-x)*100} msgs/day",font=myFont, fill=(255, 255, 255))
-                x += 5
-        lrs_picture_text.text((731, 540), "0 msgs/day",font=myFont, fill=(255, 255, 255))
-        lrs_picture.save("dailymsgs.png")
+        for n in range(1, lines+1):
+            draw.line((4000, y, 0, y), fill=(244,249,255), width=2)
+            draw.text((10, y-50), f"{n*lines_2} msgs",font=myFont, fill=(244,249,255))
+            y = y-lines_distance
+
+        image.save(output_path)
+
+
+        image = Image.open("dailymsgs.png")
+        draw = ImageDraw.Draw(image)
+
+        for i in range(1, 61):
+
+            maximum = lines*lines_2
+            number = data_2[i-1]
+            number_2 = float(number/maximum)
+            number_3 = int(round(1500*number_2)) #auch 1200 hier
+            
+            dark_colour = random.randint(int(number_3/10), int(number_3/100*40))
+            medium_colour = random.randint(int(number_3/100*20), int(number_3/100*40))
+            light_colour = number_3-(dark_colour+medium_colour)
+    
+            x1 = x1 + 60
+            x2 = x1 + 40
+
+            draw.rectangle((x2, 1900, x1, 1900-dark_colour), fill=(20,66,49))
+            draw.rectangle((x2, 1900-dark_colour, x1, 1900-dark_colour-medium_colour), fill=(34,152,108))
+            draw.rectangle((x2, 1900-dark_colour-medium_colour, x1, 1900-dark_colour-medium_colour-light_colour), fill=(46,206,150)) 
+
+        image.save(output_path)
+
+
+        image = Image.open("dailymsgs.png.png")
+        draw = ImageDraw.Draw(image)
+
+        today = date.today()
+        date_today = today.strftime("%b %d")
+        days_delta = 15
+        draw.line((3760, 1900, 3760, 1930), fill=(244,249,255), width=2)
+        date_lines_x = 3760
+        draw.text((3700, 1935), f"{date_today}",font=myFont, fill=(244,249,255))
+
+
+        for n in range(1,5):
+            date_lines_x = date_lines_x - 15*60
+            if date_lines_x == 160:
+                date_lines_x = date_lines_x + 60
+                days_delta = days_delta - 1
+            draw.line((date_lines_x, 1900, date_lines_x, 1930), fill=(244,249,255), width=2)
+            delta = today - timedelta(days = days_delta)
+            delta_format = delta.strftime("%b %d")
+            draw.text((date_lines_x-60, 1935), f"{delta_format}",font=myFont, fill=(244,249,255))
+            days_delta = days_delta + 15
+            
+
+        draw.line((4000, 1900, 0, 1900), fill=(244,249,255), width=2)
+
+
+        
+
+        image.save(output_path)
+    
+    
+
 
     async def awaitable_lrs_stats(self):
+        output_path = "dailymsgs.png"
+
         with open ("json_files/counter-file.txt", "r") as d_m:
             data = d_m.readlines()
             d_m.close
@@ -361,70 +412,119 @@ class levelroles(commands.Cog):
         data = [string for string in data if string != ""]
 
         data_2 = list(int(x) for x in data)
-        hundreds = round(max(data_2)/100 + .5)
-        if hundreds == 0:
-            hundreds = 1
 
-        divier_5 = False
-        if hundreds >= 10:
-            while divier_5 == False:
-                if hundreds % 5 == 0:
-                    divier_5 = True
-                    hundreds_1 = int(hundreds / 5)
-                else:
-                    hundreds += 1
+        lines = round(max(data_2)/1000)
+        #print(lines)
+        if lines > 2:
+            lines_2 = 1000
+
+        if lines == 2:
+            lines_2 = 500
+            lines = 4
+
+        if lines == 1:
+            if int(round(max(data_2)/100)) >= 12 <= 15:
+                lines_2 = 500
+                lines = 3
+            else:
+                lines_2 = 250
+                lines = 4
+
+        max_1 = int(round(max(data_2)/10))
+        if lines == 0:
+            if max_1 <= 10:
+                lines_2 = 25
+                lines = 4
+            if max_1 > 10 <=20:
+                lines_2 = 50
+                lines = 4
+            if max_1 > 20 <= 30:
+                lines_2 = 100
+                lines = 3
+            if max_1 > 30:
+                lines_2 = 100
+                lines = 5
+
+
+
+        image = Image.new("RGB", (4000, 2000), (49, 51, 56))
+        draw = ImageDraw.Draw(image)
+        draw.fontmode = "L"
+        myFont = ImageFont.truetype('ARIAL.TTF', 35)
+
+        x1 = 140
+        lines_distance = int(1500/lines) #auf 1200 ändern um oben platz zu haben
+        y = int(1900-lines_distance)
+
         
-        x = 1
-        y = 500/hundreds_1
-        line = Image.open("lrs_stats_tabelle.png")
-        draw = ImageDraw.Draw(line)
-        for i in range(hundreds):
-            y_1 = 500-y*x+2
-            draw.line((4, y_1, 724, y_1), fill=(45, 48, 52), width=2)
-            x += 1
-        draw.line((4, 502, 724, 502), fill=(45, 48, 52), width=2)
-        x_punkte = 0
-        punktn = int(0)
-        for i in range(60):
-            y_multi = data[punktn]
-            y_punkte = int(500/hundreds/100*int(y_multi))
-            y_punkte = 500-y_punkte
-            xy = [(716-x_punkte, y_punkte-1),(724-x_punkte, y_punkte+7)]
-            draw.ellipse(tuple(xy),fill=(88, 101, 242), outline=(88, 101, 242))
-            x_punkte += 12
-            punktn += 1
-        punktn = int(0)
-        x_punkte = 5
-        punktn = int(0)
-        for i in range(59):
-            y_multi = data[punktn]
-            y_punkte_1 = int(500-(500/hundreds/100*int(y_multi)))
-            punktn += 1
-            y_multi = data[punktn]
-            y_punkte_2 = int(500-(500/hundreds/100*int(y_multi)))
-            xy = [(714-x_punkte, y_punkte_2+3),(724-x_punkte, y_punkte_1+3)]
-            draw.line(xy, fill=(88, 101, 242), width=3)
-            x_punkte += 12
-        lrs_picture = Image.open("lrs_stats_fertig.png")
-        lrs_picture.paste(line, (5, 46))
-        lrs_picture_text = ImageDraw.Draw(lrs_picture)
-        lrs_picture_text.fontmode = "1"
-        myFont = ImageFont.truetype('calibri.ttf', 20)
-        x = 0
-        y = 500/hundreds
-        text = hundreds_1
-        for i in range(text):
-            y_1 = y*x+40
-            if divier_5 == False:
-                lrs_picture_text.text((731, y_1), f"{(hundreds-x)*100} msgs/day",font=myFont, fill=(255, 255, 255))
-                x += 1
-            elif divier_5 == True:
-                hundreds_2 = hundreds
-                if (hundreds_2-x)*100 % 1000 == 0:
-                    lrs_picture_text.text((731, y_1), f"{(hundreds_2-x)*100} msgs/day",font=myFont, fill=(255, 255, 255))
-                x += 5
-        lrs_picture_text.text((731, 540), "0 msgs/day",font=myFont, fill=(255, 255, 255))
-        lrs_picture.save("dailymsgs.png")
+        for n in range(1, lines+1):
+            draw.line((4000, y, 0, y), fill=(244,249,255), width=2)
+            draw.text((10, y-50), f"{n*lines_2} msgs",font=myFont, fill=(244,249,255))
+            y = y-lines_distance
+
+        image.save(output_path)
+
+
+        image = Image.open("dailymsgs.png")
+        draw = ImageDraw.Draw(image)
+
+        for i in range(1, 61):
+
+            maximum = lines*lines_2
+            number = data_2[i-1]
+            number_2 = float(number/maximum)
+            number_3 = int(round(1500*number_2)) #auch 1200 hier
+            
+            dark_colour = random.randint(int(number_3/10), int(number_3/100*40))
+            medium_colour = random.randint(int(number_3/100*20), int(number_3/100*40))
+            light_colour = number_3-(dark_colour+medium_colour)
+    
+            x1 = x1 + 60
+            x2 = x1 + 40
+
+            draw.rectangle((x2, 1900, x1, 1900-dark_colour), fill=(20,66,49))
+            draw.rectangle((x2, 1900-dark_colour, x1, 1900-dark_colour-medium_colour), fill=(34,152,108))
+            draw.rectangle((x2, 1900-dark_colour-medium_colour, x1, 1900-dark_colour-medium_colour-light_colour), fill=(46,206,150)) 
+
+        image.save(output_path)
+
+
+        image = Image.open("dailymsgs.png.png")
+        draw = ImageDraw.Draw(image)
+
+        today = date.today()
+        date_today = today.strftime("%b %d")
+        days_delta = 15
+        draw.line((3760, 1900, 3760, 1930), fill=(244,249,255), width=2)
+        date_lines_x = 3760
+        draw.text((3700, 1935), f"{date_today}",font=myFont, fill=(244,249,255))
+
+
+        for n in range(1,5):
+            date_lines_x = date_lines_x - 15*60
+            if date_lines_x == 160:
+                date_lines_x = date_lines_x + 60
+                days_delta = days_delta - 1
+            draw.line((date_lines_x, 1900, date_lines_x, 1930), fill=(244,249,255), width=2)
+            delta = today - timedelta(days = days_delta)
+            delta_format = delta.strftime("%b %d")
+            draw.text((date_lines_x-60, 1935), f"{delta_format}",font=myFont, fill=(244,249,255))
+            days_delta = days_delta + 15
+            
+
+        draw.line((4000, 1900, 0, 1900), fill=(244,249,255), width=2)
+
+
+        
+
+        image.save(output_path)
+  
+    
+
+        
+
+def setup(client):
+    client.add_cog(levelroles(client))
   
     
 
