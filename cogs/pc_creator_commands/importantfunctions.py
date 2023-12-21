@@ -49,6 +49,20 @@ LEADERBOARD_TITLES = {
 }
 LOADING = "<a:Loading:867450712887918632>"
 
+ONLINE_USERS = "0"
+
+async def check_session_manager() -> bool:
+  global ONLINE_USERS
+  try:
+    async with connect(SESSION_MANAGER, extra_headers=WS_HEADERS) as socket:
+      await socket.send(dumps({"method": "subscribe"}))
+      async for msg in socket:
+        msg = loads(msg)
+        ONLINE_USERS = str(msg["response"]["sessionCount"])
+        await socket.close()
+    return True
+  except:
+    return False
 
 async def check_ws(url: str) -> bool:
   try:
@@ -66,7 +80,7 @@ async def get_promocode(code: str) -> dict | list | None:
     return await resp.json(loads=loads)
 
 
-async def check_promocode() -> bool:  # this code isnt very good but i think it works
+async def check_promocode() -> bool:
   try:
     await get_promocode(WORKING_CODE)
     return True
@@ -178,20 +192,23 @@ definitions = {
     "name": "Trading Platform",
     "check": check_trading
   },
-  SESSION_MANAGER: {
-    "name": "Session Manager",
-    "check": lambda: check_ws(SESSION_MANAGER)
-  },
   LEADERBOARD: {
     "name": "Leaderboard",
     "check": check_lb
+  },
+  SESSION_MANAGER: {
+    "name": "Session Manager",
+    "check": check_session_manager
   }
 }
 
 
 def format_msg(url: str, status: bool | str) -> str:
   if status is True:
-    return f"✅ | {definitions[url]['name']} is online\n"
+    data = f"✅ | {definitions[url]['name']} is online\n"
+    if url == SESSION_MANAGER:
+      data += f"\n{ONLINE_USERS} users online"
+    return data
   if status is False:
     return f"❌ | {definitions[url]['name']} is down!\n"
   if status == "loading":
