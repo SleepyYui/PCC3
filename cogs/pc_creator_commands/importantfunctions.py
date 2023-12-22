@@ -51,7 +51,7 @@ LOADING = "<a:Loading:867450712887918632>"
 
 ONLINE_USERS = "0"
 
-async def check_session_manager() -> bool:
+async def check_session_manager():
   global ONLINE_USERS
   try:
     async with connect(SESSION_MANAGER, extra_headers=WS_HEADERS) as socket:
@@ -64,7 +64,7 @@ async def check_session_manager() -> bool:
   except:
     return False
 
-async def check_ws(url: str) -> bool:
+async def check_ws(url):
   try:
     async with connect(url, extra_headers=WS_HEADERS) as socket:
       await (await socket.ping())
@@ -74,7 +74,7 @@ async def check_ws(url: str) -> bool:
     return False
 
 
-async def get_promocode(code: str) -> dict | list | None:
+async def get_promocode(code):
   async with ClientSession() as session:
     resp = await session.get(PROMOCODE_DB + code + ".json")
     return await resp.json(loads=loads)
@@ -88,7 +88,7 @@ async def check_promocode() -> bool:
     return False
 
 
-async def check_chat() -> bool:
+async def check_chat():
   try:
     recvd = 0
     async with connect(CHAT_WS, extra_headers=WS_HEADERS) as socket:
@@ -103,7 +103,7 @@ async def check_chat() -> bool:
     return False
 
 
-async def check_exchange() -> bool:
+async def check_exchange():
   try:
     async with connect(EXCHANGE_WS, extra_headers=WS_HEADERS) as socket:
       msg = loads(await socket.recv())["response"]
@@ -114,7 +114,7 @@ async def check_exchange() -> bool:
     return False
 
 
-async def check_trading() -> bool:
+async def check_trading():
   try:
     async with connect(TRADING_WS,
                        max_size=99999999999,
@@ -131,7 +131,7 @@ async def check_trading() -> bool:
     return False
 
 
-async def check_http(url: str) -> bool:
+async def check_http(url):
   try:
     async with ClientSession() as session:
       result = await session.get(url, headers=HTTP_HEADERS)
@@ -140,7 +140,7 @@ async def check_http(url: str) -> bool:
     return False
 
 
-async def get_power_lb(count: int = 10) -> dict | list | None:
+async def get_power_lb(count = 10):
   async with ClientSession() as session:
     result = await session.post(LEADERBOARD, headers=HTTP_HEADERS, json={
       "method": "GetPowerLeaderboard",
@@ -151,7 +151,7 @@ async def get_power_lb(count: int = 10) -> dict | list | None:
     return await result.json(loads=loads)
 
 
-async def get_crypto_lb(currency: int, count: int = 10) -> dict | list | None:
+async def get_crypto_lb(currency, count = 10):
   async with ClientSession() as session:
     result = await session.post(LEADERBOARD, headers=HTTP_HEADERS, json={
       "method": "GetTopEntries",
@@ -164,7 +164,7 @@ async def get_crypto_lb(currency: int, count: int = 10) -> dict | list | None:
     return result["top"]
 
 
-async def check_lb() -> bool:
+async def check_lb():
   try:
     result = await get_power_lb(count=10)
     return len(result) == 10
@@ -203,7 +203,7 @@ definitions = {
 }
 
 
-def format_msg(url: str, status: bool | str) -> str:
+def format_msg(url, status):
   if status is True:
     data = f"✅ | {definitions[url]['name']} is online\n"
     if url == SESSION_MANAGER:
@@ -215,14 +215,14 @@ def format_msg(url: str, status: bool | str) -> str:
     return f"{LOADING} | Connecting to {definitions[url]['name']}...\n"
 
 
-async def checker_wrapper(coro) -> bool:
+async def checker_wrapper(coro):
   try:
     return await wait_for(coro, timeout=TIMEOUT)
   except:
     return False
 
 
-async def live_check(index: int, item: str, checks: list[str], response):
+async def live_check(index, item, checks, response):
   definition = definitions[item]
   data = await checker_wrapper(definition["check"]())
   checks[index] = format_msg(item, data)
