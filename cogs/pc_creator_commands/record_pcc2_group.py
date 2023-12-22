@@ -25,6 +25,7 @@ async def pcc2_status(ctx):
 
 async def pcc2_promo(ctx, code_name):
     if code_name:
+        code_name = code_name.upper()
         try:
             code = await get_promocode(code_name)
         except:
