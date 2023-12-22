@@ -80,7 +80,7 @@ async def get_promocode(code):
     return await resp.json(loads=loads)
 
 
-async def check_promocode() -> bool:
+async def check_promocode():
   try:
     await get_promocode(WORKING_CODE)
     return True
