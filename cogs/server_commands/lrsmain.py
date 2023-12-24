@@ -325,7 +325,7 @@ class levelroles(commands.Cog):
         draw.fontmode = "L"
         myFont = ImageFont.truetype('ARIAL.TTF', 35)
 
-        x1 = 140
+        x1 = 3800
         lines_distance = int(1500/lines) #auf 1200 ändern um oben platz zu haben
         y = int(1900-lines_distance)
 
@@ -351,10 +351,10 @@ class levelroles(commands.Cog):
             dark_colour = random.randint(int(number_3/10), int(number_3/100*40))
             medium_colour = random.randint(int(number_3/100*20), int(number_3/100*40))
             light_colour = number_3-(dark_colour+medium_colour)
-    
-            x1 = x1 + 60
+     
+            x1 = x1 - 60
             x2 = x1 + 40
-
+    
             draw.rectangle((x2, 1900, x1, 1900-dark_colour), fill=(20,66,49))
             draw.rectangle((x2, 1900-dark_colour, x1, 1900-dark_colour-medium_colour), fill=(34,152,108))
             draw.rectangle((x2, 1900-dark_colour-medium_colour, x1, 1900-dark_colour-medium_colour-light_colour), fill=(46,206,150)) 
@@ -370,16 +370,19 @@ class levelroles(commands.Cog):
         days_delta = 15
         draw.line((3760, 1900, 3760, 1930), fill=(244,249,255), width=2)
         date_lines_x = 3760
-        draw.text((3700, 1935), f"{date_today}",font=myFont, fill=(244,249,255))
-
-
+        yesterday = 1
+        delta_yesterday = today - timedelta(days = yesterday)
+        yesterday_format = delta_yesterday.strftime("%b %d")
+        draw.text((3700, 1935), f"{yesterday_format}",font=myFont, fill=(244,249,255))
+    
+    
         for n in range(1,5):
             date_lines_x = date_lines_x - 15*60
             if date_lines_x == 160:
                 date_lines_x = date_lines_x + 60
                 days_delta = days_delta - 1
             draw.line((date_lines_x, 1900, date_lines_x, 1930), fill=(244,249,255), width=2)
-            delta = today - timedelta(days = days_delta)
+            delta = delta_yesterday - timedelta(days = days_delta)
             delta_format = delta.strftime("%b %d")
             draw.text((date_lines_x-60, 1935), f"{delta_format}",font=myFont, fill=(244,249,255))
             days_delta = days_delta + 15
