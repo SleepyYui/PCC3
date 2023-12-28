@@ -48,7 +48,7 @@ async def info(ctx, client1):
     uptime = uptime.split(".")[0]# + " HH/MM/SS"
 
     fields = [
-        ("Bot version:", "1.12.0", True),
+        ("Bot version:", "1.12.2", True),
         ("Python version:", python_version(), True),
         ("Discord-API version:", discord_version, False),
         ("Uptime:", uptime, False),
