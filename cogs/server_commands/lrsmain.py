@@ -244,8 +244,15 @@ class levelroles(commands.Cog):
             user_id_3rd, msg_count_3rd = leaderboard[2]
             user_id_4th, msg_count_4th = leaderboard[3]
             user_id_5th, msg_count_5th = leaderboard[4]
+            
+            msg_counter_1st = "{:,}".format(msg_count_1st)
+            msg_counter_2nd = "{:,}".format(msg_count_2nd)
+            msg_counter_3rd = "{:,}".format(msg_count_3rd)
+            msg_counter_4th = "{:,}".format(msg_count_4th)
+            msg_counter_5th = "{:,}".format(msg_count_5th)
+
             embed= discord.Embed(title="Leaderboard", color=13565696)
-            embed.add_field(name="Top users by messages sent", value=f"`1.` <@{user_id_1st}>: {msg_count_1st} \n`2.` <@{user_id_2nd}>: {msg_count_2nd} \n`3.` <@{user_id_3rd}>: {msg_count_3rd} \n`4.` <@{user_id_4th}>: {msg_count_4th} \n`5.` <@{user_id_5th}>: {msg_count_5th}")
+            embed.add_field(name="Top users by messages sent", value=f"`1.` <@{user_id_1st}>: {msg_counter_1st} \n`2.` <@{user_id_2nd}>: {msg_counter_2nd} \n`3.` <@{user_id_3rd}>: {msg_counter_3rd} \n`4.` <@{user_id_4th}>: {msg_counter_4th} \n`5.` <@{user_id_5th}>: {msg_counter_5th}")
             embed.set_image(url="attachment://dailymsgs.png")
             await send(file=f,embed=embed)   
 
