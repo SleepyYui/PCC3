@@ -137,7 +137,7 @@ class SuspectButton(discord.ui.Button):
             return interaction.response.send_message("This button is only available to staff members!")
         
         self.account["suspect"] = not self.account["suspect"]
-        self.account["playtime"] += 500
+        self.account["playTime"] += 500
         try:
             result = await upload_account(self.userid, self.account)
             assert result.status < 400
