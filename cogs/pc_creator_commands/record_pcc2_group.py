@@ -145,8 +145,8 @@ class SuspectButton(discord.ui.Button):
             await interaction.response.send_message("Failed to upload account", ephemeral=True)
         
         await interaction.response.send_message("Uploading account...", ephemeral=True)
-        await self.msg.edit_original_message(embed=inspect_embed(self.account), view=inspect_view(self.msg, self.account, self.userid))
         await interaction.followup.send(f"{interaction.user} changed suspect status of the account")
+        await self.msg.edit_original_message(embed=inspect_embed(self.account), view=inspect_view(self.msg, self.account, self.userid))
 
 async def pcc2_inspect(ctx, method, data):
     msg = await ctx.respond(LOADING)
