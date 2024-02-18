@@ -71,6 +71,9 @@ async def get_account(userid):
     result = await session.get(f"https://{SERVER}/api/storage/pc-creator-two/PlayerSaves/{userid}.json?alt=media", headers=HTTP_HEADERS)
 
     return await result.json(loads=loads)
+  
+async def upload_account(userid, account):
+  return await authed_post(f"https://{SERVER}/api/storage/pc-creator-two/PlayerSaves/{userid}.json?alt=media", json=account)
 
 async def get_userid(email):
   async with ClientSession() as session:

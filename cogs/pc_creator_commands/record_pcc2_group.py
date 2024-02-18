@@ -4,13 +4,15 @@ import websockets
 import json
 from asyncio import create_task
 from cogs.pc_creator_commands.importantfunctions import (format_msg, definitions, live_check, bool_emoji, decrypt_currency,
-                                                         PUBLIC_PROMOCODE_LIST, WS_HEADERS, get_account,
+                                                         PUBLIC_PROMOCODE_LIST, WS_HEADERS, get_account, upload_account,
                                                          LEADERBOARDS, get_lb, LEADERBOARD_TITLES, LOADING, get_trader, get_userid) # the import is getting bigger and bigger
    
 ICONS = {
     "Bitcoin": "<:Bitcoin:728463949892419624>",
     "Ethereum": "<:ethereum:932746985751076864>"
 }
+
+staff_ids = [1056941196196458507, 648546626637398046, 589435378147262464, 1058779237168992286, 697728131003580537, 697002610892341298, 1208540296527482890]
 
 async def record_pcc2(ctx): 
     embed = discord.Embed(title="__PCC2 World Record__", description="This is the current PCC2 World Record PC", color=13565696)
@@ -80,28 +82,13 @@ async def pcc2_user(ctx, code):
     except:
         await msg.edit_original_message(embed=discord.Embed(title="Failed to get data", description="Something went wrong."))
 
-async def pcc2_inspect(ctx, method, data):
-    msg = await ctx.respond(LOADING)
-    id = data
+def is_staff(user):
+    for role in user.roles:
+        if role.id in staff_ids:
+            return True
+    return False
 
-    try:
-        if method == "Email":
-            id = await get_userid(data)
-        elif method == "Trading ID":
-            id = (await get_trader(code=data))["ID"]
-        elif method == "UserHash":
-            id = f"guest.{id}"
-        
-        assert id is not None
-        assert id != ""
-    except:
-        return await msg.edit_original_message(content="Failed to get account ID")
-    
-    try:
-        account = await get_account(id)
-    except:
-        return await msg.edit_original_message(content="Failed to get account data")
-
+def inspect_embed(account):
     e = discord.Embed(title=account["userName"])
     email = account["email"]
     if email == "":
@@ -130,4 +117,56 @@ async def pcc2_inspect(ctx, method, data):
     e.add_field(name="No Ads + X2", value=bool_emoji(account["adsRemovedUltimate"]))
 
     e.add_field(name="Inventory", value=f'{len(account["inventory"]["itemReferences"])}/{"5000" if vip else "500"}', inline=False)
-    await msg.edit_original_message(content="", embed=e)
+    return e
+
+def inspect_view(msg, account, id):
+    view = discord.ui.View(timeout=3600)
+    view.add_item(SuspectButton(msg, account, id))
+    return view
+
+class SuspectButton(discord.ui.Button):
+    def __init__(self, msg, account, userid):
+        self.msg = msg
+        self.account = account
+        self.userid = userid
+
+        super().__init__(label=f'{"Remove" if account["suspect"] else "Set"} Suspect')
+    
+    async def callback(self, interaction):
+        if not is_staff(interaction.user):
+            return interaction.response.send_message("This button is only available to staff members!")
+        
+        self.account["suspect"] = not self.account["suspect"]
+        try:
+            result = await upload_account(self.userid, self.account)
+            assert result.status < 400
+        except:
+            await interaction.response.send_message("Failed to upload account", ephemeral=True)
+        
+        await interaction.response.send_message("Uploading account...", ephemeral=True)
+        await self.msg.edit_original_message(embed=inspect_embed(self.account), view=inspect_view(self.msg, self.account, self.userid))
+        await interaction.followup.send(f"{interaction.user} changed suspect status of the account")
+
+async def pcc2_inspect(ctx, method, data):
+    msg = await ctx.respond(LOADING)
+    id = data
+
+    try:
+        if method == "Email":
+            id = await get_userid(data)
+        elif method == "Trading ID":
+            id = (await get_trader(code=data))["ID"]
+        elif method == "UserHash":
+            id = f"guest.{id}"
+        
+        assert id is not None
+        assert id != ""
+    except:
+        return await msg.edit_original_message(content="Failed to get account ID")
+    
+    try:
+        account = await get_account(id)
+    except:
+        return await msg.edit_original_message(content="Failed to get account data")
+    
+    await msg.edit_original_message(content="", embed=inspect_embed(account), view=inspect_view(msg, account, id))
