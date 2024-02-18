@@ -40,8 +40,7 @@ async def pcc2_leaderboard(ctx, category):
     try:
         result = await get_lb(LEADERBOARDS[category], count=10)
         result = result["records"]
-    except Exception as e:
-        raise e
+    except:
         return await msg.edit_original_message(content="", embed=discord.Embed(title="Something went wrong while retrieving leaderboard data"))
     embed = discord.Embed(title=category + " Leaderboard")
     for place in result:
