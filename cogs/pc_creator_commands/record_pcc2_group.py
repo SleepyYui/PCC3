@@ -3,10 +3,14 @@ from discord.ext import commands
 import websockets
 import json
 from asyncio import create_task
-from cogs.pc_creator_commands.importantfunctions import (format_msg, definitions, live_check, get_promocode, ITEM_DB, PROMOCODE_DB, 
-                                                         FIELD_NAMES, PUBLIC_PROMOCODE_LIST, WS_HEADERS, get_power_lb, 
-                                                         CURRENCIES, get_crypto_lb, LEADERBOARD_TITLES) # the import is getting bigger and bigger
+from cogs.pc_creator_commands.importantfunctions import (format_msg, definitions, live_check, bool_emoji, decrypt_currency,
+                                                         PUBLIC_PROMOCODE_LIST, WS_HEADERS, get_account,
+                                                         LEADERBOARDS, get_lb, LEADERBOARD_TITLES, LOADING, get_trader, get_userid) # the import is getting bigger and bigger
    
+ICONS = {
+    "Bitcoin": "<:Bitcoin:728463949892419624>",
+    "Ethereum": "<:ethereum:932746985751076864>"
+}
 
 async def record_pcc2(ctx): 
     embed = discord.Embed(title="__PCC2 World Record__", description="This is the current PCC2 World Record PC", color=13565696)
@@ -23,89 +27,108 @@ async def pcc2_status(ctx):
     for index, item in enumerate(definitions):
         create_task(live_check(index, item, checks, response))
 
-async def pcc2_promo(ctx, code_name):
-    if code_name:
-        code_name = code_name.upper()
-        try:
-            code = await get_promocode(code_name)
-        except:
-            return await ctx.respond(embed=discord.Embed(title="Failed to retrieve promocode code")) 
-        if not code:
-            return await ctx.respond(embed=discord.Embed(title="Promocode not found!"))
-        embed = discord.Embed(title=code_name)
-        for item in code:
-            if item in FIELD_NAMES:
-                value = code[item]
-                if type(value) == list:
-                    combined = []
-                    for thing in value:
-                        if thing != "":
-                            combined.append(ITEM_DB[thing]) 
-                    if len(combined) > 0:
-                        embed.add_field(name=FIELD_NAMES[item], value=", ".join(combined))
-                elif value:
-                    result = ""
-                    if type(value) == bool:
-                        result = "✅" if value else "❌"
-                    else:
-                        result = value
-                    embed.add_field(name=FIELD_NAMES[item], value=result)
-        return await ctx.respond(embed=embed)
-    else:
-        embed = discord.Embed(title="Promocodes")
-        embed.add_field(name="List of known promocodes", value="- " + "\n- ".join(PUBLIC_PROMOCODE_LIST), inline=False)
-        embed.add_field(name="❗️How to use promocodes", value='1. Go to the Shop (right side of the screen)\n2. Scroll to the right and press "Restore Purchases"\n3. Enter the promocode and click "Restore"', inline=False)
-        return await ctx.respond(embed=embed)
-
-
-async def pcc2_leaderboard(ctx, category):
-    category = category.strip()
-    try:
-        if category == "PC Score":
-            result = await get_power_lb()
-        elif category in CURRENCIES:
-            result = await get_crypto_lb(CURRENCIES[category])
-        else:
-            raise NameError
-    except:
-        return await ctx.respond(embed=discord.Embed(title="Something went wrong while retrieving leaderboard data"))
-    embed = discord.Embed(title=category + " Leaderboard")
-    for place in result:
-        position = place['UserPosition']
-        value = place['Value']
-        value = round(value, 3) if type(value) == float else value
-        embed.add_field(name=f"{LEADERBOARD_TITLES.get(position, str(position) + '.')} {discord.utils.escape_markdown(place['NickName'])}", value=f"{value} {category}", inline=False)
+async def pcc2_promo(ctx):
+    embed = discord.Embed(title="Promocodes")
+    embed.add_field(name="List of known promocodes", value="- " + "\n- ".join(PUBLIC_PROMOCODE_LIST), inline=False)
+    embed.add_field(name="❗️How to use promocodes", value='1. Go to the Shop (right side of the screen)\n2. Scroll to the right and press "Restore Purchases"\n3. Enter the promocode and click "Restore"', inline=False)
     return await ctx.respond(embed=embed)
 
 
+async def pcc2_leaderboard(ctx, category):
+    msg = await ctx.respond(LOADING)
+    category = category.strip()
+    try:
+        result = await get_lb(LEADERBOARDS[category], count=10)
+        result = result["records"]
+    except Exception as e:
+        raise e
+        return await msg.edit_original_message(content="", embed=discord.Embed(title="Something went wrong while retrieving leaderboard data"))
+    embed = discord.Embed(title=category + " Leaderboard")
+    for place in result:
+        position = place["position"]
+        value = place["score"]
+        value = round(value, 3) if type(value) == float else value
+        if str(value)[-2:] == ".0":
+            value = int(value)
+        embed.add_field(name=f"{LEADERBOARD_TITLES.get(position, str(position) + '.')} {discord.utils.escape_markdown(place['payload']['user']['userName'])}", value=f"{value} {ICONS.get(category, category)}", inline=False)
+    return await msg.edit_original_message(content="", embed=embed)
+
+
 async def pcc2_user(ctx, code):
+    msg = await ctx.respond(LOADING)
     code = str(code)
     try:
-        async with websockets.connect("ws://83.229.84.175:8082/TradingPlatform", max_size=99999999999, extra_headers=WS_HEADERS) as ws:
-            await ws.send('{"method":"getTrader","args":id}'.replace("id", code, 1))
-            msg = json.loads(await ws.recv())
-            if msg["response"] != None:
-                totals = {"CPU": 0, "RAM": 0, "PCCase": 0, "PowerSupply": 0, "Drive": 0, "Cooler": 0, "Motherboard": 0, "Videocard": 0, "ThermalGrease": 0}
-                stuff = msg["response"]
-                user = stuff["user"]
-                inventory = stuff["inventory"]
-                for item in inventory:
-                    totals[item["id"].split(".")[0]] += 1
-                embed = discord.Embed(title=user['userName'])
-                embed.add_field(name="ID", value=user['code'], inline=False)
-                embed.add_field(name="Items", value=len(inventory), inline=False)
-                embed.add_field(name="Cases", value=totals['PCCase'])
-                embed.add_field(name="Motherboards", value=totals['Motherboard'])
-                embed.add_field(name="CPUs", value=totals['CPU'])
-                embed.add_field(name="Coolers", value=totals['Cooler'])
-                embed.add_field(name="RAMs", value=totals['RAM'])
-                embed.add_field(name="Videocards", value=totals['Videocard'])
-                embed.add_field(name="Drives", value=totals['Drive'], inline=True)
-                embed.add_field(name="Power Supplies", value=totals['PowerSupply'])
-                embed.add_field(name="Thermal Grease", value=totals['ThermalGrease'])
-                await ctx.respond(embed=embed)
-            else:
-                await ctx.respond(embed=discord.Embed(title="User Not Found", description=f"User with the ID {code} was not found!"))
-            await ws.close()
+        trader = await get_trader(code=code)
+        if trader != None:
+            totals = {"CPU": 0, "RAM": 0, "PCCase": 0, "PowerSupply": 0, "Drive": 0, "Cooler": 0, "Motherboard": 0, "Videocard": 0, "ThermalGrease": 0}
+            for item in trader["inventory"]:
+                totals[item["id"].split(".")[0]] += 1
+            embed = discord.Embed(title=trader["payload"]["user"]["name"])
+            embed.add_field(name="ID", value=trader["code"], inline=False)
+            embed.add_field(name="Items", value=len(trader["inventory"]), inline=False)
+            embed.add_field(name="Cases", value=totals['PCCase'])
+            embed.add_field(name="Motherboards", value=totals['Motherboard'])
+            embed.add_field(name="CPUs", value=totals['CPU'])
+            embed.add_field(name="Coolers", value=totals['Cooler'])
+            embed.add_field(name="RAMs", value=totals['RAM'])
+            embed.add_field(name="Videocards", value=totals['Videocard'])
+            embed.add_field(name="Drives", value=totals['Drive'], inline=True)
+            embed.add_field(name="Power Supplies", value=totals['PowerSupply'])
+            embed.add_field(name="Thermal Grease", value=totals['ThermalGrease'])
+            await msg.edit_original_message(content="", embed=embed)
+        else:
+            await msg.edit_original_message(content="", embed=discord.Embed(title="User not found", description=f"User with the ID {code} was not found!"))
     except:
-        await ctx.respond(embed=discord.Embed(title="Failed To Get Data", description="The bot has failed to succesfully receive user data, most likely, the trading servers are offline."))
+        await msg.edit_original_message(embed=discord.Embed(title="Failed to get data", description="Something went wrong."))
+
+async def pcc2_inspect(ctx, method, data):
+    msg = await ctx.respond(LOADING)
+    id = data
+
+    try:
+        if method == "Email":
+            id = await get_userid(data)
+        elif method == "Trading ID":
+            id = (await get_trader(code=data))["ID"]
+        elif method == "UserHash":
+            id = f"guest.{id}"
+        
+        assert id is not None
+        assert id != ""
+    except:
+        return await msg.edit_original_message(content="Failed to get account ID")
+    
+    try:
+        account = await get_account(id)
+    except:
+        return await msg.edit_original_message(content="Failed to get account data")
+
+    e = discord.Embed(title=account["userName"])
+    email = account["email"]
+    if email == "":
+        email = "❌"
+    e.add_field(name="Email", value=email, inline=False)
+    userhash = account["userHash"]
+    userid = account["userId"]
+    if userid == "":
+        userid = f"guest.{userhash}"
+    e.add_field(name="UserID", value=userid, inline=False)
+    e.add_field(name="UserHash", value=userhash, inline=False)
+    e.add_field(name="Suspect", value=bool_emoji(account["suspect"]), inline=False)
+    e.add_field(name="Platform", value=account["platform"], inline=False)
+
+    for currency in account["currency"]:
+        value = decrypt_currency(account["currency"][currency])
+        if str(value)[-2:] == ".0":
+            value = int(value)
+        e.add_field(name=currency.upper(), value=value)
+
+    e.add_field(name="Level", value=account["level"], inline=False)
+
+    vip = account["accountInfo"]["hasSubscription"]
+    e.add_field(name="VIP", value=bool_emoji(vip))
+    e.add_field(name="No Ads", value=bool_emoji(account["adsRemoved"]))
+    e.add_field(name="No Ads + X2", value=bool_emoji(account["adsRemovedUltimate"]))
+
+    e.add_field(name="Inventory", value=f'{len(account["inventory"]["itemReferences"])}/{"5000" if vip else "500"}', inline=False)
+    await msg.edit_original_message(content="", embed=e)
