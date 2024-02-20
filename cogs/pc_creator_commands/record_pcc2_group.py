@@ -105,8 +105,6 @@ def inspect_embed(account):
 
     for currency in account["currency"]:
         value = decrypt_currency(account["currency"][currency])
-        if str(value)[-2:] == ".0":
-            value = int(value)
         e.add_field(name=currency.upper(), value=value)
 
     e.add_field(name="Level", value=account["level"], inline=False)

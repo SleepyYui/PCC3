@@ -153,10 +153,19 @@ def bool_emoji(a):
 
 def decrypt_currency(enc):
   try:
-    return float(base64.b64decode(enc["_encryptedValue"]).decode())
+    value = base64.b64decode(enc["_encryptedValue"]).decode()
   except:
-    return 0.0
-
+    return enc
+  
+  try:
+    value = float(value)
+  except:
+    return value
+  
+  if str(value)[-2:] == ".0":
+    return int(value)
+  
+  return value
 async def checker_wrapper(coro):
   try:
     return await wait_for(coro, timeout=TIMEOUT)
