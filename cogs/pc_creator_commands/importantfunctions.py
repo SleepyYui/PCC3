@@ -4,11 +4,12 @@ from asyncio import wait_for
 from orjson import loads, dumps as dump
 from discord import Embed
 import base64
+from decouple import config
 
 dumps = lambda a:str(dump(a), "utf-8")
 
 TIMEOUT = 10
-SERVER = "api.creaty.me:44386"
+SERVER = config("GAME_SERVER")
 SESSION_MANAGER = f"wss://{SERVER}/ws/sessionmanager"
 FILE_STORAGE = f"https://{SERVER}/api/storage/pc-creator-two/Localizations/production.json"
 HTTP_HEADERS = {"User-Agent": "UnityPlayer/2022.3.14f1 (UnityWebRequest/1.0, libcurl/7.80.0-DEV)", "X-Unity-Version": "2022.3.14f1"}
