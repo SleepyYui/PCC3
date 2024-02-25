@@ -3,8 +3,8 @@ from discord.ext import commands
 import websockets
 import json
 from asyncio import create_task
-from cogs.pc_creator_commands.importantfunctions import (format_msg, definitions, live_check, bool_emoji, decrypt_currency,
-                                                         PUBLIC_PROMOCODE_LIST, WS_HEADERS, get_account, upload_account,
+from cogs.pc_creator_commands.importantfunctions import (format_msg, definitions, live_check, bool_emoji, decrypt_currency, suspect_confidence,
+                                                         PUBLIC_PROMOCODE_LIST, WS_HEADERS, get_account, upload_account, items, Rarity,
                                                          LEADERBOARDS, get_lb, LEADERBOARD_TITLES, LOADING, get_trader, get_userid) # the import is getting bigger and bigger
    
 ICONS = {
@@ -103,18 +103,27 @@ def inspect_embed(account):
     e.add_field(name="Suspect", value=bool_emoji(account["suspect"]), inline=False)
     e.add_field(name="Platform", value=account["platform"], inline=False)
 
+    currencies = {}
     for currency in account["currency"]:
         value = decrypt_currency(account["currency"][currency])
+        currencies[currency] = value
         e.add_field(name=currency.upper(), value=value)
 
+    vip = account["accountInfo"]["hasSubscription"]
+    visual_inventory = list(filter(lambda a: items[a["id"]] != Rarity.Gold.value, account["inventory"]["itemReferences"]))
+    item_limit = 5000 if vip else 500
+
+    suspect_score = suspect_confidence(account, currencies, visual_inventory, item_limit)
     e.add_field(name="Level", value=account["level"], inline=False)
 
-    vip = account["accountInfo"]["hasSubscription"]
     e.add_field(name="VIP", value=bool_emoji(vip))
     e.add_field(name="No Ads", value=bool_emoji(account["adsRemoved"]))
     e.add_field(name="No Ads + X2", value=bool_emoji(account["adsRemovedUltimate"]))
 
-    e.add_field(name="Inventory", value=f'{len(account["inventory"]["itemReferences"])}/{"5000" if vip else "500"}', inline=False)
+    e.add_field(name="Actual Inventory", value=f'{len(account["inventory"]["itemReferences"])}', inline=False)
+    e.add_field(name="Visual Inventory", value=f'{len(visual_inventory)}/{item_limit}', inline=False)
+
+    e.add_field(name="Suspect Score", value=round(suspect_score, 3), inline=False)
     return e
 
 def inspect_view(msg, account, id):
