@@ -36,9 +36,7 @@ HTTP_HEADERS = {"User-Agent": "UnityPlayer/2022.3.14f1 (UnityWebRequest/1.0, lib
 WS_HEADERS = {"User-Agent": "websocket-sharp/1.0"}
 
 PUBLIC_PROMOCODE_LIST = [
-  "X5XKEY",
-  "R5RKEY",
-  "LNY024",
+  "No promocodes available. Please check back later."
 ]
 LEADERBOARDS = {
   "PC Score": "PCPower",
