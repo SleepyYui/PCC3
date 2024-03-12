@@ -3,7 +3,7 @@ from discord.ext import commands
 import websockets
 import json
 from asyncio import create_task
-from cogs.pc_creator_commands.importantfunctions import (format_msg, definitions, live_check, bool_emoji, decrypt_currency, suspect_confidence,
+from cogs.pc_creator_commands.importantfunctions import (format_msg, definitions, live_check, bool_emoji, decrypt_currency,
                                                          PUBLIC_PROMOCODE_LIST, WS_HEADERS, get_account, upload_account, items, Rarity,
                                                          LEADERBOARDS, get_lb, LEADERBOARD_TITLES, LOADING, get_trader, get_userid) # the import is getting bigger and bigger
    
@@ -88,6 +88,9 @@ def is_staff(user):
             return True
     return False
 
+def of_rarity(rarity, account):
+    return list(filter(lambda a: items[a["id"]] == rarity.value, account["inventory"]["itemReferences"]))
+
 def inspect_embed(account):
     e = discord.Embed(title=account["userName"])
     email = account["email"]
@@ -112,8 +115,6 @@ def inspect_embed(account):
     vip = account["accountInfo"]["hasSubscription"]
     visual_inventory = list(filter(lambda a: items[a["id"]] != Rarity.Gold.value, account["inventory"]["itemReferences"]))
     item_limit = 5000 if vip else 500
-
-    suspect_score = suspect_confidence(account, currencies, visual_inventory, item_limit)
     e.add_field(name="Level", value=account["level"], inline=False)
 
     e.add_field(name="VIP", value=bool_emoji(vip))
@@ -122,8 +123,9 @@ def inspect_embed(account):
 
     e.add_field(name="Actual Inventory", value=f'{len(account["inventory"]["itemReferences"])}', inline=False)
     e.add_field(name="Visual Inventory", value=f'{len(visual_inventory)}/{item_limit}', inline=False)
-
-    e.add_field(name="Suspect Score", value=round(suspect_score, 3), inline=False)
+    e.add_field(name="Epic Items", value=len(of_rarity(Rarity.Epic, account)))
+    e.add_field(name="Season Items", value=len(of_rarity(Rarity.Season, account)))
+    e.add_field(name="Relict Items", value=len(of_rarity(Rarity.Relict, account)))
     return e
 
 def inspect_view(msg, account, id):
