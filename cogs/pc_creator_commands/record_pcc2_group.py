@@ -11,7 +11,7 @@ ICONS = {
     "Bitcoin": "<:Bitcoin:728463949892419624>",
     "Ethereum": "<:ethereum:932746985751076864>"
 }
-
+pc_item_keys = ["PcCases", "MotherBoards", "CPUs", "Videocards", "Drives", "PowerSuppllies", "Coolers"]
 staff_ids = [1056941196196458507, 648546626637398046, 589435378147262464, 1058779237168992286, 697728131003580537, 697002610892341298, 1208540296527482890]
 
 async def record_pcc2(ctx): 
@@ -88,8 +88,40 @@ def is_staff(user):
             return True
     return False
 
+def is_rarity(item, rarity):
+    return items.get(item["id"]) == rarity.value
+
+def is_rarity_filter(rarity):
+    def f(item):
+        return is_rarity(item, rarity)
+    return f
+
+def process_pc(f, pc):
+    in_pc = []
+
+    for key in pc_item_keys:
+        if key not in pc:
+            continue
+                
+        for i in pc[key]:
+            if f(i):
+                in_pc.append(i)
+        
+    return in_pc
+
 def of_rarity(rarity, account):
-    return list(filter(lambda a: items[a["id"]] == rarity.value, account["inventory"]["itemReferences"]))
+    inv = account["inventory"]
+    f = is_rarity_filter(rarity)
+
+    all_items = list(filter(f, inv["itemReferences"]))
+
+    for pc in inv["PCs"]:
+        all_items += process_pc(f, pc)
+
+    building = account["BuildingStatus"]
+    all_items += process_pc(f, building["ActiveBuildingPC"])
+    all_items += process_pc(f, building["ActiveEditingPC"])
+    return all_items 
 
 def inspect_embed(account):
     e = discord.Embed(title=account["userName"])
@@ -113,7 +145,7 @@ def inspect_embed(account):
         e.add_field(name=currency.upper(), value=value)
 
     vip = account["accountInfo"]["hasSubscription"]
-    visual_inventory = list(filter(lambda a: items[a["id"]] != Rarity.Gold.value, account["inventory"]["itemReferences"]))
+    visual_inventory = list(filter(lambda a: items.get(a["id"], Rarity.Gold.value) != Rarity.Gold.value, account["inventory"]["itemReferences"]))
     item_limit = 5000 if vip else 500
     e.add_field(name="Level", value=account["level"], inline=False)
 
