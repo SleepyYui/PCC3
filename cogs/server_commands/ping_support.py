@@ -13,7 +13,7 @@ class ping_support(commands.Cog):
     @commands.slash_command(name="ping_support", description="DM Support for help")
     #@permissions.has_any_role(697728131003580537, 589435378147262464, 632674518317531137)
     async def ping_support_slash(self, ctx):
-        embed = discord.Embed(title="Support", description="This is Support: <@266306316136480770>", color=13565696)
+        embed = discord.Embed(title="Support", description="This is Support: <@550685810232524830>", color=13565696)
         await ctx.respond(embed=embed)
     
 
