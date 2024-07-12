@@ -30,17 +30,12 @@ dumps = lambda a:str(dump(a), "utf-8")
 
 TIMEOUT = 10
 SERVER = config("GAME_SERVER")
+FUNCTIONS_SERVER = config("FUNCTIONS_SERVER")
 SESSION_MANAGER = f"wss://{SERVER}/ws/sessionmanager"
 FILE_STORAGE = f"https://{SERVER}/api/storage/pc-creator-two/Localizations/production.json"
 HTTP_HEADERS = {"User-Agent": "UnityPlayer/2022.3.14f1 (UnityWebRequest/1.0, libcurl/7.80.0-DEV)", "X-Unity-Version": "2022.3.14f1"}
 WS_HEADERS = {"User-Agent": "websocket-sharp/1.0"}
 
-PUBLIC_PROMOCODE_LIST = [
-  "X2XKEY",
-  "R5RKEY",
-  "LNY024",
-  "1MARCH"
-]
 LEADERBOARDS = {
   "PC Score": "PCPower",
   "Bitcoin": "BTC",
@@ -103,7 +98,7 @@ async def upload_account(userid, account):
 
 async def get_userid(email):
   async with ClientSession() as session:
-    result = await session.post(f"https://us-central1-pc-creator-test.cloudfunctions.net/getUserUUID?email={email}")
+    result = await session.post(f"https://{FUNCTIONS_SERVER}/getUserUUID?email={email}")
 
     if result.status == 200:
       return await result.text()
@@ -203,6 +198,6 @@ async def live_check(index, item, checks, response):
   definition = definitions[item]
   data = await checker_wrapper(definition["check"]())
   checks[index] = format_msg(item, data)
-  await response.edit_original_message(
+  await response.edit_original_response(
     embed=Embed(title="Status", description=''.join(checks).strip()))
   return

@@ -3,7 +3,7 @@ from discord import SlashCommandGroup
 from discord.ext import commands
 import discord
 from discord import Option
-from cogs.pc_creator_commands.record_pcc2_group import record_pcc2, pcc2_user, pcc2_status, pcc2_promo, pcc2_leaderboard, pcc2_inspect, is_staff
+from cogs.pc_creator_commands.record_pcc2_group import record_pcc2, pcc2_user, pcc2_status, pcc2_promo, pcc2_leaderboard, pcc2_inspect, is_staff, pcc2_promocode_edit
 
 class pcc2_group(commands.Cog):
 
@@ -38,6 +38,13 @@ class pcc2_group(commands.Cog):
     async def inspect(self, ctx, method: Option(name="method", description="Account data retrieval method", choices=["Email", "Trading ID", "UserHash", "UserID"]), data: Option(name="data", description="The data (email, id etc)")):
         if is_staff(ctx.author):
             await pcc2_inspect(ctx, method, data)
+        else:
+            await ctx.respond("This command is only for staff!", ephemeral=True)
+        
+    @pcc2.command(name="promocode_change", description="Add/remove promocode")
+    async def promocode_change(self, ctx, promo: Option(name="promo", description="Promocode to add/remove")):
+        if is_staff(ctx.author):
+            await pcc2_promocode_edit(ctx, promo)
         else:
             await ctx.respond("This command is only for staff!", ephemeral=True)
 

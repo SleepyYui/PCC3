@@ -1,18 +1,39 @@
 import discord
 from discord.ext import commands
 import websockets
-import json
+import orjson
 from asyncio import create_task
-from cogs.pc_creator_commands.importantfunctions import (format_msg, definitions, live_check, bool_emoji, decrypt_currency,
-                                                         PUBLIC_PROMOCODE_LIST, WS_HEADERS, get_account, upload_account, items, Rarity,
+from cogs.pc_creator_commands.importantfunctions import (format_msg, definitions, live_check, bool_emoji, decrypt_currency, WS_HEADERS, get_account, upload_account, items, Rarity,
                                                          LEADERBOARDS, get_lb, LEADERBOARD_TITLES, LOADING, get_trader, get_userid) # the import is getting bigger and bigger
    
 ICONS = {
     "Bitcoin": "<:Bitcoin:728463949892419624>",
     "Ethereum": "<:ethereum:932746985751076864>"
 }
+inv_skill = [0, 25, 55, 100, 150, 200, 300] # increase of inventory space with the skill level (skill level 6 -> +300 space and etc)
 pc_item_keys = ["PcCases", "MotherBoards", "CPUs", "Videocards", "Drives", "PowerSuppllies", "Coolers"]
 staff_ids = [1056941196196458507, 648546626637398046, 589435378147262464, 1058779237168992286, 697728131003580537, 697002610892341298, 1208540296527482890]
+
+with open("json_files/promocodes.json", "rb") as file:
+    promocodes = orjson.loads(file.read())
+
+def format_time(s):
+    res = ""
+    mins = s // 60
+    hrs = mins // 60
+    
+    if hrs > 0:
+        res += f"{hrs}h"
+    
+    if mins > 0:
+        mins -= hrs * 60
+        res += f"{mins}m"
+    
+    if s > 0:
+        s -= hrs * 3600 + mins * 60
+        res += f"{s}s"
+
+    return res
 
 async def record_pcc2(ctx): 
     embed = discord.Embed(title="__PCC2 World Record__", description="This is the current PCC2 World Record PC", color=13565696)
@@ -31,7 +52,7 @@ async def pcc2_status(ctx):
 
 async def pcc2_promo(ctx):
     embed = discord.Embed(title="Promocodes")
-    embed.add_field(name="List of known promocodes", value="- " + "\n- ".join(PUBLIC_PROMOCODE_LIST), inline=False)
+    embed.add_field(name="List of known promocodes", value="- " + "\n- ".join(promocodes), inline=False)
     embed.add_field(name="❗️How to use promocodes", value='1. Go to the Shop (right side of the screen)\n2. Scroll to the right and press "Restore Purchases"\n3. Enter the promocode and click "Restore"', inline=False)
     return await ctx.respond(embed=embed)
 
@@ -43,7 +64,7 @@ async def pcc2_leaderboard(ctx, category):
         result = await get_lb(LEADERBOARDS[category], count=10)
         result = result["records"]
     except:
-        return await msg.edit_original_message(content="", embed=discord.Embed(title="Something went wrong while retrieving leaderboard data"))
+        return await msg.edit_original_response(content="", embed=discord.Embed(title="Something went wrong while retrieving leaderboard data"))
     embed = discord.Embed(title=category + " Leaderboard")
     for place in result:
         position = place["position"]
@@ -52,12 +73,12 @@ async def pcc2_leaderboard(ctx, category):
         if str(value)[-2:] == ".0":
             value = int(value)
         embed.add_field(name=f"{LEADERBOARD_TITLES.get(position, str(position) + '.')} {discord.utils.escape_markdown(place['payload']['user']['userName'])}", value=f"{value} {ICONS.get(category, category)}", inline=False)
-    return await msg.edit_original_message(content="", embed=embed)
+    return await msg.edit_original_response(content="", embed=embed)
 
 
 async def pcc2_user(ctx, code):
     msg = await ctx.respond(LOADING)
-    code = str(code)
+    code = str(code)    
     try:
         trader = await get_trader(code=code)
         if trader != None:
@@ -76,11 +97,11 @@ async def pcc2_user(ctx, code):
             embed.add_field(name="Drives", value=totals['Drive'], inline=True)
             embed.add_field(name="Power Supplies", value=totals['PowerSupply'])
             embed.add_field(name="Thermal Grease", value=totals['ThermalGrease'])
-            await msg.edit_original_message(content="", embed=embed)
+            await msg.edit_original_response(content="", embed=embed)
         else:
-            await msg.edit_original_message(content="", embed=discord.Embed(title="User not found", description=f"User with the ID {code} was not found!"))
+            await msg.edit_original_response(content="", embed=discord.Embed(title="User not found", description=f"User with the ID {code} was not found!"))
     except:
-        await msg.edit_original_message(embed=discord.Embed(title="Failed to get data", description="Something went wrong."))
+        await msg.edit_original_response(embed=discord.Embed(title="Failed to get data", description="Something went wrong."))
 
 def is_staff(user):
     for role in user.roles:
@@ -146,8 +167,17 @@ def inspect_embed(account):
 
     vip = account["accountInfo"]["hasSubscription"]
     visual_inventory = list(filter(lambda a: items.get(a["id"], Rarity.Gold.value) != Rarity.Gold.value, account["inventory"]["itemReferences"]))
-    item_limit = 5000 if vip else 500
+    item_limit = 100 if account.get("hasNewInventorySystem") else 500
+    invskill = account["userSkills"].get("InventoryCapacity", 0)
+    if invskill > 6:
+        invskill = 6
+    
+    item_limit += inv_skill[invskill]
+    if vip:
+        item_limit *= 10
+    
     e.add_field(name="Level", value=account["level"], inline=False)
+    e.add_field(name="Playtime", value=f'{format_time(account["playTime"])} ({account["playTime"]})', inline=False)
 
     e.add_field(name="VIP", value=bool_emoji(vip))
     e.add_field(name="No Ads", value=bool_emoji(account["adsRemoved"]))
@@ -186,7 +216,7 @@ class SuspectButton(discord.ui.Button):
             await interaction.response.send_message("Failed to upload account", ephemeral=True)
         
         await interaction.response.send_message(f"{interaction.user} changed suspect status of the account")
-        await self.msg.edit_original_message(embed=inspect_embed(self.account), view=inspect_view(self.msg, self.account, self.userid))
+        await self.msg.edit_original_response(embed=inspect_embed(self.account), view=inspect_view(self.msg, self.account, self.userid))
 
 async def pcc2_inspect(ctx, method, data):
     msg = await ctx.respond(LOADING)
@@ -203,11 +233,21 @@ async def pcc2_inspect(ctx, method, data):
         assert id is not None
         assert id != ""
     except:
-        return await msg.edit_original_message(content="Failed to get account ID")
+        return await msg.edit_original_response(content="Failed to get account ID")
     
     try:
         account = await get_account(id)
     except:
-        return await msg.edit_original_message(content="Failed to get account data")
+        return await msg.edit_original_response(content="Failed to get account data")
     
-    await msg.edit_original_message(content="", embed=inspect_embed(account), view=inspect_view(msg, account, id))
+    await msg.edit_original_response(content="", embed=inspect_embed(account), view=inspect_view(msg, account, id))
+
+async def pcc2_promocode_edit(ctx, promo):
+    if promo in promocodes:
+        promocodes.remove(promo)
+        await ctx.respond(f"{promo} removed!", ephemeral=True)
+    else:
+        promocodes.append(promo)
+        await ctx.respond(f"{promo} added!", ephemeral=True)
+    with open("json_files/promocodes.json", "wb") as file:
+        file.write(orjson.dumps(promocodes))
